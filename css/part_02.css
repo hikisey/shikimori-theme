@@ -1,6 +1,39 @@
 /* shiki glass v1.7.12 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
 html:root { --sg-p2: ""; }
 
+.b-comment:has(> .inner > .markers > .b-from_rip_marker) > .inner > header .name::after {
+    content: "rip";
+    display: inline-block;
+    margin-left: 7px;
+    padding: 0 6px;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: .5px;
+    text-transform: uppercase;
+    line-height: 15px;
+    border-radius: 6px;
+    background: rgba(var(--accent), .18);
+    border: 1px solid rgba(var(--accent), .45);
+    color: rgba(var(--accent), 1);
+    vertical-align: 1px;
+}
+
+.b-bb_codes-examples .result a:hover {
+    color: rgba(var(--link), 1);
+}
+
+.x1200 .b-modal > .inner,
+.b-modal > .inner {
+    max-width: 920px;
+    background: color-mix(in srgb, var(--glass-deep) 90%, transparent);
+    box-shadow: var(--plate-shadow-strong);
+}
+
+.bulma .modal-card-body {
+    background: color-mix(in srgb, var(--glass-deep) 80%, transparent) !important;
+    border-radius: var(--plate-radius-lg);
+}
+
 .bulma span {
     font: bold 16px var(--font-family);
 }
@@ -5095,47 +5128,4 @@ body.p-user_history .l-page {
     .b-message > .inner div.body .b-catalog_entry.cc .content {
         width: 280px;
     }
-}
-
-@media screen and (max-width: 480px) and (orientation: portrait) {
-    .b-dialog .to_dialog {
-        margin-top: 10px;
-        line-height: 1.8;
-    }
-    .b-dialog .b-message {
-        margin-left: 0 ;
-    }
-    .b-dialog > .inner div.body {
-        margin-left: 10px !important;
-    }
-    .b-message > .inner div.body .b-catalog_entry.cc .content {
-        width: 140px;
-        min-height: 160px;
-    }
-    .b-message > .inner div.body .entry-tooltip_container {
-        min-height: 180px;
-    }
-    .b-message {
-        padding-bottom: 15px;
-    }
-    .block.m0 .b-message {
-        padding-bottom: 10px !important;
-    }
-}
-
-.b-catalog_entry-tooltip .inner a.name:hover {
-    color: rgba(var(--link), var(--hundred));
-}
-.b-clubs.index .b-postloader {
-    width: 100%;
-}
-
-.b-db_entry-variant-list_item > .info .b-user_rate .b-add_to_list .trigger,
-.b-db_entry-variant-list_item > .info .b-user_rate .b-add_to_list .option {
-    max-width: 200px;
-}
-
-.p-user_rates-index .list-lines tr td .episodes_total:after,
-.p-user_rates-index .list-lines tr td .episodes_total:before {
-    color: rgba(var(--accent), 1);
 }

@@ -65,19 +65,35 @@
 | `--text` | основной текст |
 | `--text-2` | подписи и второстепенный текст |
 
-### Готовые палитры
+### Песочная палитра
 
-В site.css под блоком «Палитра» есть две готовые палитры. Чтобы включить одну, удалите строку с её названием над блоком и строку `*/` под ним. Остальные настройки останутся вашими.
-
-| Палитра | Акцент | Что меняет |
-| --- | --- | --- |
-| Алая (по умолчанию) | `232, 108, 108` | ничего не нужно включать |
-| Синяя ночь | `90, 155, 255` | акцент, синее стекло и свои обои с горами |
-| Песочная | `220, 182, 132` | спокойный тёплый акцент, тёплое стекло и текст, обои прежние |
+В site.css под блоком «Палитра» есть готовая палитра «Песочная»: спокойный тёплый акцент `220, 182, 132` вместо алого, тёплое стекло и текст, обои прежние. Чтобы включить её, удалите строку с названием над блоком и строку `*/` под ним.
 
 Если ставите свои светлые обои, увеличьте `--bg-dim` до `.7`: текст будет читаться лучше.
 
-![Палитры: алая, синяя ночь и песочная](docs/palettes.jpg)
+<details>
+<summary><b>Пример своей темы: «Синяя ночь»</b></summary>
+<br>
+
+Так можно подогнать тему под свои обои: поменять акцент, обои, цвет под ними, затемнение и стекло. Вставьте блок в самый конец стиля или замените этими строками значения в блоке «Палитра».
+
+```css
+@media screen and (min-width: 1px) {
+  html:root {
+    --accent: 90, 155, 255;
+    --bg-image: url("//cdn.jsdelivr.net/gh/Hikisey/shikimori-theme/bg_blue.webp");
+    --bg-image-mobile: url("//cdn.jsdelivr.net/gh/Hikisey/shikimori-theme/bg_blue_m.webp");
+    --bg-color: 33, 58, 84;
+    --bg-color-mobile: 39, 61, 87;
+    --bg-dim: .35;
+    --glass: 22, 32, 54;
+  }
+}
+```
+
+</details>
+
+![Алая по умолчанию, пример «Синяя ночь» и палитра «Песочная»](docs/palettes.jpg)
 
 > [!WARNING]
 > В ссылке на свою картинку не должно быть символа `@`, иначе Шикимори её не покажет.
@@ -122,4 +138,4 @@
 
 Основа темы: [E-design](https://github.com/ed-main) от [ed-main](https://github.com/ed-main).
 
-Обои палитры «Синяя ночь»: [Kanchenjunga South Peak](https://commons.wikimedia.org/wiki/File:Kanchenjunga_South_Peak_%28Unsplash%29.jpg) (Mukesh Jain, Unsplash, [CC0](https://creativecommons.org/publicdomain/zero/1.0/)).
+Обои примера «Синяя ночь»: [Kanchenjunga South Peak](https://commons.wikimedia.org/wiki/File:Kanchenjunga_South_Peak_%28Unsplash%29.jpg) (Mukesh Jain, Unsplash, [CC0](https://creativecommons.org/publicdomain/zero/1.0/)).

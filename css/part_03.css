@@ -1,6 +1,49 @@
 /* shiki glass v1.7.12 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
 html:root { --sg-p3: ""; }
 
+@media screen and (max-width: 480px) and (orientation: portrait) {
+    .b-dialog .to_dialog {
+        margin-top: 10px;
+        line-height: 1.8;
+    }
+    .b-dialog .b-message {
+        margin-left: 0 ;
+    }
+    .b-dialog > .inner div.body {
+        margin-left: 10px !important;
+    }
+    .b-message > .inner div.body .b-catalog_entry.cc .content {
+        width: 140px;
+        min-height: 160px;
+    }
+    .b-message > .inner div.body .entry-tooltip_container {
+        min-height: 180px;
+    }
+    .b-message {
+        padding-bottom: 15px;
+    }
+    .block.m0 .b-message {
+        padding-bottom: 10px !important;
+    }
+}
+
+.b-catalog_entry-tooltip .inner a.name:hover {
+    color: rgba(var(--link), var(--hundred));
+}
+.b-clubs.index .b-postloader {
+    width: 100%;
+}
+
+.b-db_entry-variant-list_item > .info .b-user_rate .b-add_to_list .trigger,
+.b-db_entry-variant-list_item > .info .b-user_rate .b-add_to_list .option {
+    max-width: 200px;
+}
+
+.p-user_rates-index .list-lines tr td .episodes_total:after,
+.p-user_rates-index .list-lines tr td .episodes_total:before {
+    color: rgba(var(--accent), 1);
+}
+
 .p-user_rates-index .l-content .b-options-floated span:before,
 .p-user_rates-index .l-content .b-options-floated span:after {
     color: rgba(var(--text-2), 1);
@@ -5523,38 +5566,4 @@ body.p-profiles .subheadline .misc-links > a:after {
 
 .l-top_menu-v2 .submenu > a.icon-mail:hover span.unread span:first-child {
     background: rgba(52, 105, 54, 0.8);
-}
-
-.l-top_menu-v2 .submenu > a.icon-mail:hover span.unread span:nth-child(2n) {
-    background: rgba(65, 100, 144, 0.8);
-}
-
-.l-top_menu-v2 .submenu > a.icon-mail:hover span.unread span:nth-child(3n) {
-    background: rgba(148, 70, 113, 0.8);
-}
-
-body.p-achievements.p-profiles .b-list_switchers > *,
-body.p-achievements.p-profiles .b-list_switchers > *:after {
-    display: inline-flex;
-}
-
-.b-user_rate-history .title {
-    font-weight: 700;
-    color: rgba(var(--text-strong), var(--hundred));
-}
-
-.p-dashboards-show .v2 .my-list .label span {
-    color: rgba(var(--text-strong), 1);
-}
-
-.b-review-topic.is-review_review_author_details > .inner .review-info .opinion.neutral,
-.b-review_opinion_marker.is-neutral input:checked + span {
-    color: rgb(var(--text-strong));
-    background: var(--tone-3b3a3e);
-}
-
-.b-review-topic.is-review_review_author_details > .inner .review-info .opinion.positive,
-.b-review_opinion_marker.is-positive input:checked + span {
-    background: #1c4c20;
-    color: #c6dacb;
 }

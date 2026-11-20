@@ -54,6 +54,7 @@ html:root { --sg-p1: ""; }
         --glass-shadow: rgb(10, 12, 16);
         --text-input: rgb(165, 172, 184);
         --link-hover: rgb(245, 150, 150);
+        --accent-warm: rgb(232, 162, 108);
         --tone-6e1515: rgb(110, 21, 21);
         --tone-010101: rgb(1, 1, 1);
         --tone-0c0c0c: rgb(12, 12, 12);
@@ -128,6 +129,7 @@ html:root { --sg-p1: ""; }
         --glass-shadow: rgb(from rgb(var(--glass)) calc(r * 10 / 30) calc(g * 12 / 34) calc(b * 16 / 42));
         --text-input: rgb(from rgb(var(--text-2)) calc(r * 165 / 170) calc(g * 172 / 178) calc(b * 184 / 192));
         --link-hover: hsl(from rgb(var(--link)) h min(100, calc(s * 82.61 / 72.94)) calc(l + (100 - l) * 10.78 / 33.33));
+        --accent-warm: hsl(from rgb(var(--accent)) calc(h + 26) s l);
         --tone-6e1515: hsl(from rgb(var(--accent)) h calc(s * 67.94 / 72.94) calc(l * 25.69 / 66.67));
         --tone-010101: rgb(from rgb(var(--glass)) calc(r * 1 / 30) calc(g * 1 / 34) calc(b * 1 / 42));
         --tone-0c0c0c: rgb(from rgb(var(--glass)) calc(r * 12 / 30) calc(g * 12 / 34) calc(b * 12 / 42));
@@ -2325,7 +2327,7 @@ body#dashboards_show .b-catalog_entry.b-catalog_entry {
 
 @media screen and (max-width: 1199px) {
     .l-page {
-        background-color: color-mix(in srgb, var(--glass-deep) 50%, transparent);
+        background-color: color-mix(in srgb, var(--glass-deep) 0%, transparent);
         box-shadow: none !important;
     }
     body#profiles_show .b-clubs {
@@ -2657,9 +2659,6 @@ html input[type="checkbox"]:not(#u):focus-visible {
         font-size: 12px !important;
         white-space: nowrap;
     }
-    .l-page {
-        text-shadow: 0 1px 2px rgba(var(--shade), 0.6), 0 0 8px rgba(var(--shade), 0.35);
-    }
     html body#profiles_show .profile-content .c-left .lifetime,
     html body#profiles_show .profile-content .c-left .activity {
         padding: 10px 12px !important;
@@ -2739,6 +2738,20 @@ html input[type="checkbox"]:not(#u):focus-visible {
         color: rgb(var(--link)) !important;
         transform: scale(.92);
         transition-duration: .06s !important;
+    }
+}
+
+@media screen and (max-width: 1199px) {
+    .l-page {
+        --text-halo: 0 0 2px rgba(var(--shade), .9), 0 0 6px rgba(var(--shade), .7), 0 0 14px rgba(var(--shade), .5);
+        text-shadow: var(--text-halo);
+    }
+    .l-page a:not([class*="button"]):not(.b-tag) {
+        text-shadow: var(--text-halo);
+    }
+    .l-page :is(.b-user .last-online, .b-user .line .event, .b-club span.grouped > span, .b-user_history-line > time.date,
+        .b-user_history-line > a.id, .b-topic .section time, .b-topic span.comments, .b-topic span.hash, span.misc > span) {
+        color: rgba(var(--text), .82) !important;
     }
 }
 
@@ -3907,25 +3920,25 @@ header.head :is(h1, h2) > :is(.misc, a.misc) {
 }
 
 .bar.simple .bar.s3 {
-    background: rgba(var(--small-rating), 1);
+    background: color-mix(in srgb, var(--accent-warm) 55%, rgb(var(--text-3)));
     transition: 0.2s ease-out, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s,
     min-height 0s;
 }
 
 .bar.simple .bar.s2 {
-    background: rgba(var(--average-rating), 1);
+    background: var(--accent-warm);
     transition: 0.2s ease-out, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s,
     min-height 0s;
 }
 
 .bar.simple .bar.s1 {
-    background: rgba(var(--high-rating), 1);
+    background: color-mix(in srgb, rgb(var(--accent)) 50%, var(--accent-warm));
     transition: 0.2s ease-out, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s,
     min-height 0s;
 }
 
 .bar.simple .bar.s0 {
-    background: rgba(var(--very-high-rating), 1);
+    background: rgb(var(--accent));
     transition: 0.2s ease-out, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s,
     min-height 0s;
 }
@@ -3948,7 +3961,7 @@ header.head :is(h1, h2) > :is(.misc, a.misc) {
     .bar.simple .bar.s2:hover,
     .bar.simple .bar.s1:hover,
     .bar.simple .bar.s0:hover {
-        background: rgba(var(--accent), 1);
+        background: var(--link-hover);
     }
 }
 
@@ -5835,37 +5848,4 @@ html body .b-comments_select-panel button:disabled:not(#u) {
     .b-shiki_editor .hidden-block {
         margin-bottom: 40px;
     }
-}
-
-.b-comment:has(> .inner > .markers > .b-from_rip_marker) > .inner > header .name::after {
-    content: "rip";
-    display: inline-block;
-    margin-left: 7px;
-    padding: 0 6px;
-    font-size: 9px;
-    font-weight: 700;
-    letter-spacing: .5px;
-    text-transform: uppercase;
-    line-height: 15px;
-    border-radius: 6px;
-    background: rgba(var(--accent), .18);
-    border: 1px solid rgba(var(--accent), .45);
-    color: rgba(var(--accent), 1);
-    vertical-align: 1px;
-}
-
-.b-bb_codes-examples .result a:hover {
-    color: rgba(var(--link), 1);
-}
-
-.x1200 .b-modal > .inner,
-.b-modal > .inner {
-    max-width: 920px;
-    background: color-mix(in srgb, var(--glass-deep) 90%, transparent);
-    box-shadow: var(--plate-shadow-strong);
-}
-
-.bulma .modal-card-body {
-    background: color-mix(in srgb, var(--glass-deep) 80%, transparent) !important;
-    border-radius: var(--plate-radius-lg);
 }

@@ -538,9 +538,7 @@ body#dashboards_show .b-catalog_entry.b-catalog_entry {
 
 @media screen and (max-width: 1199px) {
     .l-page {
-        /* лёгкая тёмная вуаль без размытия: текст, который лежит прямо на обоях
-           (списки пользователей и клубов, «Прочее» в настройках, ссылки «О сайте»), читается и на светлых обоях */
-        background-color: color-mix(in srgb, var(--glass-deep) 50%, transparent);
+        background-color: color-mix(in srgb, var(--glass-deep) 0%, transparent);
         box-shadow: none !important;
     }
     body#profiles_show .b-clubs {
@@ -895,10 +893,6 @@ html input[type="checkbox"]:not(#u):focus-visible {
         font-size: 12px !important;
         white-space: nowrap;
     }
-    /* мягкая тень у текста, который лежит прямо на обоях */
-    .l-page {
-        text-shadow: 0 1px 2px rgba(var(--shade), 0.6), 0 0 8px rgba(var(--shade), 0.35);
-    }
     html body#profiles_show .profile-content .c-left .lifetime,
     html body#profiles_show .profile-content .c-left .activity {
         padding: 10px 12px !important;
@@ -996,3 +990,22 @@ html input[type="checkbox"]:not(#u):focus-visible {
         transition-duration: .06s !important;
     }
 }
+
+/* Телефон и планшет (до 1199px): у страницы нет стеклянной подложки, часть текста лежит прямо на обоях
+   (списки пользователей и клубов, новости, история, «Прочее» в настройках, ссылки «О сайте»).
+   Фон не добавляем: тексту — плотная тёмная тень-ореол (без размытия под ним, дёшево),
+   подписям и датам на обоях — цвет светлее (из --text, поэтому следует палитре). */
+@media screen and (max-width: 1199px) {
+    .l-page {
+        --text-halo: 0 0 2px rgba(var(--shade), .9), 0 0 6px rgba(var(--shade), .7), 0 0 14px rgba(var(--shade), .5);
+        text-shadow: var(--text-halo);
+    }
+    .l-page a:not([class*="button"]):not(.b-tag) {
+        text-shadow: var(--text-halo);
+    }
+    .l-page :is(.b-user .last-online, .b-user .line .event, .b-club span.grouped > span, .b-user_history-line > time.date,
+        .b-user_history-line > a.id, .b-topic .section time, .b-topic span.comments, .b-topic span.hash, span.misc > span) {
+        color: rgba(var(--text), .82) !important; /* перебивает time {… !important} и цвета шикимори */
+    }
+}
+

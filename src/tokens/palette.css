@@ -71,6 +71,7 @@
         --glass-shadow: rgb(10, 12, 16); /* тени блоков */
         --text-input: rgb(165, 172, 184); /* текст в полях ввода */
         --link-hover: rgb(245, 150, 150); /* ссылки под курсором */
+        --accent-warm: rgb(232, 162, 108); /* тёплый оранжевый рядом с акцентом: полоски оценок */
         /* внутренние оттенки (tone-…) — считаются из стекла, текста и акцента сами */
         --tone-6e1515: rgb(110, 21, 21);
         --tone-010101: rgb(1, 1, 1);
@@ -149,6 +150,7 @@
         --glass-shadow: rgb(from rgb(var(--glass)) calc(r * 10 / 30) calc(g * 12 / 34) calc(b * 16 / 42));
         --text-input: rgb(from rgb(var(--text-2)) calc(r * 165 / 170) calc(g * 172 / 178) calc(b * 184 / 192));
         --link-hover: hsl(from rgb(var(--link)) h min(100, calc(s * 82.61 / 72.94)) calc(l + (100 - l) * 10.78 / 33.33));
+        --accent-warm: hsl(from rgb(var(--accent)) calc(h + 26) s l);
         --tone-6e1515: hsl(from rgb(var(--accent)) h calc(s * 67.94 / 72.94) calc(l * 25.69 / 66.67));
         --tone-010101: rgb(from rgb(var(--glass)) calc(r * 1 / 30) calc(g * 1 / 34) calc(b * 1 / 42));
         --tone-0c0c0c: rgb(from rgb(var(--glass)) calc(r * 12 / 30) calc(g * 12 / 34) calc(b * 12 / 42));
