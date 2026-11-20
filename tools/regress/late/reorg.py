@@ -6,7 +6,7 @@ SRC=C.SRC;M=C.man()
 s=open(SRC+'/overrides/late.css',encoding='utf-8').read()
 E=json.load(open('lateedges.json'));blocks=[tuple(t) for t in E['blocks']]
 EV={}
-for f in ['comatch4.json','comatch_late.json']:
+for f in os.environ.get('EVF','comatch5.json,comatch_late.json').split(','):
     for a,b,r in json.load(open(f)): EV[(a,b)]=r
 def evid(a,b):
     r=EV.get((a,b))

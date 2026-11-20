@@ -15,7 +15,7 @@ const JOBS=+(process.env.JOBS||4);
 const CONFIGS=(process.env.CONFIGS||'pc1920,pc1280,rm1280,an1280,st1280,tab1024,ph390,rm390,an390,st390').split(',');
 if(!process.env.WORKER){
  fs.mkdirSync(out,{recursive:true});const res=path.join(out,'results.jsonl');
- if(process.env.RESUME&&fs.existsSync(res)){const done={};for(const l of fs.readFileSync(res,'utf8').split('\n').filter(Boolean)){try{const r=JSON.parse(l);(done[r.fx]=done[r.fx]||new Set()).add(r.cfg)}catch(e){}}
+ if(process.env.RESUME&&fs.existsSync(res)){const done={};for(const l of fs.readFileSync(res,'utf8').split('\n').filter(Boolean)){try{const r=JSON.parse(l);if(r.err)continue;(done[r.fx]=done[r.fx]||new Set()).add(r.cfg)}catch(e){}}
   const need=CONFIGS.length;const before=fx.length;for(let i=fx.length-1;i>=0;i--){const d=done[path.basename(fx[i])];if(d&&(d.size>=need||[...d].some(c=>/^(pc|tab|ph)$/.test(c))&&d.size>=need-2))fx.splice(i,1)}
   console.log('RESUME: skip',before-fx.length,'left',fx.length)} else fs.writeFileSync(res,'');
  const slices=[...Array(JOBS)].map((_,i)=>fx.filter((_,j)=>j%JOBS===i));let left=JOBS;const t0=Date.now();

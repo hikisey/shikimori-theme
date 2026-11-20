@@ -1,10 +1,10 @@
 # python3 labels.py [--apply] — подписывает подряд идущие блоки late.css: модуль-хозяин и почему правило здесь.
 # Порядок правил не меняется, меняются только комментарии (в сборку не попадают).
-import sys,json,re,collections;sys.path.insert(0,'/workspace/rf')
+import sys,os,json,re,collections;sys.path.insert(0,'/workspace/rf')
 exec(open('/workspace/rf/reorg.py').read().split("edges=collections")[0])
 plan={tuple(b['top']):b for b in json.load(open('plan.json'))}
 cls={}
-for l in open('cls4.txt'):
+for l in open(os.environ.get('CLS','cls4.txt')):
     m=re.match(r"(\d+) (\d+) (\S+) (\{.*?\}) (.*)",l);k=eval(m.group(4));cls[int(m.group(1))]='real' if k.get('real') else 'rest'
 exec(open('/workspace/rf/reorg.py').read().split("COL=")[1].join(["COL=",""]).split("sec=[section")[0]) if False else None
 src=open('/workspace/rf/reorg.py').read()
