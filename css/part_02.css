@@ -1,6 +1,83 @@
 /* shiki glass v1.7.13 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
 html:root { --sg-p2: ""; }
 
+@media screen and (max-width: 767px) {
+    .fullwidth>.b-spoiler>label:not(._) {
+        white-space: nowrap;
+        padding: 0.47em 6em 0.47em 1em;
+    }
+    .buttons .editor-italic,
+    .buttons .editor-spoiler,
+    .buttons .editor-smiley,
+    .buttons .editor-quote,
+    .buttons .editor-image,
+    .buttons .editor-link,
+    .buttons .editor-strike,
+    .buttons .editor-underline,
+    .buttons .editor-bold,
+    .buttons .editor-file {
+        margin-left: 0 ;
+        padding: 7px 13px;
+    }
+    .buttons .editor-bold {
+        padding: 7px 13px;
+    }
+    .b-shiki_editor aside.buttons {
+        white-space: normal;
+    }
+    .editor-controls {
+        white-space: normal;
+        overflow-x: auto;
+        height: 50px;
+    }
+    .b-shiki_editor aside.buttons .editor-spoiler {
+        margin-left: 0  !important;
+    }
+    .editor-container .b-summary_marker {
+        width: 10px !important;
+    }
+    .editor-container .b-summary_marker:before {
+        margin-left: -34px;
+    }
+}
+
+@media screen and (max-width: 480px) and (orientation: portrait) {
+    .b-shiki_editor aside.buttons {
+        width: 70%;
+        float: left !important;
+    }
+    .b-shiki_editor aside.buttons .editor-spoiler {
+        margin-left: 35px;
+    }
+    .b-shiki_editor .links,
+    .b-shiki_editor .images,
+    .b-shiki_editor .quotes,
+    .b-shiki_editor .email,
+    .b-shiki_editor .upload {
+        height: 43px;
+    }
+    .b-comments {
+        padding-bottom: 10px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .b-comments .comments-loader.comments-loader,
+    .b-comments .comments-hider.comments-hider,
+    .b-comments .comments-expander.comments-expander {
+        padding: 5px 4px;
+    }
+    .b-comments .comments-loader.click-loader {
+        padding: 5px 30px 5px 30px;
+    }
+}
+
+@media screen and (max-width: 420px) and (orientation: portrait) {
+    .b-shiki_editor .hidden-block {
+        margin-bottom: 40px;
+    }
+}
+
 .b-comment:has(> .inner > .markers > .b-from_rip_marker) > .inner > header .name::after {
     content: "rip";
     display: inline-block;
@@ -2714,6 +2791,10 @@ html body .activity .graph.bar.vertical:not(#u) {
     font-weight: bold;
 }
 
+.p-profiles .profile-head .c-info .c-additionals div a {
+    color: rgba(var(--link), 1);
+}
+
 .b-db_entry-note .name-container .note .relation,
 .b-db_entry-note .name-container .note .additional {
     color: rgba(var(--text-2), 1) !important;
@@ -3757,6 +3838,9 @@ img.studio-logo:is([src*="/studios/original/11."], [src*="/studios/original/44."
 .p-db_entries-show .resources-loader > :is(.cc-characters, .cc-themes) { order: 2; }
 .watch-online :is(.b-link_button, .watch-online-play):after { content: none !important; display: none !important; }
 
+#players .player-dropdown,
+.players-loader .player-dropdown { display: none !important; }
+
 .b-form input[type="submit"],
 .b-shiki_editor.previewed footer .unpreview,
 .b-poll .poll-actions .vote,
@@ -4017,6 +4101,11 @@ body.p-profiles-edit .tipsy.tipsy-s .tipsy-arrow.tipsy-arrow {
     }
 }
 .b-edit_styles .editor-container > .buttons:not(.m15) { display: none !important; }
+
+.b-form input[type="submit"],
+.b-button {
+    line-height: 13px;
+}
 
 .b-block_list li {
     color: rgba(var(--text), 1);
@@ -5053,79 +5142,5 @@ body.p-user_history .l-page {
     body.p-db_entries-works .subheadline .misc-links a {
         font-size: 0 !important;
         right: -3rem;
-    }
-}
-
-@media screen and (max-width: 1023px) {
-    .b-dialog > .inner header img {
-        margin: 1px 10px 7px 0 !important;
-        width: 48px !important;
-    }
-    .b-dialog .b-message .inner header img {
-        margin: 7px 7px 4px 0 !important;
-        width: 37px !important;
-    }
-    .b-message > .inner .name-date .time {
-        padding-top: 0;
-        line-height: 14px;
-    }
-    .b-comments-notifier {
-        display: none !important;
-    }
-    .b-comment > .inner div.body,
-    .b-message > .inner div.body,
-    .b-dialog > .inner div.body {
-        margin-left: 10px !important;
-    }
-    .b-topic.aside-expanded > .inner,
-    .b-dialog.aside-expanded > .inner,
-    .b-message.aside-expanded > .inner,
-    .b-comment.aside-expanded > .inner,
-    .b-topic.aside-expanded > .b-comments {
-        margin-left: 0 ;
-        min-height: 200px;
-    }
-    .b-topic.aside-expanded > .inner aside.buttons,
-    .b-comment.aside-expanded > .inner aside.buttons,
-    .b-dialog.aside-expanded > .inner aside.buttons,
-    .b-message.aside-expanded > .inner aside.buttons {
-        display: block;
-        margin-right: 0 ;
-        position: absolute;
-        top: 0;
-        right: 0;
-        left: 0;
-        width: auto;
-        height: 100% !important;
-        background-color: color-mix(in srgb, var(--glass-deep) 80%, transparent);
-        z-index: 3;
-        padding: 10px 14px;
-    }
-    .b-message > .inner div.body .b-catalog_entry {
-        max-width: 600px;
-    }
-    .b-message > .inner div.body .b-catalog_entry.cc .content {
-        width: 300px;
-        max-width: 600px;
-    }
-    .b-comment > .inner header .name-date a.name,
-    .b-topic > .inner header .name-date a.name,
-    .b-dialog > .inner header .name-date a.name,
-    .b-message > .inner header .name-date a.name {
-        font-size: 14px;
-    }
-    .b-dialog > .inner > header .name-date a.name {
-        font-size: 16px;
-    }
-    .b-topic > .inner header .name-date a.name,
-    .b-dialog > .inner header .name-date a.name {
-        top: 2px;
-        position: relative;
-    }
-}
-
-@media screen and (max-width: 540px) {
-    .b-message > .inner div.body .b-catalog_entry.cc .content {
-        width: 280px;
     }
 }

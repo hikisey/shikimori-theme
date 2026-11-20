@@ -1009,3 +1009,34 @@ html input[type="checkbox"]:not(#u):focus-visible {
     }
 }
 
+body * .b-anime_status_tag.episode:before {
+    background: #392589;
+    color: #d5d4ff;
+}
+body * .b-anime_status_tag.news:before {
+    background: #984915;
+    color: #f3e5d3;
+}
+body * .b-anime_status_tag.contest:before {
+    content: '🏆︎ турнир' !important;
+    background: linear-gradient(45deg, #632f86, #662a7d, #471fa7);
+}
+body * .b-anime_status_tag.article:before {
+    background: linear-gradient(45deg, #86412f, #7d2a2a, #a7491f);
+}
+body * .b-anime_status_tag.review:before {
+    content: '★ отзыв' !important;
+    background: linear-gradient(45deg, #417942, var(--tone-444444), #883737);
+}
+body * .b-anime_status_tag.review-negative:before {
+    background: #933131;
+    content: '👎' !important;
+}
+body * .b-anime_status_tag.review-positive:before {
+    background: #28662e;
+    content: '👍' !important;
+}
+body * .b-anime_status_tag.critique:before {
+    color: #fae5ee;
+    background: #7c1946;
+}

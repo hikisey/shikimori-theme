@@ -311,3 +311,11 @@
     box-shadow: none;
     backdrop-filter: none;
 }
+
+/* Новости и вставки карточек: общий «подъём» (cards.css) обнулял margin-top при наведении,
+   новость становилась ниже, курсор уходил с неё и она прыгала туда-обратно.
+   Здесь отступ одинаковый в покое и при наведении */
+.b-message .b-catalog_entry.b-catalog_entry:not(#u),
+.b-catalog-entry-embedded .b-catalog_entry.b-catalog_entry:not(#u) {
+    margin-top: 0;
+}

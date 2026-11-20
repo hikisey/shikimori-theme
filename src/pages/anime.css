@@ -1081,3 +1081,6 @@ img.studio-logo:is([src*="/studios/original/11."], [src*="/studios/original/44."
 .p-db_entries-show .resources-loader > .cc.m0:has(> .c-screenshots, > .c-videos) { order: -1 !important; }
 .p-db_entries-show .resources-loader > :is(.cc-characters, .cc-themes) { order: 2; }
 .watch-online :is(.b-link_button, .watch-online-play):after { content: none !important; display: none !important; }
+
+#players .player-dropdown,
+.players-loader .player-dropdown { display: none !important; }

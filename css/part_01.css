@@ -1805,6 +1805,16 @@ span.submenu-triangle.submenu-triangle.icon-profile {
     display: none;
 }
 
+.l-top_menu-v2 .submenu > a.icon-mail:hover span.unread span:first-child {
+    background: rgba(52, 105, 54, 0.8);
+}
+.l-top_menu-v2 .submenu > a.icon-mail:hover span.unread span:nth-child(2n) {
+    background: rgba(65, 100, 144, 0.8);
+}
+.l-top_menu-v2 .submenu > a.icon-mail:hover span.unread span:nth-child(3n) {
+    background: rgba(148, 70, 113, 0.8);
+}
+
 body {
     font-family: var(--font-family) !important;
 }
@@ -2755,6 +2765,38 @@ html input[type="checkbox"]:not(#u):focus-visible {
     }
 }
 
+body * .b-anime_status_tag.episode:before {
+    background: #392589;
+    color: #d5d4ff;
+}
+body * .b-anime_status_tag.news:before {
+    background: #984915;
+    color: #f3e5d3;
+}
+body * .b-anime_status_tag.contest:before {
+    content: '🏆︎ турнир' !important;
+    background: linear-gradient(45deg, #632f86, #662a7d, #471fa7);
+}
+body * .b-anime_status_tag.article:before {
+    background: linear-gradient(45deg, #86412f, #7d2a2a, #a7491f);
+}
+body * .b-anime_status_tag.review:before {
+    content: '★ отзыв' !important;
+    background: linear-gradient(45deg, #417942, var(--tone-444444), #883737);
+}
+body * .b-anime_status_tag.review-negative:before {
+    background: #933131;
+    content: '👎' !important;
+}
+body * .b-anime_status_tag.review-positive:before {
+    background: #28662e;
+    content: '👍' !important;
+}
+body * .b-anime_status_tag.critique:before {
+    color: #fae5ee;
+    background: #7c1946;
+}
+
 .locale-ru .b-summary_marker:before {
     background-color: #1a421d;
     border: rgba(var(--glass), 0.4);
@@ -3245,6 +3287,10 @@ body * .b-anime_status_tag.released:before {
 }
 
 .b-catalog_entry-tooltip .inner .line .value a:hover {
+    color: rgba(var(--link), var(--hundred));
+}
+
+.b-catalog_entry-tooltip .inner .line .value a {
     color: rgba(var(--link), var(--hundred));
 }
 
@@ -4889,6 +4935,11 @@ header.head :is(h1, h2) > :is(.misc, a.misc) {
     backdrop-filter: none;
 }
 
+.b-message .b-catalog_entry.b-catalog_entry:not(#u),
+.b-catalog-entry-embedded .b-catalog_entry.b-catalog_entry:not(#u) {
+    margin-top: 0;
+}
+
 .b-prgrph,
 .b-spoiler_prgrph {
     color: rgba(var(--text), 1);
@@ -5780,82 +5831,5 @@ html body .b-comments_select-panel button:disabled:not(#u) {
     }
     .CodeMirror-dialog-top {
         margin-top: 80px;
-    }
-}
-
-@media screen and (max-width: 767px) {
-    .fullwidth>.b-spoiler>label:not(._) {
-        white-space: nowrap;
-        padding: 0.47em 6em 0.47em 1em;
-    }
-    .buttons .editor-italic,
-    .buttons .editor-spoiler,
-    .buttons .editor-smiley,
-    .buttons .editor-quote,
-    .buttons .editor-image,
-    .buttons .editor-link,
-    .buttons .editor-strike,
-    .buttons .editor-underline,
-    .buttons .editor-bold,
-    .buttons .editor-file {
-        margin-left: 0 ;
-        padding: 7px 13px;
-    }
-    .buttons .editor-bold {
-        padding: 7px 13px;
-    }
-    .b-shiki_editor aside.buttons {
-        white-space: normal;
-    }
-    .editor-controls {
-        white-space: normal;
-        overflow-x: auto;
-        height: 50px;
-    }
-    .b-shiki_editor aside.buttons .editor-spoiler {
-        margin-left: 0  !important;
-    }
-    .editor-container .b-summary_marker {
-        width: 10px !important;
-    }
-    .editor-container .b-summary_marker:before {
-        margin-left: -34px;
-    }
-}
-
-@media screen and (max-width: 480px) and (orientation: portrait) {
-    .b-shiki_editor aside.buttons {
-        width: 70%;
-        float: left !important;
-    }
-    .b-shiki_editor aside.buttons .editor-spoiler {
-        margin-left: 35px;
-    }
-    .b-shiki_editor .links,
-    .b-shiki_editor .images,
-    .b-shiki_editor .quotes,
-    .b-shiki_editor .email,
-    .b-shiki_editor .upload {
-        height: 43px;
-    }
-    .b-comments {
-        padding-bottom: 10px;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .b-comments .comments-loader.comments-loader,
-    .b-comments .comments-hider.comments-hider,
-    .b-comments .comments-expander.comments-expander {
-        padding: 5px 4px;
-    }
-    .b-comments .comments-loader.click-loader {
-        padding: 5px 30px 5px 30px;
-    }
-}
-
-@media screen and (max-width: 420px) and (orientation: portrait) {
-    .b-shiki_editor .hidden-block {
-        margin-bottom: 40px;
     }
 }

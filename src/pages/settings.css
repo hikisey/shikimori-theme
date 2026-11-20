@@ -267,3 +267,8 @@ body.p-profiles-edit .tipsy.tipsy-s .tipsy-arrow.tipsy-arrow {
     }
 }
 .b-edit_styles .editor-container > .buttons:not(.m15) { display: none !important; }
+
+.b-form input[type="submit"],
+.b-button {
+    line-height: 13px;
+}

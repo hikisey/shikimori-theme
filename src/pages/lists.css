@@ -645,3 +645,9 @@ tr.user_rate.selectable.editable:after {
         display: table-cell !important;
     }
 }
+
+@media screen and (max-width: 480px) {
+    span.current-value[data-field="chapters"] {
+        display: none;
+    }
+}

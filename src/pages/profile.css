@@ -1921,3 +1921,7 @@ html body .activity .graph.bar.vertical:not(#u) {
     color: rgba(var(--link), 1) !important;
     font-weight: bold;
 }
+
+.p-profiles .profile-head .c-info .c-additionals div a {
+    color: rgba(var(--link), 1);
+}

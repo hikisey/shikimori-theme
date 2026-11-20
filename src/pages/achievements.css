@@ -1238,3 +1238,24 @@ body.p-achievements.p-profiles a.menu-icon:hover {
 body.p-achievements.p-profiles .l-top_menu-v2 .menu-dropdown a {
     color: #fff7e8;
 }
+
+body.p-profiles:not(.p-achievements):not(.p-user_history):not(.p-user_rates) .b-options-floated,
+body#clubs_edit .b-options-floated,
+body#messages_index .b-options-floated,
+body#dialogs_index .b-options-floated,
+body#dialogs_show .b-options-floated,
+body.p-messages .b-options-floated,
+body.p-dialogs .b-options-floated {
+    position: static !important;
+    height: auto !important;
+    width: 100% !important;
+    line-height: normal !important;
+    display: flex !important;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 8px 12px;
+    margin: 0 0 16px !important;
+    float: none;
+    overflow: visible;
+}

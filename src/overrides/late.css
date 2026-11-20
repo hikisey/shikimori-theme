@@ -221,45 +221,6 @@ body * [class*="broadcast_marker"]:before {
     color: var(--tone-eadddd);
 }
 
-body * .b-anime_status_tag.episode:before {
-    background: #392589;
-    color: #d5d4ff;
-}
-
-body * .b-anime_status_tag.news:before {
-    background: #984915;
-    color: #f3e5d3;
-}
-
-body * .b-anime_status_tag.contest:before {
-    content: '🏆︎ турнир' !important;
-    background: linear-gradient(45deg, #632f86, #662a7d, #471fa7);
-}
-
-body * .b-anime_status_tag.article:before {
-    background: linear-gradient(45deg, #86412f, #7d2a2a, #a7491f);
-}
-
-body * .b-anime_status_tag.review:before {
-    content: '★ отзыв' !important;
-    background: linear-gradient(45deg, #417942, var(--tone-444444), #883737);
-}
-
-body * .b-anime_status_tag.review-negative:before {
-    background: #933131;
-    content: '👎' !important;
-}
-
-body * .b-anime_status_tag.review-positive:before {
-    background: #28662e;
-    content: '👍' !important;
-}
-
-body * .b-anime_status_tag.critique:before {
-    color: #fae5ee;
-    background: #7c1946;
-}
-
 body * .b-anime_status_tag.broadcast:before {
     background-color: #6d0b37;
     color: #ffe0ee;
@@ -392,10 +353,6 @@ body * [class*="new_marker"] {
     color: rgba(var(--text-strong), var(--hundred));
 }
 
-.b-catalog_entry-tooltip .inner .line .value a {
-    color: rgba(var(--link), var(--hundred));
-}
-
 .b-catalog_entry-tooltip .inner .rating .text {
     color: rgba(var(--text), var(--hundred));
 }
@@ -463,14 +420,6 @@ header.head h2 a.back {
     }
 }
 
-/* Новости и вставки карточек: общий «подъём» (cards.css) обнулял margin-top при наведении,
-   новость становилась ниже, курсор уходил с неё и она прыгала туда-обратно.
-   Здесь отступ одинаковый в покое и при наведении */
-.b-message .b-catalog_entry.b-catalog_entry:not(#u),
-.b-catalog-entry-embedded .b-catalog_entry.b-catalog_entry:not(#u) {
-    margin-top: 0;
-}
-
 body#profiles_show .b-catalog_entry,
 .c-column.user_rate .b-catalog_entry {
     background: transparent;
@@ -515,11 +464,6 @@ body#profiles_show .b-catalog_entry,
         box-shadow: none;
         background: none;
     }
-}
-
-.b-dialog > .inner header .name-date {
-    padding-top: 2px;
-    padding-bottom: 2px;
 }
 
 .b-poll .poll .name {
@@ -729,16 +673,6 @@ a.b-menu-line.entry.b-link .time {
     width: 100%;
 }
 
-.p-dashboards-show .subheadline-buttons a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    margin-top: 0;
-    font-size: 9px !important;
-    transition: 0.2s all;
-}
-
 .subheadline-buttons a:hover {
     color: var(--heading-link);
 }
@@ -771,18 +705,6 @@ a.b-menu-line.entry.b-link .time {
 body.p-profiles .subheadline .misc-links > a:after {
     content: '\f2b6';
     font-size: 15px;
-}
-
-.l-top_menu-v2 .submenu > a.icon-mail:hover span.unread span:first-child {
-    background: rgba(52, 105, 54, 0.8);
-}
-
-.l-top_menu-v2 .submenu > a.icon-mail:hover span.unread span:nth-child(2n) {
-    background: rgba(65, 100, 144, 0.8);
-}
-
-.l-top_menu-v2 .submenu > a.icon-mail:hover span.unread span:nth-child(3n) {
-    background: rgba(148, 70, 113, 0.8);
 }
 
 body.p-achievements.p-profiles .b-list_switchers > *,
@@ -922,10 +844,6 @@ a.name[href*="/morr"] {
 input.ac_input.ac_loading {
     box-shadow: none;
     background: none !important;
-}
-
-.p-profiles .profile-head .c-info .c-additionals div a {
-    color: rgba(var(--link), 1);
 }
 
 .cc-8 > .c-column {
@@ -1500,11 +1418,6 @@ a.menu-icon.contest,
 .l-top_menu-v2 .menu-dropdown.active > button,
 .l-top_menu-v2 .menu-dropdown > button:focus {
     background: none;
-}
-
-.b-form input[type="submit"],
-.b-button {
-    line-height: 13px;
 }
 
 a.b-db_entry-variant-list_item span.b-link {
@@ -2100,12 +2013,6 @@ body.p-achievements.p-profiles .b-anime_status_tag.episode,
 @media screen and (max-width: 480px) {
     a.actor.b-user16 span:before {
         content: none;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    span.current-value[data-field="chapters"] {
-        display: none;
     }
 }
 
@@ -3390,27 +3297,6 @@ body .b-catalog_entry .collection_score .collection_score_marker {
         box-shadow: none !important;
     }
 }
-
-body.p-profiles:not(.p-achievements):not(.p-user_history):not(.p-user_rates) .b-options-floated,
-body#clubs_edit .b-options-floated,
-body#messages_index .b-options-floated,
-body#dialogs_index .b-options-floated,
-body#dialogs_show .b-options-floated,
-body.p-messages .b-options-floated,
-body.p-dialogs .b-options-floated {
-    position: static !important;
-    height: auto !important;
-    width: 100% !important;
-    line-height: normal !important;
-    display: flex !important;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 8px 12px;
-    margin: 0 0 16px !important;
-    float: none;
-    overflow: visible;
-}
 body#messages_index .l-content > .subheadline,
 body#dialogs_index .l-content > .subheadline,
 body#dialogs_show .l-content > .subheadline,
@@ -3505,8 +3391,6 @@ header.head :is(h1, h2) {
     font-size: 12px;
     font-weight: 600;
 }
-#players .player-dropdown,
-.players-loader .player-dropdown { display: none !important; }
 #players select:not(#u),
 .players-loader select:not(#u) {
     width: 100% !important;

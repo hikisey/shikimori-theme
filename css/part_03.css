@@ -1,6 +1,80 @@
 /* shiki glass v1.7.13 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
 html:root { --sg-p3: ""; }
 
+@media screen and (max-width: 1023px) {
+    .b-dialog > .inner header img {
+        margin: 1px 10px 7px 0 !important;
+        width: 48px !important;
+    }
+    .b-dialog .b-message .inner header img {
+        margin: 7px 7px 4px 0 !important;
+        width: 37px !important;
+    }
+    .b-message > .inner .name-date .time {
+        padding-top: 0;
+        line-height: 14px;
+    }
+    .b-comments-notifier {
+        display: none !important;
+    }
+    .b-comment > .inner div.body,
+    .b-message > .inner div.body,
+    .b-dialog > .inner div.body {
+        margin-left: 10px !important;
+    }
+    .b-topic.aside-expanded > .inner,
+    .b-dialog.aside-expanded > .inner,
+    .b-message.aside-expanded > .inner,
+    .b-comment.aside-expanded > .inner,
+    .b-topic.aside-expanded > .b-comments {
+        margin-left: 0 ;
+        min-height: 200px;
+    }
+    .b-topic.aside-expanded > .inner aside.buttons,
+    .b-comment.aside-expanded > .inner aside.buttons,
+    .b-dialog.aside-expanded > .inner aside.buttons,
+    .b-message.aside-expanded > .inner aside.buttons {
+        display: block;
+        margin-right: 0 ;
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        width: auto;
+        height: 100% !important;
+        background-color: color-mix(in srgb, var(--glass-deep) 80%, transparent);
+        z-index: 3;
+        padding: 10px 14px;
+    }
+    .b-message > .inner div.body .b-catalog_entry {
+        max-width: 600px;
+    }
+    .b-message > .inner div.body .b-catalog_entry.cc .content {
+        width: 300px;
+        max-width: 600px;
+    }
+    .b-comment > .inner header .name-date a.name,
+    .b-topic > .inner header .name-date a.name,
+    .b-dialog > .inner header .name-date a.name,
+    .b-message > .inner header .name-date a.name {
+        font-size: 14px;
+    }
+    .b-dialog > .inner > header .name-date a.name {
+        font-size: 16px;
+    }
+    .b-topic > .inner header .name-date a.name,
+    .b-dialog > .inner header .name-date a.name {
+        top: 2px;
+        position: relative;
+    }
+}
+
+@media screen and (max-width: 540px) {
+    .b-message > .inner div.body .b-catalog_entry.cc .content {
+        width: 280px;
+    }
+}
+
 @media screen and (max-width: 480px) and (orientation: portrait) {
     .b-dialog .to_dialog {
         margin-top: 10px;
@@ -32,6 +106,11 @@ html:root { --sg-p3: ""; }
 }
 .b-clubs.index .b-postloader {
     width: 100%;
+}
+
+.b-dialog > .inner header .name-date {
+    padding-top: 2px;
+    padding-bottom: 2px;
 }
 
 .b-db_entry-variant-list_item > .info .b-user_rate .b-add_to_list .trigger,
@@ -660,6 +739,12 @@ tr.user_rate.selectable.editable:after {
     }
     th.num.order-control[data-order="kind"] {
         display: table-cell !important;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    span.current-value[data-field="chapters"] {
+        display: none;
     }
 }
 
@@ -1887,6 +1972,27 @@ body.p-achievements.p-profiles a.menu-icon:hover {
 }
 body.p-achievements.p-profiles .l-top_menu-v2 .menu-dropdown a {
     color: #fff7e8;
+}
+
+body.p-profiles:not(.p-achievements):not(.p-user_history):not(.p-user_rates) .b-options-floated,
+body#clubs_edit .b-options-floated,
+body#messages_index .b-options-floated,
+body#dialogs_index .b-options-floated,
+body#dialogs_show .b-options-floated,
+body.p-messages .b-options-floated,
+body.p-dialogs .b-options-floated {
+    position: static !important;
+    height: auto !important;
+    width: 100% !important;
+    line-height: normal !important;
+    display: flex !important;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 8px 12px;
+    margin: 0 0 16px !important;
+    float: none;
+    overflow: visible;
 }
 
 .p-contests .results .cc-result .c-rounds .label {
@@ -3242,6 +3348,16 @@ html body .fc-user-sections .devise:not(#u) {
     padding: 0;
     right: 4px;
     height: var(--heading-height);
+}
+
+.p-dashboards-show .subheadline-buttons a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin-top: 0;
+    font-size: 9px !important;
+    transition: 0.2s all;
 }
 
 .name-date a.name[title="morr"]::after,
@@ -5015,45 +5131,6 @@ body * [class*="broadcast_marker"]:before {
     color: var(--tone-eadddd);
 }
 
-body * .b-anime_status_tag.episode:before {
-    background: #392589;
-    color: #d5d4ff;
-}
-
-body * .b-anime_status_tag.news:before {
-    background: #984915;
-    color: #f3e5d3;
-}
-
-body * .b-anime_status_tag.contest:before {
-    content: '🏆︎ турнир' !important;
-    background: linear-gradient(45deg, #632f86, #662a7d, #471fa7);
-}
-
-body * .b-anime_status_tag.article:before {
-    background: linear-gradient(45deg, #86412f, #7d2a2a, #a7491f);
-}
-
-body * .b-anime_status_tag.review:before {
-    content: '★ отзыв' !important;
-    background: linear-gradient(45deg, #417942, var(--tone-444444), #883737);
-}
-
-body * .b-anime_status_tag.review-negative:before {
-    background: #933131;
-    content: '👎' !important;
-}
-
-body * .b-anime_status_tag.review-positive:before {
-    background: #28662e;
-    content: '👍' !important;
-}
-
-body * .b-anime_status_tag.critique:before {
-    color: #fae5ee;
-    background: #7c1946;
-}
-
 body * .b-anime_status_tag.broadcast:before {
     background-color: #6d0b37;
     color: #ffe0ee;
@@ -5186,10 +5263,6 @@ body * [class*="new_marker"] {
     color: rgba(var(--text-strong), var(--hundred));
 }
 
-.b-catalog_entry-tooltip .inner .line .value a {
-    color: rgba(var(--link), var(--hundred));
-}
-
 .b-catalog_entry-tooltip .inner .rating .text {
     color: rgba(var(--text), var(--hundred));
 }
@@ -5257,11 +5330,6 @@ header.head h2 a.back {
     }
 }
 
-.b-message .b-catalog_entry.b-catalog_entry:not(#u),
-.b-catalog-entry-embedded .b-catalog_entry.b-catalog_entry:not(#u) {
-    margin-top: 0;
-}
-
 body#profiles_show .b-catalog_entry,
 .c-column.user_rate .b-catalog_entry {
     background: transparent;
@@ -5306,11 +5374,6 @@ body#profiles_show .b-catalog_entry,
         box-shadow: none;
         background: none;
     }
-}
-
-.b-dialog > .inner header .name-date {
-    padding-top: 2px;
-    padding-bottom: 2px;
 }
 
 .b-poll .poll .name {
@@ -5450,111 +5513,4 @@ a.b-menu-line.entry.b-link .time {
     background: color-mix(in srgb, var(--tone-6d6d6d) 40%, transparent);
     color: var(--tone-b7b7b7);
     border: none;
-}
-
-.powderblue {
-    background: rgba(61, 133, 160, 0.4);
-    color: #91c3d2;
-    border: none;
-}
-
-.skyblue {
-    background: rgba(28, 127, 185, 0.4);
-    color: #97c5e0;
-    border: none;
-}
-
-.yellow {
-    background: rgba(167, 139, 39, 0.4);
-    color: #c7c590;
-    border: none;
-}
-
-.red {
-    background: rgba(175, 38, 38, 0.4);
-    color: #cca1a1;
-    border: none;
-}
-
-.pink {
-    background: rgba(174, 77, 175, 0.4);
-    color: #c9a3ce;
-    border: none;
-}
-
-.brown {
-    background: rgba(162, 60, 1, 0.4);
-    color: #d4a882;
-    border: none;
-}
-
-.b-news_wall-topic .title:hover,
-.b-news_wall-topic > a:hover .title {
-    color: rgba(var(--accent), 1);
-}
-
-.youtube .marker {
-    color: var(--tone-dadada);
-    font-size: 10px;
-    font-weight: 900;
-    background: var(--tone-1b1b1b);
-    border-radius: var(--plate-radius);
-    padding: 0 8px;
-}
-
-.vk .marker {
-    color: #c7dbec;
-    font-size: 10px;
-    font-weight: 900;
-    background: #293e54;
-    border-radius: var(--plate-radius);
-    padding: 0 13px;
-}
-
-.p-dashboards-show .v2 .sections .title,
-.p-dashboards-show .v2 .sections a.title {
-    color: rgba(var(--text-2), 1);
-}
-
-.block.edit-page.styles > * {
-    width: 100%;
-}
-
-.p-dashboards-show .subheadline-buttons a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    margin-top: 0;
-    font-size: 9px !important;
-    transition: 0.2s all;
-}
-
-.subheadline-buttons a:hover {
-    color: var(--heading-link);
-}
-
-.b-options-floated a,
-.headline .misc-links a,
-.midheadline .misc-links a,
-.subheadline .misc-links a {
-    color: var(--heading-link)
-}
-
-.b-options-floated a:hover,
-.headline .misc-links a:hover,
-.midheadline .misc-links a:hover,
-.subheadline .misc-links a:hover {
-    color: var(--heading-link)
-}
-
-.b-options-floated .selected,
-.headline .misc-links .selected,
-.midheadline .misc-links .selected,
-.subheadline .misc-links > a.selected {
-    color: rgba(var(--text), 1)
-}
-
-.misc-links a[href*="/reviews"]:before {
-    content: '\f005';
 }

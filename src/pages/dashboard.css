@@ -356,3 +356,13 @@ html body .fc-user-sections .devise:not(#u) {
     right: 4px;
     height: var(--heading-height);
 }
+
+.p-dashboards-show .subheadline-buttons a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin-top: 0;
+    font-size: 9px !important;
+    transition: 0.2s all;
+}

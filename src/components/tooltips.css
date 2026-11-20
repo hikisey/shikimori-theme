@@ -176,3 +176,7 @@
 .b-catalog_entry-tooltip .inner .line .value a:hover {
     color: rgba(var(--link), var(--hundred));
 }
+
+.b-catalog_entry-tooltip .inner .line .value a {
+    color: rgba(var(--link), var(--hundred));
+}
