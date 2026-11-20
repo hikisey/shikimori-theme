@@ -1259,3 +1259,13 @@ body.p-dialogs .b-options-floated {
     float: none;
     overflow: visible;
 }
+
+.b-options-floated a,
+.b-options-floated a:active,
+.b-options-floated a:focus {
+    outline: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+    transform: none !important;
+    filter: none !important;
+}

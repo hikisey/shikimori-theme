@@ -37,10 +37,6 @@
     color: rgba(var(--accent), 1) !important;
 }
 
-.buttons .main-controls a {
-    color: rgba(var(--link), 1);
-}
-
 .p-profiles-show .about a {
     color: rgba(var(--link), 1);
 }
@@ -2151,11 +2147,6 @@ body.p-achievements.p-profiles .b-anime_status_tag.episode,
     }
 }
 
-.b-footer_vote .vote-group .vote span {
-    color: rgba(var(--text), var(--hundred));
-    border: none;
-}
-
 .b-footer_vote .vote-group .vote {
     color: rgba(var(--text), var(--hundred));
 }
@@ -2613,16 +2604,6 @@ input[type="checkbox"]:active,
     filter: none !important;
 }
 
-.b-options-floated a,
-.b-options-floated a:active,
-.b-options-floated a:focus {
-    outline: none !important;
-    box-shadow: none !important;
-    background: transparent !important;
-    transform: none !important;
-    filter: none !important;
-}
-
 .p-profiles-edit input[type="submit"],
 .p-profiles-edit button[type="submit"],
 .p-profiles-edit .b-button,
@@ -3008,10 +2989,6 @@ img.studio-logo,
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-}
-
-.b-catalog_entry .image-decor {
-    position: relative;
 }
 
 /* общее правило body * [class*="_marker"] красит маркер в серую плашку — перебиваем */

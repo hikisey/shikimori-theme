@@ -3975,6 +3975,10 @@ header.head :is(h1, h2) > :is(.misc, a.misc) {
     }
 }
 
+.buttons .main-controls a {
+    color: rgba(var(--link), 1);
+}
+
 .bar.simple .bar.s3 {
     background: color-mix(in srgb, var(--accent-warm) 55%, rgb(var(--text-3)));
     transition: 0.2s ease-out, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s,

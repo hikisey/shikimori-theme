@@ -890,3 +890,8 @@
     color: rgba(var(--text-2), .9);
 }
 .p-user_tools .b-useful_card .vote.down { color: rgba(var(--accent), 1); }
+
+.b-footer_vote .vote-group .vote span {
+    color: rgba(var(--text), var(--hundred));
+    border: none;
+}

@@ -1,6 +1,24 @@
 /* shiki glass v1.7.13 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
 html:root { --sg-p4: ""; }
 
+.blue {
+    background: rgba(29, 77, 167, 0.4);
+    color: #98b6da;
+    border: none;
+}
+
+.magenta {
+    background: rgba(193, 37, 138, 0.4);
+    color: #c7a0b9;
+    border: none;
+}
+
+.gray {
+    background: color-mix(in srgb, var(--tone-6d6d6d) 40%, transparent);
+    color: var(--tone-b7b7b7);
+    border: none;
+}
+
 .powderblue {
     background: rgba(61, 133, 160, 0.4);
     color: #91c3d2;
@@ -1547,11 +1565,6 @@ body.p-achievements.p-profiles .b-anime_status_tag.episode,
     }
 }
 
-.b-footer_vote .vote-group .vote span {
-    color: rgba(var(--text), var(--hundred));
-    border: none;
-}
-
 .b-footer_vote .vote-group .vote {
     color: rgba(var(--text), var(--hundred));
 }
@@ -2005,16 +2018,6 @@ input[type="checkbox"]:active,
     filter: none !important;
 }
 
-.b-options-floated a,
-.b-options-floated a:active,
-.b-options-floated a:focus {
-    outline: none !important;
-    box-shadow: none !important;
-    background: transparent !important;
-    transform: none !important;
-    filter: none !important;
-}
-
 .p-profiles-edit input[type="submit"],
 .p-profiles-edit button[type="submit"],
 .p-profiles-edit .b-button,
@@ -2392,10 +2395,6 @@ img.studio-logo,
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-}
-
-.b-catalog_entry .image-decor {
-    position: relative;
 }
 
 body .b-catalog_entry .collection_score .collection_score_marker {

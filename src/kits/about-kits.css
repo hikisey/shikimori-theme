@@ -1432,3 +1432,7 @@ div.Ssylki-anime:hover .Text-2 {
 .b-catalog_entry .collection_score_mal_icon {
     display: none !important;
 }
+
+.b-catalog_entry .image-decor {
+    position: relative;
+}

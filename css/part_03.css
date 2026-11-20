@@ -1995,6 +1995,16 @@ body.p-dialogs .b-options-floated {
     overflow: visible;
 }
 
+.b-options-floated a,
+.b-options-floated a:active,
+.b-options-floated a:focus {
+    outline: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+    transform: none !important;
+    filter: none !important;
+}
+
 .p-contests .results .cc-result .c-rounds .label {
     color: rgba(var(--accent), 1);
 }
@@ -3002,6 +3012,11 @@ body.p-dialogs .b-options-floated {
     color: rgba(var(--text-2), .9);
 }
 .p-user_tools .b-useful_card .vote.down { color: rgba(var(--accent), 1); }
+
+.b-footer_vote .vote-group .vote span {
+    color: rgba(var(--text), var(--hundred));
+    border: none;
+}
 
 .p-dashboards-show .v2 .db-update .tags {
     height: 50px;
@@ -4856,6 +4871,10 @@ div.Ssylki-anime:hover .Text-2 {
     display: none !important;
 }
 
+.b-catalog_entry .image-decor {
+    position: relative;
+}
+
 :root {
     --theme-name: "shiki glass";
     --theme-version: "1.7.13";
@@ -4945,10 +4964,6 @@ div.Ssylki-anime:hover .Text-2 {
 .b-user.named_avatar img:hover,
 .b-user16:hover a {
     color: rgba(var(--accent), 1) !important;
-}
-
-.buttons .main-controls a {
-    color: rgba(var(--link), 1);
 }
 
 .p-profiles-show .about a {
@@ -5494,23 +5509,5 @@ a.b-menu-line.entry.b-link .time {
 .green {
     background: rgba(16, 130, 67, 0.4);
     color: #90c7ae;
-    border: none;
-}
-
-.blue {
-    background: rgba(29, 77, 167, 0.4);
-    color: #98b6da;
-    border: none;
-}
-
-.magenta {
-    background: rgba(193, 37, 138, 0.4);
-    color: #c7a0b9;
-    border: none;
-}
-
-.gray {
-    background: color-mix(in srgb, var(--tone-6d6d6d) 40%, transparent);
-    color: var(--tone-b7b7b7);
     border: none;
 }

@@ -254,3 +254,7 @@
         margin-right: 0 ;
     }
 }
+
+.buttons .main-controls a {
+    color: rgba(var(--link), 1);
+}
