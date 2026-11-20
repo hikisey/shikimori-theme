@@ -1,6 +1,15 @@
 /* shiki glass v1.7.12 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
 html:root { --sg-p4: ""; }
 
+body.p-profiles .subheadline .misc-links > a:after {
+    content: '\f2b6';
+    font-size: 15px;
+}
+
+.l-top_menu-v2 .submenu > a.icon-mail:hover span.unread span:first-child {
+    background: rgba(52, 105, 54, 0.8);
+}
+
 .l-top_menu-v2 .submenu > a.icon-mail:hover span.unread span:nth-child(2n) {
     background: rgba(65, 100, 144, 0.8);
 }

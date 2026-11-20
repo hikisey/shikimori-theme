@@ -141,3 +141,16 @@
         font-size: 12px;
     }
 }
+
+/* список пользователей (.b-user.detailed): ник стоит в строке перед плавающим аватаром.
+   Длинный ник не помещался рядом с аватаром, аватар уезжал на строку ниже, а ник — влево поверх него.
+   Ограничиваем ширину ника (аватар 73px + отступ 10px) и обрезаем многоточием, полный ник — в подсказке title. */
+.b-user.detailed .info .image-name .name {
+    display: inline-block;
+    max-width: calc(100% - 83px);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    vertical-align: top;
+    margin-top: -5px; /* ник остаётся на прежней высоте, как у строчного */
+}

@@ -3669,6 +3669,16 @@ header.head :is(h1, h2) > :is(.misc, a.misc) {
     }
 }
 
+.b-user.detailed .info .image-name .name {
+    display: inline-block;
+    max-width: calc(100% - 83px);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    vertical-align: top;
+    margin-top: -5px;
+}
+
 .b-link_button {
     background-color: var(--btn-bg) !important;
 }

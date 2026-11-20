@@ -5558,12 +5558,3 @@ a.b-menu-line.entry.b-link .time {
 .misc-links a[href*="/reviews"]:before {
     content: '\f005';
 }
-
-body.p-profiles .subheadline .misc-links > a:after {
-    content: '\f2b6';
-    font-size: 15px;
-}
-
-.l-top_menu-v2 .submenu > a.icon-mail:hover span.unread span:first-child {
-    background: rgba(52, 105, 54, 0.8);
-}
