@@ -47,7 +47,7 @@ def conflicts(R,P,L,ignore=set()):
                     sp=C.spec(s)
                     for t in X['sels']:
                         if C.spec(t)==sp and C.compatible(s,t) and not C.page_disjoint(s,t) and not C.class_disjoint(s,t):
-                            out.append((i,X['file'],s,t,p,q));break
+                            out.append((i,X['file'],s,t,p,q))
     return out
 if __name__=='__main__':
     late='overrides/late.css';L0=modstart[late]
