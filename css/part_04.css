@@ -1328,9 +1328,15 @@ body.p-achievements.p-profiles .b-anime_status_tag.episode,
         content: "Изменено";
         font-size: 12px;
     }
+}
+
+@media screen and (max-width: 480px) {
     a.actor.b-user16 span:before {
         content: none;
     }
+}
+
+@media screen and (max-width: 480px) {
     span.current-value[data-field="chapters"] {
         display: none;
     }

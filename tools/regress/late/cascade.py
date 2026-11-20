@@ -243,7 +243,7 @@ def page_disjoint(s1,s2):
     return False
 def vnorm(v): return ' '.join(v.replace('!important','').split()).lower()
 import pickle as _p
-_IDX=_p.load(open('/workspace/rf/clsidx.pkl','rb'))
+_IDX=_p.load(open(os.environ.get('CLSIDX','/workspace/rf/clsidx.pkl'),'rb'))
 def subj_classes(sel):
     s=sel
     while re.search(r'\([^()]*\)',s): s=re.sub(r'\([^()]*\)','',s)
@@ -259,7 +259,7 @@ def class_disjoint(s1,s2):
         it=_IDX[c] if it is None else it&_IDX[c]
         if not it: return True
     return False
-_IDX=_p.load(open('/workspace/rf/clsidx.pkl','rb'))
+_IDX=_p.load(open(os.environ.get('CLSIDX','/workspace/rf/clsidx.pkl'),'rb'))
 def subj_tokens(sel):
     s=sel
     while re.search(r'\([^()]*\)',s): s=re.sub(r'\([^()]*\)','',s)

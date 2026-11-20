@@ -2,7 +2,7 @@
 import sys,json,collections;sys.path.insert(0,'/workspace/rf')
 from plan import *
 EV={}
-for a,b,r in json.load(open('comatch2.json')): EV[(a,b)]=r
+for a,b,r in json.load(open(os.environ.get('EVF','comatch2.json'))): EV[(a,b)]=r
 def evid(x):
     r=EV.get((x[2],x[3]))
     if r is None or r.get('err') or r['co']: return False

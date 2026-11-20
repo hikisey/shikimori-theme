@@ -36,6 +36,8 @@ for ln,tgt in mp:
     if EV:
         ev=[x for x in c if evidenced(x)];c=[x for x in c if not evidenced(x)]
         if ev: print('EVIDENCE',ln,len(ev),'пар разведены корпусом')
+    if c and os.environ.get('DUMP'):
+        open(os.environ['DUMP'],'a').write(''.join(json.dumps([x[2],x[3]])+'\n' for x in c))
     if c:
         bad+=1;print('CONFLICT',ln,tgt);[print('   ',x[1],x[2][:70],'|',x[3][:70],x[4],x[5]) for x in c[:6]]
     moves[tgt].append(t)
