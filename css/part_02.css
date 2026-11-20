@@ -1,6 +1,14 @@
 /* shiki glass v1.7.12 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
 html:root { --sg-p2: ""; }
 
+.bulma span {
+    font: bold 16px var(--font-family);
+}
+
+.bulma .play-icon::before {
+    display: none;
+}
+
 .mfp-container {
     backdrop-filter: blur(calc(var(--glass-blur) * .8));
     -webkit-backdrop-filter: blur(4px);
@@ -5130,10 +5138,4 @@ body.p-user_history .l-page {
 .p-user_rates-index .list-lines tr td .episodes_total:after,
 .p-user_rates-index .list-lines tr td .episodes_total:before {
     color: rgba(var(--accent), 1);
-}
-
-.p-user_rates-index .l-content .b-options-floated span:before,
-.p-user_rates-index .l-content .b-options-floated span:after {
-    color: rgba(var(--text-2), 1);
-    font-size: 0;
 }

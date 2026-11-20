@@ -1,6 +1,12 @@
 /* shiki glass v1.7.12 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
 html:root { --sg-p3: ""; }
 
+.p-user_rates-index .l-content .b-options-floated span:before,
+.p-user_rates-index .l-content .b-options-floated span:after {
+    color: rgba(var(--text-2), 1);
+    font-size: 0;
+}
+
 .p-user_rates-index .l-content .b-options-floated span:hover {
     color: rgba(var(--accent), 1);
 }

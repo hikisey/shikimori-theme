@@ -136,8 +136,11 @@
 
 @supports (color: rgb(from red r g b)) {
     html:root {
-        --accent-dim: rgb(from rgb(var(--accent)) calc(r * 178 / 232) calc(g * 58 / 108) calc(b * 64 / 108));
-        --accent-hover: rgb(from rgb(var(--accent)) calc(r * 214 / 232) calc(g * 82 / 108) calc(b * 82 / 108));
+        /* оттенки акцента считаются в HSL: тон сохраняется, меняются только насыщенность и светлота.
+           Для алого 232, 108, 108 дают те же цвета, что и раньше (178, 58, 64 / 214, 82, 82 / 245, 150, 150 / 110, 21, 21),
+           а синий, мятный или серый акцент больше не уводят кнопки в розовый. */
+        --accent-dim: hsl(from rgb(var(--accent)) calc(h - 3) calc(s * 50.85 / 72.94) calc(l * 46.27 / 66.67));
+        --accent-hover: hsl(from rgb(var(--accent)) h calc(s * 61.68 / 72.94) calc(l * 58.04 / 66.67));
         --glass-deep: rgb(from rgb(var(--glass)) calc(r * 20 / 30) calc(g * 22 / 34) calc(b * 28 / 42));
         --glass-bar: rgb(from rgb(var(--glass)) calc(r * 18 / 30) calc(g * 20 / 34) calc(b * 26 / 42));
         --glass-bar-hover: rgb(from rgb(var(--glass)) calc(r * 26 / 30) calc(g * 29 / 34) calc(b * 37 / 42));
@@ -145,8 +148,8 @@
         --glass-active: rgb(from rgb(var(--glass)) calc(r * 26 / 30) calc(g * 28 / 34) calc(b * 34 / 42));
         --glass-shadow: rgb(from rgb(var(--glass)) calc(r * 10 / 30) calc(g * 12 / 34) calc(b * 16 / 42));
         --text-input: rgb(from rgb(var(--text-2)) calc(r * 165 / 170) calc(g * 172 / 178) calc(b * 184 / 192));
-        --link-hover: rgb(from rgb(var(--link)) calc(r + (255 - r) * 13 / 23) calc(g + (255 - g) * 42 / 147) calc(b + (255 - b) * 42 / 147));
-        --tone-6e1515: rgb(from rgb(var(--accent)) calc(r * 110 / 232) calc(g * 21 / 108) calc(b * 21 / 108));
+        --link-hover: hsl(from rgb(var(--link)) h min(100, calc(s * 82.61 / 72.94)) calc(l + (100 - l) * 10.78 / 33.33));
+        --tone-6e1515: hsl(from rgb(var(--accent)) h calc(s * 67.94 / 72.94) calc(l * 25.69 / 66.67));
         --tone-010101: rgb(from rgb(var(--glass)) calc(r * 1 / 30) calc(g * 1 / 34) calc(b * 1 / 42));
         --tone-0c0c0c: rgb(from rgb(var(--glass)) calc(r * 12 / 30) calc(g * 12 / 34) calc(b * 12 / 42));
         --tone-121223: rgb(from rgb(var(--glass)) calc(r * 18 / 30) calc(g * 18 / 34) calc(b * 35 / 42));

@@ -538,7 +538,9 @@ body#dashboards_show .b-catalog_entry.b-catalog_entry {
 
 @media screen and (max-width: 1199px) {
     .l-page {
-        background-color: color-mix(in srgb, var(--glass-deep) 0%, transparent);
+        /* лёгкая тёмная вуаль без размытия: текст, который лежит прямо на обоях
+           (списки пользователей и клубов, «Прочее» в настройках, ссылки «О сайте»), читается и на светлых обоях */
+        background-color: color-mix(in srgb, var(--glass-deep) 50%, transparent);
         box-shadow: none !important;
     }
     body#profiles_show .b-clubs {
