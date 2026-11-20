@@ -61,7 +61,7 @@ flowchart LR
 | `README.md` | только для пользователей: короткая установка, цвета, скриншоты, простые вопросы; технические пределы импорта, сборка и `site.css` — в этом документе |
 | `bg.webp`, `bg_m.webp` | обои по умолчанию (алый вариант): пк (около 750 КБ) и телефон (900×1440, около 180 КБ) |
 | `bg_blue.webp`, `bg_blue_m.webp` | обои для примера с синим акцентом в README (CC0, Kanchenjunga South Peak) |
-| `docs/screenshot.jpg`, `docs/home.jpg`, `docs/catalog.jpg`, `docs/profile.jpg`, `docs/phone.jpg`, `docs/compare.jpg` | скриншоты для README (тема по умолчанию; compare.jpg — рядом алый и синий пример) |
+| `docs/screenshot.jpg`, `docs/home.jpg`, `docs/catalog.jpg`, `docs/profile.jpg`, `docs/phone.jpg`, `docs/palettes.jpg` | скриншоты для README (тема по умолчанию; palettes.jpg — готовые палитры из site.css) |
 | `docs/ARCHITECTURE.md` | этот документ |
 | `AGENTS.md` | короткая навигация и жёсткие правила для правок (для ai-ассистентов и людей) |
 

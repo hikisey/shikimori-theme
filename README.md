@@ -60,42 +60,24 @@
 | `--bg-blur` / `--bg-blur-mobile` | размытие обоев на компьютере / на телефоне |
 | `--profile-banner` | картинка-баннер над профилем |
 | `--profile-banner-height` | высота баннера на компьютере |
-| `--glass` | цвет стеклянных блоков, меню и окон |
+| `--glass` | цвет стеклянных блоков, меню и окон; чем темнее, тем лучше читается текст |
 | `--glass-blur` | сила размытия под стеклом |
 | `--text` | основной текст |
 | `--text-2` | подписи и второстепенный текст |
 
-<details>
-<summary><b>Пример: синий акцент и другие обои</b></summary>
-<br>
+### Готовые палитры
 
-Замените этими строками соответствующие значения в блоке «Палитра» или вставьте блок в самый конец стиля. Слева тема как есть, справа с этим примером.
+В site.css под блоком «Палитра» есть две готовые палитры. Чтобы включить одну, удалите строку с её названием над блоком и строку `*/` под ним. Остальные настройки останутся вашими.
 
-```css
-@media screen and (min-width: 1px) {
-  html:root {
-    --accent: 90, 155, 255;
-    --link: var(--accent);
+| Палитра | Акцент | Что меняет |
+| --- | --- | --- |
+| Алая (по умолчанию) | `232, 108, 108` | ничего не нужно включать |
+| Синяя ночь | `90, 155, 255` | акцент, синее стекло и свои обои с горами |
+| Песочная | `220, 182, 132` | спокойный тёплый акцент, тёплое стекло и текст, обои прежние |
 
-    --bg-image: url("//cdn.jsdelivr.net/gh/Hikisey/shikimori-theme/bg_blue.webp");
-    --bg-image-mobile: url("//cdn.jsdelivr.net/gh/Hikisey/shikimori-theme/bg_blue_m.webp");
-    --bg-color: 33, 58, 84;
-    --bg-color-mobile: 39, 61, 87;
-    --bg-dim: .35;
-    --bg-blur: 3px;
+Если ставите свои светлые обои, увеличьте `--bg-dim` до `.7`: текст будет читаться лучше.
 
-    --glass: 22, 32, 54;
-    --glass-blur: 8px;
-
-    --text: 236, 240, 247;
-    --text-2: 170, 178, 192;
-  }
-}
-```
-
-![Сравнение: тема по умолчанию и пример с синим акцентом](docs/compare.jpg)
-
-</details>
+![Палитры: алая, синяя ночь и песочная](docs/palettes.jpg)
 
 > [!WARNING]
 > В ссылке на свою картинку не должно быть символа `@`, иначе Шикимори её не покажет.
@@ -140,4 +122,4 @@
 
 Основа темы: [E-design](https://github.com/ed-main) от [ed-main](https://github.com/ed-main).
 
-Обои из синего примера: [Kanchenjunga South Peak](https://commons.wikimedia.org/wiki/File:Kanchenjunga_South_Peak_%28Unsplash%29.jpg) (Mukesh Jain, Unsplash, [CC0](https://creativecommons.org/publicdomain/zero/1.0/)).
+Обои палитры «Синяя ночь»: [Kanchenjunga South Peak](https://commons.wikimedia.org/wiki/File:Kanchenjunga_South_Peak_%28Unsplash%29.jpg) (Mukesh Jain, Unsplash, [CC0](https://creativecommons.org/publicdomain/zero/1.0/)).
