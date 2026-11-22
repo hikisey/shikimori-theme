@@ -1,16 +1,16 @@
-/* shiki glass v1.7.11 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
+/* shiki glass v1.7.12 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
 /* 4 части темы идут первыми: shikimori.io подключает только 4 первых @import,
    остальные молча пропускает (shikimori.rip берёт все). */
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.11/css/part_01.css");
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.11/css/part_02.css");
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.11/css/part_03.css");
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.11/css/part_04.css");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.12/css/part_01.css");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.12/css/part_02.css");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.12/css/part_03.css");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.12/css/part_04.css");
 
-/* Тёмный редактор кода в настройках и замена постеров персонажей (css-club).
-   Стоят после частей темы: на shikimori.io они уже не подключатся, зато тема загрузится целиком.
-   Внутри файлов темы Шикимори такие строки вырезает, поэтому они здесь. */
+/* Тёмный редактор кода в настройках стиля (css-club). Стоит после частей темы:
+   на shikimori.io он может не подключиться, зато тема загрузится целиком.
+   Внутри файлов темы Шикимори такие строки вырезает, поэтому она здесь.
+   Свои постеры персонажей теперь внутри темы, отдельный импорт для них не нужен. */
 @import url("https://css-club.web.app/css/CodeMirror_dark.css");
-@import url("https://css-club.web.app/css/custom_posters.min.css");
 
 /* Если какая-то из четырёх частей не загрузилась (Шикимори хранит ошибку 8 часов),
    в левом нижнем углу появится надпись с её номером. Тогда откройте

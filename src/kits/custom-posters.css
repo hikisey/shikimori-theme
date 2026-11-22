@@ -56,7 +56,17 @@ img[alt='morr'] {
 
 }
 
-/* --- Свои постеры персонажей (нужен custom_posters.min.css в «Внешнем виде сайта») --- */
+/* --- Свои постеры персонажей ---
+   Ссылке на персонажа задаётся --custom-image (картинка) и --show-default: 0 (скрыть родной постер).
+   Раньше это делал отдельный импорт custom_posters.min.css (css-club), но Шикимори
+   писал на него «Ошибки импорта»; теперь нужное здесь, в теме (v1.7.12) */
+.b-catalog_entry > .cover .image-cutter {
+    background: var(--custom-image, none) center top / cover;
+}
+.b-catalog_entry > .cover .image-cutter img {
+    opacity: var(--show-default, 1);
+}
+
 /* Рори Меркьюри */
 [href*="characters/99661-"] {
     --show-default: 0;

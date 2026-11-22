@@ -1,4 +1,4 @@
-/* shiki glass v1.7.11 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
+/* shiki glass v1.7.12 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
 html:root { --sg-p3: ""; }
 
 .p-user_rates-index .l-content .b-options-floated span:hover {
@@ -3249,6 +3249,13 @@ img[alt='morr'] {
 
 }
 
+.b-catalog_entry > .cover .image-cutter {
+    background: var(--custom-image, none) center top / cover;
+}
+.b-catalog_entry > .cover .image-cutter img {
+    opacity: var(--show-default, 1);
+}
+
 [href*="characters/99661-"] {
     --show-default: 0;
     --custom-image: url("https://i.pinimg.com/736x/0e/22/2e/0e222e48f108015c047824155679b0ec.jpg");
@@ -4686,7 +4693,7 @@ div.Ssylki-anime:hover .Text-2 {
 
 :root {
     --theme-name: "shiki glass";
-    --theme-version: "1.7.11";
+    --theme-version: "1.7.12";
 }
 
 .l-footer:before {
@@ -5544,14 +5551,4 @@ body.p-achievements.p-profiles .b-list_switchers > *:after {
 .b-review_opinion_marker.is-positive input:checked + span {
     background: #1c4c20;
     color: #c6dacb;
-}
-
-.b-review-topic.is-review_review_author_details > .inner .review-info .opinion.negative,
-.b-review_opinion_marker.is-negative input:checked + span {
-    background: #862a22;
-    color: #ffcfcf;
-}
-
-.navigation-node.navigation-node-neutral.is-empty * {
-    color: var(--glass-shadow) !important;
 }
