@@ -1,4 +1,4 @@
-const fs=require('fs');const pw=require('/workspace/pw/node_modules/playwright-core');const nc=require('./netcache');
+const fs=require('fs');const pw=(()=>{try{return require('playwright-core')}catch(e){return require('/workspace/pw/node_modules/playwright-core')}})();const nc=require('/workspace/rf/netcache');
 const [fx,...css]=process.argv.slice(2);
 (async()=>{const b=await pw.chromium.launch({executablePath:'/usr/bin/google-chrome',args:['--no-sandbox']});
 for(const c of css){for(const start of [1280,1920]){const ctx=await b.newContext({viewport:{width:start,height:900}});const p=await ctx.newPage();await nc(p,{block:['image','font','media']});
