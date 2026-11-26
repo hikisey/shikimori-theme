@@ -399,8 +399,39 @@
     color: #f1a0a3;
 }
 
+/* форма отзыва: метки «Положительный / Нейтральный / Отрицательный». Выбранная красится своим цветом
+   (overrides/late.css), невыбранные — стеклянный чип, как метки формы комментария (--chip-*):
+   раньше текст был почти чёрным (--glass-shadow) на тёмном стекле и не читался */
+.b-review_opinion_marker > span {
+    border-radius: var(--chip-radius);
+}
 .b-review_opinion_marker input:not(:checked) + span {
-    color: var(--glass-shadow) !important;
+    color: var(--chip-text) !important;
+    background: var(--chip-bg);
+    cursor: pointer;
+}
+@media (hover: hover) and (pointer: fine) {
+    .b-review_opinion_marker:hover input:not(:checked) + span {
+        color: rgb(var(--text-strong)) !important;
+    }
+}
+/* телефон: метки не помещались справа от «Отправить / Отмена» и уходили за край экрана —
+   отдельной строкой под кнопками, на всю ширину */
+@media screen and (max-width: 767px) {
+    .b-shiki_editor-v2 footer:has(> .markers > .b-review_opinion_marker) {
+        flex-wrap: wrap;
+        row-gap: 10px;
+    }
+    .b-shiki_editor-v2 footer > .markers:has(> .b-review_opinion_marker) {
+        width: 100%;
+    }
+    .b-shiki_editor-v2 footer > .markers > .b-review_opinion_marker {
+        flex: 1 1 auto;
+    }
+    .b-shiki_editor-v2 footer > .markers > .b-review_opinion_marker > span {
+        flex: 1 1 auto;
+        text-align: center;
+    }
 }
 
 .b-collection-topic > .inner .collection-row.is-spoilers .cover .image-cutter {

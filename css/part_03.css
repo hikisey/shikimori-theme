@@ -2546,8 +2546,34 @@ body.p-dialogs .b-options-floated {
     color: #f1a0a3;
 }
 
+.b-review_opinion_marker > span {
+    border-radius: var(--chip-radius);
+}
 .b-review_opinion_marker input:not(:checked) + span {
-    color: var(--glass-shadow) !important;
+    color: var(--chip-text) !important;
+    background: var(--chip-bg);
+    cursor: pointer;
+}
+@media (hover: hover) and (pointer: fine) {
+    .b-review_opinion_marker:hover input:not(:checked) + span {
+        color: rgb(var(--text-strong)) !important;
+    }
+}
+@media screen and (max-width: 767px) {
+    .b-shiki_editor-v2 footer:has(> .markers > .b-review_opinion_marker) {
+        flex-wrap: wrap;
+        row-gap: 10px;
+    }
+    .b-shiki_editor-v2 footer > .markers:has(> .b-review_opinion_marker) {
+        width: 100%;
+    }
+    .b-shiki_editor-v2 footer > .markers > .b-review_opinion_marker {
+        flex: 1 1 auto;
+    }
+    .b-shiki_editor-v2 footer > .markers > .b-review_opinion_marker > span {
+        flex: 1 1 auto;
+        text-align: center;
+    }
 }
 
 .b-collection-topic > .inner .collection-row.is-spoilers .cover .image-cutter {
@@ -5472,43 +5498,4 @@ body#profiles_show .b-catalog_entry,
 a.b-menu-line.entry.b-link.person-tooltip .time,
 a.b-menu-line.entry.b-link .time {
     color: rgba(var(--text-2), var(--hundred));
-}
-
-.b-form .variants .variant a {
-    color: rgba(var(--link), var(--hundred));
-}
-
-.p-dashboards-show .generated-news-line .info .name,
-.b-topic.b-news_wall-topic.b-news-topic > .inner .name-date .name {
-    color: rgba(var(--text-strong), var(--hundred));
-}
-
-.p-dashboards-show .generated-news-line .info .status-time .time,
-.p-dashboards-show .sections a.title,
-.p-dashboards-show .sections .title {
-    color: rgba(var(--text-2), var(--hundred));
-}
-
-.orange {
-    background: rgba(175, 84, 24, 0.4);
-    color: #deb8a1;
-    border: none;
-}
-
-.purple {
-    background: rgba(108, 46, 175, 0.4);
-    color: #c19ed6;
-    border: none;
-}
-
-.green {
-    background: rgba(16, 130, 67, 0.4);
-    color: #90c7ae;
-    border: none;
-}
-
-.blue {
-    background: rgba(29, 77, 167, 0.4);
-    color: #98b6da;
-    border: none;
 }
