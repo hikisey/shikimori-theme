@@ -2917,6 +2917,10 @@ body * .b-anime_status_tag.released:before {
     color: #C4E9ED;
 }
 
+body * .b-from_rip_marker:not(#u) {
+    display: none;
+}
+
 .slide.animes .cc-2a .c-column.m0,
 .slide.mangas .cc-2a .c-column.m0,
 .slide.ranobe .cc-2a .c-column.m0 {

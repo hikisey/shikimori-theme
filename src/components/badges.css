@@ -127,3 +127,10 @@ body * .b-anime_status_tag.released:before {
     background-color: #1A421D;
     color: #C4E9ED;
 }
+
+/* rip: .b-from_rip_marker — пустой служебный маркер «написано на rip» (в комментариях, почте, уведомлениях).
+   Общее body * [class*="_marker"] (layout/page.css) делало из него пустую серую полоску 28×4px рядом с ☰;
+   в комментариях метку «rip» и так рисует components/editor.css у имени автора (:has работает и со скрытым). */
+body * .b-from_rip_marker:not(#u) {
+    display: none;
+}
