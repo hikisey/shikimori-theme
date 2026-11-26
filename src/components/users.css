@@ -154,3 +154,8 @@
     vertical-align: top;
     margin-top: -5px; /* ник остаётся на прежней высоте, как у строчного */
 }
+
+.b-user16:hover a:hover {
+    text-decoration: none !important;
+    color: rgba(var(--link), 1);
+}

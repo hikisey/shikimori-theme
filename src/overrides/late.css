@@ -114,11 +114,6 @@ a:-webkit-any-link {
     color: rgba(var(--link), 1);
 }
 
-.b-user16:hover a:hover {
-    text-decoration: none !important;
-    color: rgba(var(--link), 1);
-}
-
 @media (hover: hover) and (pointer: fine) {
     .club-actions a:hover {
         background: none;
@@ -3283,13 +3278,6 @@ body.p-dialogs .l-content > .subheadline {
     position: relative;
     z-index: 0;
     margin-top: 4px;
-}
-
-header.head :is(h1, h2) {
-    display: flex !important;
-    flex-wrap: wrap;
-    align-items: center !important;
-    gap: 0 8px;
 }
 
 .p-user_tools .b-useful_card {

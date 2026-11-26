@@ -1,12 +1,6 @@
 /* shiki glass v1.7.13 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
 html:root { --sg-p4: ""; }
 
-.blue {
-    background: rgba(29, 77, 167, 0.4);
-    color: #98b6da;
-    border: none;
-}
-
 .magenta {
     background: rgba(193, 37, 138, 0.4);
     color: #c7a0b9;
@@ -2688,13 +2682,6 @@ body.p-dialogs .l-content > .subheadline {
     position: relative;
     z-index: 0;
     margin-top: 4px;
-}
-
-header.head :is(h1, h2) {
-    display: flex !important;
-    flex-wrap: wrap;
-    align-items: center !important;
-    gap: 0 8px;
 }
 
 .p-user_tools .b-useful_card {

@@ -3578,6 +3578,13 @@ header.head :is(h1, h2) > :is(.misc, a.misc) {
     text-decoration: none;
 }
 
+header.head :is(h1, h2) {
+    display: flex !important;
+    flex-wrap: wrap;
+    align-items: center !important;
+    gap: 0 8px;
+}
+
 .b-user.named_avatar .name {
     color: rgba(var(--text-strong), 1);
     transition: 1s ease-out, -webkit-1s ease-out, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s,
@@ -3723,6 +3730,11 @@ header.head :is(h1, h2) > :is(.misc, a.misc) {
     white-space: nowrap;
     vertical-align: top;
     margin-top: -5px;
+}
+
+.b-user16:hover a:hover {
+    text-decoration: none !important;
+    color: rgba(var(--link), 1);
 }
 
 .b-link_button {

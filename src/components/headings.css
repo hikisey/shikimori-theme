@@ -290,3 +290,10 @@ header.head :is(h1, h2) > :is(.misc, a.misc) {
 .linkheadline.subheadline > a:hover {
     text-decoration: none;
 }
+
+header.head :is(h1, h2) {
+    display: flex !important;
+    flex-wrap: wrap;
+    align-items: center !important;
+    gap: 0 8px;
+}
