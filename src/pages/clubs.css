@@ -248,3 +248,8 @@
     top: -5px;
     position: relative;
 }
+
+/* форма «Новый клуб» / настройки клуба: подвал вставал вплотную под «Создать / Отмена» */
+form.simple_form.b-form:is(.new_club, .edit_club):last-child {
+    padding-bottom: 24px;
+}

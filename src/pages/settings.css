@@ -272,3 +272,9 @@ body.p-profiles-edit .tipsy.tipsy-s .tipsy-arrow.tipsy-arrow {
 .b-button {
     line-height: 13px;
 }
+
+/* кнопки «Сохранить / Отмена» внизу формы настроек: у подвала темы нет верхнего отступа (layout/footer.css),
+   и он вставал вплотную под кнопки — отступ даёт сама форма */
+body.p-profiles-edit .block.edit-page > form.simple_form.b-form:last-child {
+    padding-bottom: 24px;
+}

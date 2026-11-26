@@ -648,3 +648,8 @@ section.l-page aside.l-menu .c-filters:has(.c-score-input:focus) .c-ms-dropdown:
         }
     }
 }
+
+/* форма новой / изменяемой коллекции: подвал вставал вплотную под кнопки */
+form.simple_form.b-form:is(.new_collection, .edit_collection):last-child {
+    padding-bottom: 24px;
+}

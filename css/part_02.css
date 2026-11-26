@@ -936,6 +936,10 @@ label:has(> input[type="checkbox"]) > input[type="checkbox"]:not(#u) {
     position: relative;
 }
 
+form.simple_form.b-form:is(.new_club, .edit_club):last-child {
+    padding-bottom: 24px;
+}
+
 .b-shiki_editor footer .about-bb_codes:hover:before {
     color: rgba(var(--text-2), 1);
 }
@@ -4107,6 +4111,10 @@ body.p-profiles-edit .tipsy.tipsy-s .tipsy-arrow.tipsy-arrow {
     line-height: 13px;
 }
 
+body.p-profiles-edit .block.edit-page > form.simple_form.b-form:last-child {
+    padding-bottom: 24px;
+}
+
 .b-block_list li {
     color: rgba(var(--text), 1);
     transition: 0.1s ease-out, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s,
@@ -4682,6 +4690,10 @@ section.l-page aside.l-menu .c-filters:has(.c-score-input:focus) .c-ms-dropdown:
                         overlay var(--drop-time) allow-discrete !important;
         }
     }
+}
+
+form.simple_form.b-form:is(.new_collection, .edit_collection):last-child {
+    padding-bottom: 24px;
 }
 
 .p-dashboards-show .v2 .db-update .name,
