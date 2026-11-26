@@ -1,4 +1,4 @@
-/* shiki glass v1.7.12 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
+/* shiki glass v1.7.13 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
 html:root { --sg-p2: ""; }
 
 .b-comment:has(> .inner > .markers > .b-from_rip_marker) > .inner > header .name::after {
