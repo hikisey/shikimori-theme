@@ -1,6 +1,20 @@
 /* shiki glass v1.7.13 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
 html:root { --sg-p4: ""; }
 
+.b-status-line .section.main .comments:before,
+.b-news_wall-topic .status-line .comments,
+.b-status-line .section.created_at time:before,
+.b-status-line .section.additional .collection-size,
+.b-status-line .section.additional .comments,
+.b-status-line .section.additional .comments:before,
+.b-review_votes span,
+.b-status-line .section.changed_at time:before,
+.b-topic > .inner > header .about > span,
+a.b-menu-line.entry.b-link.person-tooltip .time,
+a.b-menu-line.entry.b-link .time {
+    color: rgba(var(--text-2), var(--hundred));
+}
+
 .b-form .variants .variant a {
     color: rgba(var(--link), var(--hundred));
 }

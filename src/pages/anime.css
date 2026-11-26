@@ -1084,3 +1084,13 @@ img.studio-logo:is([src*="/studios/original/11."], [src*="/studios/original/44."
 
 #players .player-dropdown,
 .players-loader .player-dropdown { display: none !important; }
+
+/* «Связанное» на странице аниме/манги, 768–1199px: колонка сужается до ~360–420px, и вкладки
+   «Напрямую / Хронология / Франшиза» (сайт ставит их position: absolute справа в строке заголовка)
+   наезжали на слово «Связанное». Как на телефоне: вкладки строкой над заголовком, справа. */
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+    .cc-related-authors > .c-column > .b-options-floated {
+        position: static;
+        margin: 0 0 5px;
+    }
+}

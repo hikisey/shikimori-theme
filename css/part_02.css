@@ -3845,6 +3845,13 @@ img.studio-logo:is([src*="/studios/original/11."], [src*="/studios/original/44."
 #players .player-dropdown,
 .players-loader .player-dropdown { display: none !important; }
 
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+    .cc-related-authors > .c-column > .b-options-floated {
+        position: static;
+        margin: 0 0 5px;
+    }
+}
+
 .b-form input[type="submit"],
 .b-shiki_editor.previewed footer .unpreview,
 .b-poll .poll-actions .vote,
@@ -5144,15 +5151,5 @@ body.p-user_history .l-page {
 @media only screen and (max-width: 1100px) {
     .b-comments-notifier {
         display: none !important;
-    }
-}
-
-@media screen and (max-width: 768px) {
-    body.p-db_entries-works .p-profiles .mass-actions .action a,
-    body.p-db_entries-works .headline .misc-links a,
-    body.p-db_entries-works .midheadline .misc-links a,
-    body.p-db_entries-works .subheadline .misc-links a {
-        font-size: 0 !important;
-        right: -3rem;
     }
 }

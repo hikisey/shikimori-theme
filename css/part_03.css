@@ -1,6 +1,16 @@
 /* shiki glass v1.7.13 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
 html:root { --sg-p3: ""; }
 
+@media screen and (max-width: 768px) {
+    body.p-db_entries-works .p-profiles .mass-actions .action a,
+    body.p-db_entries-works .headline .misc-links a,
+    body.p-db_entries-works .midheadline .misc-links a,
+    body.p-db_entries-works .subheadline .misc-links a {
+        font-size: 0 !important;
+        right: -3rem;
+    }
+}
+
 @media screen and (max-width: 1023px) {
     .b-dialog > .inner header img {
         margin: 1px 10px 7px 0 !important;
@@ -5484,18 +5494,4 @@ body#profiles_show .b-catalog_entry,
     border: none;
     font-family: var(--font-family);
     box-shadow: var(--plate-shadow);
-}
-
-.b-status-line .section.main .comments:before,
-.b-news_wall-topic .status-line .comments,
-.b-status-line .section.created_at time:before,
-.b-status-line .section.additional .collection-size,
-.b-status-line .section.additional .comments,
-.b-status-line .section.additional .comments:before,
-.b-review_votes span,
-.b-status-line .section.changed_at time:before,
-.b-topic > .inner > header .about > span,
-a.b-menu-line.entry.b-link.person-tooltip .time,
-a.b-menu-line.entry.b-link .time {
-    color: rgba(var(--text-2), var(--hundred));
 }
