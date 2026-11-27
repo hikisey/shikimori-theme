@@ -1,4 +1,4 @@
-/* shiki glass v1.7.19 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
+/* shiki glass v1.7.20 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
 html:root { --sg-p3: ""; }
 
 .b-dialog:first-child {
@@ -5293,7 +5293,7 @@ div.Ssylki-anime:hover .Text-2 {
 
 :root {
     --theme-name: "shiki glass";
-    --theme-version: "1.7.19";
+    --theme-version: "1.7.20";
 }
 
 .l-footer:before {

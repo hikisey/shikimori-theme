@@ -33,13 +33,13 @@
 ## Установка
 
 1. На Шикимори откройте профиль → **Настройки** → **Внешний вид сайта**.
-2. Откройте [site.css](https://github.com/Hikisey/shikimori-theme/blob/v1.7.19/site.css), скопируйте его **целиком** (кнопка копирования справа над кодом) и вставьте в поле стиля вместо того, что там было.
+2. Откройте [site.css](https://github.com/Hikisey/shikimori-theme/blob/v1.7.20/site.css), скопируйте его **целиком** (кнопка копирования справа над кодом) и вставьте в поле стиля вместо того, что там было.
 3. Нажмите **Сохранить** и обновите страницу с очисткой кеша: <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>R</kbd>.
 
 В site.css лежат строки подключения темы и блок настроек: обои, баннер профиля и цвета.
 
 > [!TIP]
-> **Обновление.** Когда выйдет новая версия, замените в четырёх строках `@import` номер `v1.7.19` на новый со страницы [Releases](https://github.com/Hikisey/shikimori-theme/releases). Свои цвета и обои можно не трогать.
+> **Обновление.** Когда выйдет новая версия, замените в четырёх строках `@import` номер `v1.7.20` на новый со страницы [Releases](https://github.com/Hikisey/shikimori-theme/releases). Свои цвета и обои можно не трогать.
 >
 > С v1.7.16 в site.css ровно четыре строки `@import`: тёмный редактор кода (`CodeMirror_dark.css` от css-club) встроен в тему. Если у вас осталась пятая строка с `css-club.web.app/css/CodeMirror_dark.css`, удалите её: на shikimori.io из-за неё появлялось «Не удалось импортировать следующие стили».
 
@@ -68,14 +68,14 @@
 <summary>CSS-код</summary>
 
 ```css
-/* shiki glass v1.7.19 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
+/* shiki glass v1.7.20 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
 /* Ровно 4 @import — 4 части темы: shikimori.io подключает только 4 первых @import.
    Тёмный редактор кода (CodeMirror_dark) и свои постеры персонажей уже внутри темы,
    отдельные импорты для них не нужны. */
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.19/css/part_01.css");
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.19/css/part_02.css");
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.19/css/part_03.css");
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.19/css/part_04.css");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.20/css/part_01.css");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.20/css/part_02.css");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.20/css/part_03.css");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.20/css/part_04.css");
 
 /* Если какая-то из четырёх частей не загрузилась (Шикимори хранит ошибку 8 часов),
    в левом нижнем углу появится надпись с её номером. Тогда откройте
@@ -148,23 +148,8 @@
   }
 }
 
-/* ===================== Готовая палитра ===================== */
-/* Чтобы включить, удалите строку с названием над блоком и строку со звёздочкой и косой чертой под ним.
-   Палитра перекрывает блок «Палитра» выше, всё остальное берётся из него. */
-
-/* Песочная: спокойный тёплый акцент вместо алого, меньше яркого цвета
-@media screen and (min-width: 1px) {
-  html:root {
-    --accent: 220, 182, 132;
-    --glass: 32, 31, 30;
-    --text: 238, 234, 226;
-  }
-}
-*/
-
 /* ===================== Дополнительно ===================== */
-/* Чтобы включить блок, удалите строку с косой чертой и звёздочкой над ним
-   и строку со звёздочкой и косой чертой под ним. */
+/* Чтобы включить блок, удалите /*коментарий/* он убирается удалением слеша с звездочкой с двух сторон */
 
 /* Полупрозрачная рамка вокруг страницы:
 @media (min-width: 1200px) {
@@ -198,14 +183,14 @@
 <summary>CSS-код</summary>
 
 ```css
-/* shiki glass v1.7.19, тема «неоновый квартал» — тема и обновления: https://github.com/Hikisey/shikimori-theme */
+/* shiki glass v1.7.20, тема «неоновый квартал» — тема и обновления: https://github.com/Hikisey/shikimori-theme */
 /* Ровно 4 @import — 4 части темы: shikimori.io подключает только 4 первых @import.
    Тёмный редактор кода (CodeMirror_dark) и свои постеры персонажей уже внутри темы,
    отдельные импорты для них не нужны. */
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.19/css/part_01.css");
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.19/css/part_02.css");
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.19/css/part_03.css");
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.19/css/part_04.css");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.20/css/part_01.css");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.20/css/part_02.css");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.20/css/part_03.css");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.20/css/part_04.css");
 
 /* Если какая-то из четырёх частей не загрузилась (Шикимори хранит ошибку 8 часов),
    в левом нижнем углу появится надпись с её номером. Тогда откройте
@@ -239,15 +224,15 @@
     --link: var(--accent);             /* цвет ссылок; можно задать отдельно, например 120, 170, 255 */
 
     /* Фон */
-    --bg-image: url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.19/themes/neon/bg.webp");  /* обои на ПК (Шикимори всё равно загружает их через свой прокси картинок — и с //, и с https://) */
-    --bg-image-mobile: url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.19/themes/neon/bg_m.webp");  /* обои на телефоне */
+    --bg-image: url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.20/themes/neon/bg.webp");  /* обои на ПК (Шикимори всё равно загружает их через свой прокси картинок — и с //, и с https://) */
+    --bg-image-mobile: url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.20/themes/neon/bg_m.webp");  /* обои на телефоне */
     --bg-color: 34, 21, 17;         /* цвет под обоями, пока они грузятся (средний тон обоев) */
     --bg-color-mobile: 30, 20, 17;  /* то же на телефоне */
     --bg-zoom: 1;                   /* приближение обоев на ПК, 1 — без зума */
     --bg-blur: 2px;                    /* размытие обоев на ПК, например 4px */
     --bg-blur-mobile: 1.5px;           /* размытие обоев на телефоне */
     --bg-dim: .55;                      /* затемнение обоев: 0 — нет, 1 — совсем тёмные; для светлых обоев — .7 */
-    --profile-banner: url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.19/themes/neon/banner.webp");  /* баннер в профиле */
+    --profile-banner: url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.20/themes/neon/banner.webp");  /* баннер в профиле */
     --profile-banner-height: 300px;    /* высота баннера; картинка не растягивается, лишнее обрезается */
     --profile-banner-height-mobile: 170px; /* высота баннера на телефоне (аватар и ник ложатся на его нижний край) */
     --profile-banner-glow: .5;         /* яркость свечения под баннером (цвет берётся из картинки), 0 — выключить */
@@ -278,23 +263,8 @@
   }
 }
 
-/* ===================== Готовая палитра ===================== */
-/* Чтобы включить, удалите строку с названием над блоком и строку со звёздочкой и косой чертой под ним.
-   Палитра перекрывает блок «Палитра» выше, всё остальное берётся из него. */
-
-/* Песочная: спокойный тёплый акцент вместо алого, меньше яркого цвета
-@media screen and (min-width: 1px) {
-  html:root {
-    --accent: 220, 182, 132;
-    --glass: 32, 31, 30;
-    --text: 238, 234, 226;
-  }
-}
-*/
-
 /* ===================== Дополнительно ===================== */
-/* Чтобы включить блок, удалите строку с косой чертой и звёздочкой над ним
-   и строку со звёздочкой и косой чертой под ним. */
+/* Чтобы включить блок, удалите /*коментарий/* он убирается удалением слеша с звездочкой с двух сторон */
 
 /* Полупрозрачная рамка вокруг страницы:
 @media (min-width: 1200px) {
@@ -328,14 +298,14 @@
 <summary>CSS-код</summary>
 
 ```css
-/* shiki glass v1.7.19, тема «туманные тории» — тема и обновления: https://github.com/Hikisey/shikimori-theme */
+/* shiki glass v1.7.20, тема «туманные тории» — тема и обновления: https://github.com/Hikisey/shikimori-theme */
 /* Ровно 4 @import — 4 части темы: shikimori.io подключает только 4 первых @import.
    Тёмный редактор кода (CodeMirror_dark) и свои постеры персонажей уже внутри темы,
    отдельные импорты для них не нужны. */
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.19/css/part_01.css");
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.19/css/part_02.css");
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.19/css/part_03.css");
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.19/css/part_04.css");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.20/css/part_01.css");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.20/css/part_02.css");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.20/css/part_03.css");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.20/css/part_04.css");
 
 /* Если какая-то из четырёх частей не загрузилась (Шикимори хранит ошибку 8 часов),
    в левом нижнем углу появится надпись с её номером. Тогда откройте
@@ -369,15 +339,15 @@
     --link: var(--accent);             /* цвет ссылок; можно задать отдельно, например 120, 170, 255 */
 
     /* Фон */
-    --bg-image: url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.19/themes/torii/bg.webp");  /* обои на ПК (Шикимори всё равно загружает их через свой прокси картинок — и с //, и с https://) */
-    --bg-image-mobile: url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.19/themes/torii/bg_m.webp");  /* обои на телефоне */
+    --bg-image: url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.20/themes/torii/bg.webp");  /* обои на ПК (Шикимори всё равно загружает их через свой прокси картинок — и с //, и с https://) */
+    --bg-image-mobile: url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.20/themes/torii/bg_m.webp");  /* обои на телефоне */
     --bg-color: 54, 94, 80;         /* цвет под обоями, пока они грузятся (средний тон обоев) */
     --bg-color-mobile: 48, 86, 72;  /* то же на телефоне */
     --bg-zoom: 1;                   /* приближение обоев на ПК, 1 — без зума */
     --bg-blur: 0px;                    /* размытие обоев на ПК, например 4px */
     --bg-blur-mobile: 1.5px;           /* размытие обоев на телефоне */
     --bg-dim: .45;                      /* затемнение обоев: 0 — нет, 1 — совсем тёмные; для светлых обоев — .7 */
-    --profile-banner: url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.19/themes/torii/banner.webp");  /* баннер в профиле */
+    --profile-banner: url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.20/themes/torii/banner.webp");  /* баннер в профиле */
     --profile-banner-height: 300px;    /* высота баннера; картинка не растягивается, лишнее обрезается */
     --profile-banner-height-mobile: 170px; /* высота баннера на телефоне (аватар и ник ложатся на его нижний край) */
     --profile-banner-glow: .5;         /* яркость свечения под баннером (цвет берётся из картинки), 0 — выключить */
@@ -408,23 +378,8 @@
   }
 }
 
-/* ===================== Готовая палитра ===================== */
-/* Чтобы включить, удалите строку с названием над блоком и строку со звёздочкой и косой чертой под ним.
-   Палитра перекрывает блок «Палитра» выше, всё остальное берётся из него. */
-
-/* Песочная: спокойный тёплый акцент вместо алого, меньше яркого цвета
-@media screen and (min-width: 1px) {
-  html:root {
-    --accent: 220, 182, 132;
-    --glass: 32, 31, 30;
-    --text: 238, 234, 226;
-  }
-}
-*/
-
 /* ===================== Дополнительно ===================== */
-/* Чтобы включить блок, удалите строку с косой чертой и звёздочкой над ним
-   и строку со звёздочкой и косой чертой под ним. */
+/* Чтобы включить блок, удалите /*коментарий/* он убирается удалением слеша с звездочкой с двух сторон */
 
 /* Полупрозрачная рамка вокруг страницы:
 @media (min-width: 1200px) {
@@ -458,14 +413,14 @@
 <summary>CSS-код</summary>
 
 ```css
-/* shiki glass v1.7.19, тема «лунная ночь» — тема и обновления: https://github.com/Hikisey/shikimori-theme */
+/* shiki glass v1.7.20, тема «лунная ночь» — тема и обновления: https://github.com/Hikisey/shikimori-theme */
 /* Ровно 4 @import — 4 части темы: shikimori.io подключает только 4 первых @import.
    Тёмный редактор кода (CodeMirror_dark) и свои постеры персонажей уже внутри темы,
    отдельные импорты для них не нужны. */
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.19/css/part_01.css");
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.19/css/part_02.css");
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.19/css/part_03.css");
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.19/css/part_04.css");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.20/css/part_01.css");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.20/css/part_02.css");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.20/css/part_03.css");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.20/css/part_04.css");
 
 /* Если какая-то из четырёх частей не загрузилась (Шикимори хранит ошибку 8 часов),
    в левом нижнем углу появится надпись с её номером. Тогда откройте
@@ -499,15 +454,15 @@
     --link: var(--accent);             /* цвет ссылок; можно задать отдельно, например 120, 170, 255 */
 
     /* Фон */
-    --bg-image: url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.19/themes/moon/bg.webp");  /* обои на ПК (Шикимори всё равно загружает их через свой прокси картинок — и с //, и с https://) */
-    --bg-image-mobile: url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.19/themes/moon/bg_m.webp");  /* обои на телефоне */
+    --bg-image: url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.20/themes/moon/bg.webp");  /* обои на ПК (Шикимори всё равно загружает их через свой прокси картинок — и с //, и с https://) */
+    --bg-image-mobile: url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.20/themes/moon/bg_m.webp");  /* обои на телефоне */
     --bg-color: 75, 95, 123;         /* цвет под обоями, пока они грузятся (средний тон обоев) */
     --bg-color-mobile: 62, 74, 92;  /* то же на телефоне */
     --bg-zoom: 1;                   /* приближение обоев на ПК, 1 — без зума */
     --bg-blur: 0px;                    /* размытие обоев на ПК, например 4px */
     --bg-blur-mobile: 1.5px;           /* размытие обоев на телефоне */
     --bg-dim: .4;                      /* затемнение обоев: 0 — нет, 1 — совсем тёмные; для светлых обоев — .7 */
-    --profile-banner: url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.19/themes/moon/banner.webp");  /* баннер в профиле */
+    --profile-banner: url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.20/themes/moon/banner.webp");  /* баннер в профиле */
     --profile-banner-height: 300px;    /* высота баннера; картинка не растягивается, лишнее обрезается */
     --profile-banner-height-mobile: 170px; /* высота баннера на телефоне (аватар и ник ложатся на его нижний край) */
     --profile-banner-glow: .5;         /* яркость свечения под баннером (цвет берётся из картинки), 0 — выключить */
@@ -538,23 +493,8 @@
   }
 }
 
-/* ===================== Готовая палитра ===================== */
-/* Чтобы включить, удалите строку с названием над блоком и строку со звёздочкой и косой чертой под ним.
-   Палитра перекрывает блок «Палитра» выше, всё остальное берётся из него. */
-
-/* Песочная: спокойный тёплый акцент вместо алого, меньше яркого цвета
-@media screen and (min-width: 1px) {
-  html:root {
-    --accent: 220, 182, 132;
-    --glass: 32, 31, 30;
-    --text: 238, 234, 226;
-  }
-}
-*/
-
 /* ===================== Дополнительно ===================== */
-/* Чтобы включить блок, удалите строку с косой чертой и звёздочкой над ним
-   и строку со звёздочкой и косой чертой под ним. */
+/* Чтобы включить блок, удалите /*коментарий/* он убирается удалением слеша с звездочкой с двух сторон */
 
 /* Полупрозрачная рамка вокруг страницы:
 @media (min-width: 1200px) {
@@ -588,14 +528,14 @@
 <summary>CSS-код</summary>
 
 ```css
-/* shiki glass v1.7.19, тема «туманное озеро» — тема и обновления: https://github.com/Hikisey/shikimori-theme */
+/* shiki glass v1.7.20, тема «туманное озеро» — тема и обновления: https://github.com/Hikisey/shikimori-theme */
 /* Ровно 4 @import — 4 части темы: shikimori.io подключает только 4 первых @import.
    Тёмный редактор кода (CodeMirror_dark) и свои постеры персонажей уже внутри темы,
    отдельные импорты для них не нужны. */
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.19/css/part_01.css");
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.19/css/part_02.css");
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.19/css/part_03.css");
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.19/css/part_04.css");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.20/css/part_01.css");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.20/css/part_02.css");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.20/css/part_03.css");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.20/css/part_04.css");
 
 /* Если какая-то из четырёх частей не загрузилась (Шикимори хранит ошибку 8 часов),
    в левом нижнем углу появится надпись с её номером. Тогда откройте
@@ -629,15 +569,15 @@
     --link: var(--accent);             /* цвет ссылок; можно задать отдельно, например 120, 170, 255 */
 
     /* Фон */
-    --bg-image: url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.19/themes/lake/bg.webp");  /* обои на ПК (Шикимори всё равно загружает их через свой прокси картинок — и с //, и с https://) */
-    --bg-image-mobile: url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.19/themes/lake/bg_m.webp");  /* обои на телефоне */
+    --bg-image: url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.20/themes/lake/bg.webp");  /* обои на ПК (Шикимори всё равно загружает их через свой прокси картинок — и с //, и с https://) */
+    --bg-image-mobile: url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.20/themes/lake/bg_m.webp");  /* обои на телефоне */
     --bg-color: 93, 98, 99;         /* цвет под обоями, пока они грузятся (средний тон обоев) */
     --bg-color-mobile: 93, 98, 99;  /* то же на телефоне */
     --bg-zoom: 1;                   /* приближение обоев на ПК, 1 — без зума */
     --bg-blur: 0px;                    /* размытие обоев на ПК, например 4px */
     --bg-blur-mobile: 1.5px;           /* размытие обоев на телефоне */
     --bg-dim: .5;                      /* затемнение обоев: 0 — нет, 1 — совсем тёмные; для светлых обоев — .7 */
-    --profile-banner: url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.19/themes/lake/banner.webp");  /* баннер в профиле */
+    --profile-banner: url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.20/themes/lake/banner.webp");  /* баннер в профиле */
     --profile-banner-height: 300px;    /* высота баннера; картинка не растягивается, лишнее обрезается */
     --profile-banner-height-mobile: 170px; /* высота баннера на телефоне (аватар и ник ложатся на его нижний край) */
     --profile-banner-glow: .5;         /* яркость свечения под баннером (цвет берётся из картинки), 0 — выключить */
@@ -668,23 +608,8 @@
   }
 }
 
-/* ===================== Готовая палитра ===================== */
-/* Чтобы включить, удалите строку с названием над блоком и строку со звёздочкой и косой чертой под ним.
-   Палитра перекрывает блок «Палитра» выше, всё остальное берётся из него. */
-
-/* Песочная: спокойный тёплый акцент вместо алого, меньше яркого цвета
-@media screen and (min-width: 1px) {
-  html:root {
-    --accent: 220, 182, 132;
-    --glass: 32, 31, 30;
-    --text: 238, 234, 226;
-  }
-}
-*/
-
 /* ===================== Дополнительно ===================== */
-/* Чтобы включить блок, удалите строку с косой чертой и звёздочкой над ним
-   и строку со звёздочкой и косой чертой под ним. */
+/* Чтобы включить блок, удалите /*коментарий/* он убирается удалением слеша с звездочкой с двух сторон */
 
 /* Полупрозрачная рамка вокруг страницы:
 @media (min-width: 1200px) {
@@ -727,7 +652,17 @@
 
 ### Песочная палитра
 
-В site.css под блоком «Палитра» есть готовая палитра «Песочная»: спокойный тёплый акцент `220, 182, 132` вместо алого, тёплое стекло и текст, обои прежние. Чтобы включить её, удалите строку с названием над блоком и строку `*/` под ним.
+Готовая палитра «Песочная»: спокойный тёплый акцент `220, 182, 132` вместо алого, тёплое стекло и текст, обои прежние. Чтобы включить её, вставьте блок в самый конец стиля.
+
+```css
+@media screen and (min-width: 1px) {
+  html:root {
+    --accent: 220, 182, 132;
+    --glass: 32, 31, 30;
+    --text: 238, 234, 226;
+  }
+}
+```
 
 Если ставите свои светлые обои, увеличьте `--bg-dim` до `.7`: текст будет читаться лучше.
 

@@ -1,11 +1,11 @@
-/* shiki glass v1.7.19, тема «туманные тории» — тема и обновления: https://github.com/Hikisey/shikimori-theme */
+/* shiki glass v1.7.20, тема «туманные тории» — тема и обновления: https://github.com/Hikisey/shikimori-theme */
 /* Ровно 4 @import — 4 части темы: shikimori.io подключает только 4 первых @import.
    Тёмный редактор кода (CodeMirror_dark) и свои постеры персонажей уже внутри темы,
    отдельные импорты для них не нужны. */
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.19/css/part_01.css");
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.19/css/part_02.css");
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.19/css/part_03.css");
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.19/css/part_04.css");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.20/css/part_01.css");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.20/css/part_02.css");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.20/css/part_03.css");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.20/css/part_04.css");
 
 /* Если какая-то из четырёх частей не загрузилась (Шикимори хранит ошибку 8 часов),
    в левом нижнем углу появится надпись с её номером. Тогда откройте
@@ -39,15 +39,15 @@
     --link: var(--accent);             /* цвет ссылок; можно задать отдельно, например 120, 170, 255 */
 
     /* Фон */
-    --bg-image: url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.19/themes/torii/bg.webp");  /* обои на ПК (Шикимори всё равно загружает их через свой прокси картинок — и с //, и с https://) */
-    --bg-image-mobile: url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.19/themes/torii/bg_m.webp");  /* обои на телефоне */
+    --bg-image: url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.20/themes/torii/bg.webp");  /* обои на ПК (Шикимори всё равно загружает их через свой прокси картинок — и с //, и с https://) */
+    --bg-image-mobile: url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.20/themes/torii/bg_m.webp");  /* обои на телефоне */
     --bg-color: 54, 94, 80;         /* цвет под обоями, пока они грузятся (средний тон обоев) */
     --bg-color-mobile: 48, 86, 72;  /* то же на телефоне */
     --bg-zoom: 1;                   /* приближение обоев на ПК, 1 — без зума */
     --bg-blur: 0px;                    /* размытие обоев на ПК, например 4px */
     --bg-blur-mobile: 1.5px;           /* размытие обоев на телефоне */
     --bg-dim: .45;                      /* затемнение обоев: 0 — нет, 1 — совсем тёмные; для светлых обоев — .7 */
-    --profile-banner: url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.19/themes/torii/banner.webp");  /* баннер в профиле */
+    --profile-banner: url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.20/themes/torii/banner.webp");  /* баннер в профиле */
     --profile-banner-height: 300px;    /* высота баннера; картинка не растягивается, лишнее обрезается */
     --profile-banner-height-mobile: 170px; /* высота баннера на телефоне (аватар и ник ложатся на его нижний край) */
     --profile-banner-glow: .5;         /* яркость свечения под баннером (цвет берётся из картинки), 0 — выключить */
@@ -78,23 +78,8 @@
   }
 }
 
-/* ===================== Готовая палитра ===================== */
-/* Чтобы включить, удалите строку с названием над блоком и строку со звёздочкой и косой чертой под ним.
-   Палитра перекрывает блок «Палитра» выше, всё остальное берётся из него. */
-
-/* Песочная: спокойный тёплый акцент вместо алого, меньше яркого цвета
-@media screen and (min-width: 1px) {
-  html:root {
-    --accent: 220, 182, 132;
-    --glass: 32, 31, 30;
-    --text: 238, 234, 226;
-  }
-}
-*/
-
 /* ===================== Дополнительно ===================== */
-/* Чтобы включить блок, удалите строку с косой чертой и звёздочкой над ним
-   и строку со звёздочкой и косой чертой под ним. */
+/* Чтобы включить блок, удалите /*коментарий/* он убирается удалением слеша с звездочкой с двух сторон */
 
 /* Полупрозрачная рамка вокруг страницы:
 @media (min-width: 1200px) {

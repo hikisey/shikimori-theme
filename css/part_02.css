@@ -1,4 +1,4 @@
-/* shiki glass v1.7.19 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
+/* shiki glass v1.7.20 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
 html:root { --sg-p2: ""; }
 
 .CodeMirror-search-field {
@@ -2884,8 +2884,8 @@ div.compatibility > span.link-replacement > .text.full:before {
         background: var(--profile-banner) center bottom / cover no-repeat;
         filter: blur(32px) saturate(1.5);
         opacity: var(--profile-banner-glow);
-        -webkit-mask-image: linear-gradient(to bottom, #000 30%, transparent);
-        mask-image: linear-gradient(to bottom, #000 30%, transparent);
+        -webkit-mask-image: radial-gradient(closest-side, #000 30%, transparent);
+        mask-image: radial-gradient(closest-side, #000 30%, transparent);
         -webkit-mask-size: 100% 100%;
         mask-size: 100% 100%;
         -webkit-mask-repeat: no-repeat;
