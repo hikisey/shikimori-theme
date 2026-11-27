@@ -134,3 +134,10 @@ body * .b-anime_status_tag.released:before {
 body * .b-from_rip_marker:not(#u) {
     display: none;
 }
+
+/* rip: .b-shiki_sync_marker — пустая ссылка-маркер «пришло с шикимори» у комментариев, синхронизированных
+   с shikimori.io. То же общее body * [class*="_marker"] (layout/page.css) рисовало из неё пустую серую полоску
+   28×4px рядом с ☰. Скрыта только пустая (:empty) — если сайт когда-нибудь положит в неё текст, она останется. */
+body * .b-shiki_sync_marker:empty:not(#u) {
+    display: none;
+}
