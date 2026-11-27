@@ -213,7 +213,7 @@ body[data-locale=ru] .b-offtopic_marker.off:before {
    на комментарий / сообщение показывает её (display: block). Раньше тема давала ей тут 75px — невидимая
    коробка во float-блоке меток раздвигала шапку: время переносилось, карточка росла, страница прыгала,
    на стыке карточек наведение «мигало». Теперь она и при наведении не занимает места */
-body * .inner:hover aside.markers [class*="new_marker"].off {
+body * .inner:hover aside.markers [class*="new_marker"].off:not(.active) {
     display: none !important;
 }
 
