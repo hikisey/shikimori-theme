@@ -606,6 +606,22 @@ html:not(:hover) body::before {
     transform: scale(1);
 }
 
+/* v1.7.23: на широком экране затемнение обоев рисуется в том же слое, что и сами обои
+   (верхний слой фона body::before), а не отдельным слоем body:after на всё окно.
+   Вид тот же, но при прокрутке видеокарта складывает на один полноэкранный слой меньше:
+   на слабой видеокарте ~9% времени кадра (Chrome, 1920×1080). Ниже 1200px остаётся как было:
+   там своя схема обоев (телефон — html::before) и страница ачивок без обоев. */
+@media screen and (min-width: 1200px) {
+    body::before {
+        background:
+            linear-gradient(color-mix(in srgb, var(--glass-deep) calc(var(--bg-dim) * 100%), transparent) 0 0),
+            var(--bg-image) center / cover no-repeat;
+    }
+    body::after {
+        content: none;
+    }
+}
+
 /* Открытый select: его окно (::picker(select)) браузер рисует в верхнем слое,
    вне дерева страницы, и пока курсор над ним, у html нет :hover — обои начинали
    отъезжать, как будто курсор ушёл со страницы. Пока select открыт, обои
