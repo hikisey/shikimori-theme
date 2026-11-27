@@ -884,8 +884,11 @@ div.compatibility > span.link-replacement > .text.full:before {
 @media (hover: hover) and (pointer: fine) {
     /* v1.2.22: карточка поднимается на 6px, и у нижнего края курсор оказывался уже не над ней:
        наведение пропадало, карточка опускалась, и так по кругу (мигание курсора).
-       Невидимая полоска под поднятой карточкой держит наведение; на контент она не ложится. */
-    .b-catalog_entry:not(.cc-favourites.sortable .b-catalog_entry):hover::after {
+       Невидимая полоска под поднятой карточкой держит наведение; на контент она не ложится.
+       Не у карточек-вставок (.b-catalog-entry-embedded — новости в почте «Новости сайта», уведомления):
+       у них ::after — clearfix сайта, и absolute-полоска его отменяла: карточка схлопывалась, новость
+       становилась на ~20px ниже, курсор уходил, и наведение мигало туда-обратно. Они и не поднимаются (cards.css) */
+    .b-catalog_entry:not(.cc-favourites.sortable .b-catalog_entry):not(.b-catalog-entry-embedded .b-catalog_entry):hover::after {
         content: "";
         position: absolute;
         left: 0;
