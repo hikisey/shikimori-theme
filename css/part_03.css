@@ -1,5 +1,40 @@
-/* shiki glass v1.7.20 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
+/* shiki glass v1.7.21 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
 html:root { --sg-p3: ""; }
+
+.p-messages .mass-actions .action:after {
+    display: none;
+}
+
+.b-dialog > .inner div.body {
+    color: rgba(var(--text), 1);
+}
+
+.b-dialog,
+.b-user.detailed,
+.b-comment,
+.b-db_entry-note,
+.p-topics .l-menu .sticky-topics .topic,
+.b-comments .comments-loaded,
+.b-message .comments-loaded {
+    border-bottom: 1px solid rgba(var(--text), 0.1) !important;
+}
+
+.b-dialog,
+.b-user.detailed,
+.b-comment,
+.b-db_entry-note,
+.p-topics .l-menu .clubs .entry,
+.p-topics .l-menu .sticky-topics .topic {
+    margin: 4px 0;
+    border-top: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.b-comments .comments-loaded,
+.b-message .comments-loaded {
+    padding-bottom: 10px !important;
+}
 
 .b-dialog:first-child {
     padding-top: 15px;
@@ -5293,7 +5328,7 @@ div.Ssylki-anime:hover .Text-2 {
 
 :root {
     --theme-name: "shiki glass";
-    --theme-version: "1.7.20";
+    --theme-version: "1.7.21";
 }
 
 .l-footer:before {
@@ -5448,29 +5483,4 @@ body.localized_names-ru .name-ru {
 
 .b-db_entry-note .name-container .name {
     color: rgba(var(--text-strong), 1);
-}
-
-.b-db_entry-note .name-container .name:hover {
-    color: rgba(var(--accent), 1);
-}
-
-a:-webkit-any-link {
-    text-decoration: none;
-    color: rgba(var(--link), 1);
-}
-
-@media (hover: hover) and (pointer: fine) {
-    .club-actions a:hover {
-        background: none;
-        box-shadow: none;
-    }
-}
-
-.p-studios .studio .name {
-    color: rgba(var(--text-strong), 1);
-    width: 150px;
-}
-
-.p-studios .studio .name:hover {
-    color: rgba(var(--accent), 1);
 }

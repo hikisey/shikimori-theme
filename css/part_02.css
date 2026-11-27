@@ -1,5 +1,41 @@
-/* shiki glass v1.7.20 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
+/* shiki glass v1.7.21 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
 html:root { --sg-p2: ""; }
+
+.cm-s-solarized.cm-s-light {
+    background-color: var(--tone-1f2123);
+    color: #9eb8c7;
+    text-shadow: none;
+}
+
+.cm-s-solarized .cm-number {
+    color: #8f6fec;
+}
+
+.cm-s-solarized.cm-s-light .CodeMirror-gutters {
+    background-color: var(--tone-282e33);
+}
+
+.cm-s-solarized .cm-property {
+    color: #2bb39b;
+}
+
+.cm-s-solarized.cm-s-light div.CodeMirror-selected {
+    background: color-mix(in srgb, var(--tone-6b6965) 40%, transparent);
+}
+
+.CodeMirror-dialog-top {
+    border-bottom: none;
+    top: 0px;
+    background: var(--tone-171717);
+}
+
+.cm-s-solarized .cm-variable {
+    color: #dade38;
+}
+
+.cm-s-solarized .cm-tag {
+    color: var(--tone-a8a99f);
+}
 
 .CodeMirror-search-field {
     width: 400px !important;
@@ -5082,39 +5118,4 @@ form.simple_form.b-form:is(.new_collection, .edit_collection):last-child {
     line-height: 24px;
     overflow: visible;
     white-space: normal;
-}
-
-.p-messages .mass-actions .action:after {
-    display: none;
-}
-
-.b-dialog > .inner div.body {
-    color: rgba(var(--text), 1);
-}
-
-.b-dialog,
-.b-user.detailed,
-.b-comment,
-.b-db_entry-note,
-.p-topics .l-menu .sticky-topics .topic,
-.b-comments .comments-loaded,
-.b-message .comments-loaded {
-    border-bottom: 1px solid rgba(var(--text), 0.1) !important;
-}
-
-.b-dialog,
-.b-user.detailed,
-.b-comment,
-.b-db_entry-note,
-.p-topics .l-menu .clubs .entry,
-.p-topics .l-menu .sticky-topics .topic {
-    margin: 4px 0;
-    border-top: none;
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-
-.b-comments .comments-loaded,
-.b-message .comments-loaded {
-    padding-bottom: 10px !important;
 }

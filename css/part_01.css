@@ -1,4 +1,4 @@
-/* shiki glass v1.7.20 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
+/* shiki glass v1.7.21 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
 html:root { --sg-p1: ""; }
 
 @media screen and (min-width: 1px) {
@@ -1852,6 +1852,7 @@ body:after {
     content: "";
     width: 100vw;
     height: 100%;
+    min-height: 100lvh;
     position: fixed;
     top: 0;
     left: 0;
@@ -2385,8 +2386,6 @@ body::before {
     filter: blur(var(--bg-blur));
     transition: transform 2.5s var(--ease-out);
     pointer-events: none;
-    will-change: transform;
-    backface-visibility: hidden;
 }
 
 html:not(:hover) body::before {
@@ -2684,6 +2683,7 @@ html input[type="checkbox"]:not(#u):focus-visible {
         content: "";
         position: fixed;
         inset: 0;
+        min-height: 100lvh;
         z-index: -1;
         background: var(--bg-image-mobile) center / cover no-repeat;
         background-color: rgb(var(--bg-color-mobile));
@@ -2691,8 +2691,6 @@ html input[type="checkbox"]:not(#u):focus-visible {
         filter: blur(var(--bg-blur-mobile)) brightness(var(--bg-brightness-mobile));
         -webkit-filter: blur(var(--bg-blur-mobile)) brightness(var(--bg-brightness-mobile));
         pointer-events: none;
-        will-change: transform;
-        backface-visibility: hidden;
     }
     html:has(> body.p-achievements.p-profiles)::before {
         background: none;
@@ -2917,6 +2915,10 @@ body * .b-from_rip_marker:not(#u) {
 }
 
 body * .b-shiki_sync_marker:empty:not(#u) {
+    display: none;
+}
+
+body * .b-synced_marker:not(#u) {
     display: none;
 }
 
@@ -3999,6 +4001,21 @@ header.head :is(h1, h2) {
     top: 0;
     right: 0;
     z-index: 2;
+}
+
+@media screen and (min-width: 1024px) {
+    :is(.b-comment, .b-topic, .b-message, .b-dialog):not(.aside-expanded) > .inner:has(> aside.markers > .b-new_marker.active) > aside.buttons {
+        right: 80px;
+    }
+}
+
+aside.buttons :is(.item-share, .item-ban, .item-abuse, .item-spoiler, .item-censored, .item-offtopic, .item-summary) {
+    color: rgba(var(--text-2), 1);
+}
+@media (hover: hover) and (pointer: fine) {
+    aside.buttons :is(.item-share, .item-ban, .item-abuse, .item-spoiler, .item-censored, .item-offtopic, .item-summary):hover {
+        color: rgba(var(--accent), 1);
+    }
 }
 
 .bar.simple .bar.s3 {
@@ -5543,40 +5560,4 @@ a.b-link.bubbled-processed {
 
 .b-quote {
     margin: 5px 0;
-}
-
-.cm-s-solarized.cm-s-light {
-    background-color: var(--tone-1f2123);
-    color: #9eb8c7;
-    text-shadow: none;
-}
-
-.cm-s-solarized .cm-number {
-    color: #8f6fec;
-}
-
-.cm-s-solarized.cm-s-light .CodeMirror-gutters {
-    background-color: var(--tone-282e33);
-}
-
-.cm-s-solarized .cm-property {
-    color: #2bb39b;
-}
-
-.cm-s-solarized.cm-s-light div.CodeMirror-selected {
-    background: color-mix(in srgb, var(--tone-6b6965) 40%, transparent);
-}
-
-.CodeMirror-dialog-top {
-    border-bottom: none;
-    top: 0px;
-    background: var(--tone-171717);
-}
-
-.cm-s-solarized .cm-variable {
-    color: #dade38;
-}
-
-.cm-s-solarized .cm-tag {
-    color: var(--tone-a8a99f);
 }

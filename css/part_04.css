@@ -1,5 +1,30 @@
-/* shiki glass v1.7.20 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
+/* shiki glass v1.7.21 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
 html:root { --sg-p4: ""; }
+
+.b-db_entry-note .name-container .name:hover {
+    color: rgba(var(--accent), 1);
+}
+
+a:-webkit-any-link {
+    text-decoration: none;
+    color: rgba(var(--link), 1);
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .club-actions a:hover {
+        background: none;
+        box-shadow: none;
+    }
+}
+
+.p-studios .studio .name {
+    color: rgba(var(--text-strong), 1);
+    width: 150px;
+}
+
+.p-studios .studio .name:hover {
+    color: rgba(var(--accent), 1);
+}
 
 @media (hover: hover) and (pointer: fine) {
     .p-animes .c-about .watch-online > a.kind:hover {

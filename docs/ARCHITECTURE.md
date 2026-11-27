@@ -79,7 +79,7 @@ flowchart LR
 | `base/animations.css` | 294 | 5.4 | все @keyframes темы |
 | `base/colors.css` | 46 | 1.2 | цветовые классы bb-кодов и подсветки (.red, .green, …) |
 | `layout/header.css` | 531 | 25.2 | верхняя панель .l-top_menu-v2, выпадающие меню, глобальный поиск |
-| `layout/page.css` | 1047 | 33.4 | каркас страницы: html/body, обои, .l-page, колонки и сетки .cc/.c-column |
+| `layout/page.css` | 1045 | 33.5 | каркас страницы: html/body, обои, .l-page, колонки и сетки .cc/.c-column |
 | `components/badges.css` | 150 | 4.8 | статусы и метки: *_status_tag, *_marker, .b-tag |
 | `components/carousels.css` | 212 | 7.2 | ленты, стрелки, пагинация, кнопка «наверх»; стрелки лент (::scroll-button) |
 | `components/tooltips.css` | 182 | 4.7 | подсказки .tipsy, .b-tooltipped, всплывающие карточки |
