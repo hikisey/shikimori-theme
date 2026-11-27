@@ -1,4 +1,4 @@
-/* shiki glass v1.7.23 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
+/* shiki glass v2.0.0 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
 html:root { --sg-p3: ""; }
 
 @supports (appearance: base-select) and selector(:open) {

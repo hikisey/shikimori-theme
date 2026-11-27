@@ -1,4 +1,4 @@
-/* shiki glass v1.7.23 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
+/* shiki glass v2.0.0 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
 html:root { --sg-p4: ""; }
 
 .b-catalog_entry .cover .image-decor .image-cutter {
@@ -70,7 +70,7 @@ html:root { --sg-p4: ""; }
 
 :root {
     --theme-name: "shiki glass";
-    --theme-version: "1.7.23";
+    --theme-version: "2.0.0";
 }
 
 .l-footer:before {
