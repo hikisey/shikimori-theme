@@ -3256,12 +3256,13 @@ body .b-catalog_entry .collection_score .collection_score_marker {
 
 .p-dashboards-show .review-slide,
 .p-dashboards-show .review-slide:is(.color-0, .color-1, .color-2) {
-    background: color-mix(in srgb, var(--glass-deep) 62%, transparent);
+    /* v1.7.23: без backdrop-filter — карточки и так лежат на стеклянном блоке, а десять
+       размытий 350×270 в ленте пересчитывались в каждом кадре прокрутки (rip, главная).
+       Фон чуть плотнее (62 → 68%), чтобы обои под ним читались так же спокойно. */
+    background: color-mix(in srgb, var(--glass-deep) 68%, transparent);
     border: 1px solid rgba(var(--glass-light), .08);
     border-radius: var(--plate-radius-lg);
     box-shadow: var(--plate-shadow-soft);
-    backdrop-filter: var(--plate-blur);
-    -webkit-backdrop-filter: blur(5px);
 }
 
 .p-dashboards-show :is(.review-slide a.mini-review-title, .mini-review-title) {
