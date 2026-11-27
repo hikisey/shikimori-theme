@@ -45,6 +45,7 @@ body:after {
     content: "";
     width: 100vw;
     height: 100%;
+    height: 100lvh; /* v1.7.21: затемнение по самому большому окну — не меняет размер, когда на телефоне прячется адресная строка */
     position: fixed;
     top: 0;
     left: 0;
@@ -594,8 +595,11 @@ body::before {
     /* одинаковая анимация на приближение и отдаление */
     transition: transform 2.5s var(--ease-out);
     pointer-events: none;
-    will-change: transform;
-    backface-visibility: hidden;
+    /* v1.7.21: без will-change: transform и backface-visibility: hidden. С ними слой обоев жил отдельно,
+       и размытие (filter) браузер заново считал в каждом кадре прокрутки — при быстрой прокрутке кадр
+       рисовался ~22 мс вместо ~9 (Chrome, 1920×1080), страница подтормаживала, обои мигали.
+       Без них размытые обои рисуются один раз и при прокрутке просто остаются на месте;
+       плавный зум (transition) браузер на время анимации выносит в слой сам */
 }
 
 html:not(:hover) body::before {
@@ -920,7 +924,13 @@ html input[type="checkbox"]:not(#u):focus-visible {
     html::before {
         content: "";
         position: fixed;
-        inset: 0;
+        /* v1.7.21: высота по самому большому окну (100lvh): когда при прокрутке прячется адресная строка,
+           слой не меняет размер — его не надо перерисовывать, и снизу не мелькает полоса цвета фона */
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 100vh;
+        height: 100lvh;
         z-index: -1;
         background: var(--bg-image-mobile) center / cover no-repeat;
         background-color: rgb(var(--bg-color-mobile));
@@ -928,8 +938,7 @@ html input[type="checkbox"]:not(#u):focus-visible {
         filter: blur(var(--bg-blur-mobile)) brightness(var(--bg-brightness-mobile));
         -webkit-filter: blur(var(--bg-blur-mobile)) brightness(var(--bg-brightness-mobile));
         pointer-events: none;
-        will-change: transform;
-        backface-visibility: hidden;
+        /* v1.7.21: без will-change и backface-visibility — размытие рисуется один раз, а не в каждом кадре (как у body::before) */
     }
     /* как раньше: на странице ачивок профиля обоев нет (правило achievements.css) */
     html:has(> body.p-achievements.p-profiles)::before {
