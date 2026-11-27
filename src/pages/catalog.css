@@ -653,3 +653,52 @@ section.l-page aside.l-menu .c-filters:has(.c-score-input:focus) .c-ms-dropdown:
 form.simple_form.b-form:is(.new_collection, .edit_collection):last-child {
     padding-bottom: 24px;
 }
+
+/* shikimori.rip (ноябрь 2026): над фильтрами каталога две кнопки-значка в .filter-actions —
+   «Случайное с фильтром» (кубик) и «Сбросить фильтры». Старое правило темы для прежней широкой
+   кнопки .random-anime-button (display: block; width: 100%, overrides/late.css) ломало центровку:
+   выходили два широких пустых прямоугольника с крошечным значком в углу. Теперь — компактные
+   кнопки в стиле полей фильтров, значок по центру */
+.b-collection-filters .filter-actions:not(#u) {
+    display: flex;
+    gap: 8px;
+}
+
+.b-collection-filters .filter-actions > .filter-action:not(#u) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+    width: 46px;
+    height: var(--field-height, 34px);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: var(--field-bg);
+    border: 1px solid var(--field-border);
+    border-radius: var(--field-radius);
+    color: rgb(var(--text-2));
+    box-shadow: none;
+    transition: background-color var(--ease-fast), border-color var(--ease-fast), color var(--ease-fast);
+}
+
+.b-collection-filters .filter-actions > .filter-action:not(#u)::before {
+    flex: 0 0 auto;
+    width: 18px;
+    height: 18px;
+    margin: 0;
+    background-color: currentColor;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .b-collection-filters .filter-actions > .filter-action:not(#u):hover {
+        background: var(--field-bg);
+        border-color: var(--field-border-hover);
+        color: rgb(var(--accent));
+    }
+}
+
+.b-collection-filters .filter-actions > .filter-action:not(#u):active {
+    background: var(--field-bg);
+    color: rgb(var(--accent));
+}
