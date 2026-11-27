@@ -1,11 +1,11 @@
-/* shiki glass v1.7.15 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
+/* shiki glass v1.7.16 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
 /* Ровно 4 @import — 4 части темы: shikimori.io подключает только 4 первых @import.
    Тёмный редактор кода (CodeMirror_dark) и свои постеры персонажей уже внутри темы,
    отдельные импорты для них не нужны. */
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.15/css/part_01.css");
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.15/css/part_02.css");
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.15/css/part_03.css");
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.15/css/part_04.css");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.16/css/part_01.css");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.16/css/part_02.css");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.16/css/part_03.css");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.16/css/part_04.css");
 
 /* Если какая-то из четырёх частей не загрузилась (Шикимори хранит ошибку 8 часов),
    в левом нижнем углу появится надпись с её номером. Тогда откройте
