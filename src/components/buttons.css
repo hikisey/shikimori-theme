@@ -272,3 +272,23 @@
     right: 0;
     z-index: 2;
 }
+
+/* v1.7.21: у непрочитанного (метка «новое» справа в шапке) кнопки встают левее метки, а не поверх неё.
+   Место задано заранее, по классу метки, а не по наведению — при наведении ничего не сдвигается.
+   .active остаётся и у прочитанной (.active.off), так что после прочтения кнопки тоже не прыгают */
+@media screen and (min-width: 1024px) {
+    :is(.b-comment, .b-topic, .b-message, .b-dialog):not(.aside-expanded) > .inner:has(> aside.markers > .b-new_marker.active) > aside.buttons {
+        right: 80px;
+    }
+}
+
+/* v1.7.21: «поделиться» и кнопки модерации (бан, жалоба, спойлер, цензура, оффтоп) у сайта #444 —
+   на тёмном стекле почти чёрные. Теперь как остальные: приглушённый текст, под курсором акцент */
+aside.buttons :is(.item-share, .item-ban, .item-abuse, .item-spoiler, .item-censored, .item-offtopic, .item-summary) {
+    color: rgba(var(--text-2), 1);
+}
+@media (hover: hover) and (pointer: fine) {
+    aside.buttons :is(.item-share, .item-ban, .item-abuse, .item-spoiler, .item-censored, .item-offtopic, .item-summary):hover {
+        color: rgba(var(--accent), 1);
+    }
+}

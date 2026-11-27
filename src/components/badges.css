@@ -141,3 +141,10 @@ body * .b-from_rip_marker:not(#u) {
 body * .b-shiki_sync_marker:empty:not(#u) {
     display: none;
 }
+
+/* v1.7.21, rip: .b-synced_marker (data-text="sync") — метка «отправлено на shikimori.io» у своих комментариев,
+   написанных на rip. Тема у всех меток без своего правила гасит текст (layout/page.css), и вместо «sync»
+   справа сверху оставалась пустая серая полоска (на телефоне — поверх ☰). Скрыта, как .b-shiki_sync_marker. */
+body * .b-synced_marker:not(#u) {
+    display: none;
+}
