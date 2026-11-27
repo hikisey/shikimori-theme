@@ -209,13 +209,15 @@ body[data-locale=ru] .b-offtopic_marker.off:before {
     color: #7b646d;
 }
 
+/* прочитанная метка «новое» (.off): её значок тема скрывает (components/badges.css), а сайт при наведении
+   на комментарий / сообщение показывает её (display: block). Раньше тема давала ей тут 75px — невидимая
+   коробка во float-блоке меток раздвигала шапку: время переносилось, карточка росла, страница прыгала,
+   на стыке карточек наведение «мигало». Теперь она и при наведении не занимает места */
 body * .inner:hover aside.markers [class*="new_marker"].off {
-    display: inline-flex;
-    width: 75px !important;
+    display: none !important;
 }
 
-body * [class*="new_marker"].active,
-.b-message > .inner:hover aside.markers .b-new_marker.off {
+body * [class*="new_marker"].active {
     display: inline-flex;
     width: 75px;
 }
