@@ -1,11 +1,11 @@
-/* shiki glass v1.7.22, тема «туманное озеро» — тема и обновления: https://github.com/Hikisey/shikimori-theme */
+/* shiki glass v1.7.23, тема «туманное озеро» — тема и обновления: https://github.com/Hikisey/shikimori-theme */
 /* Ровно 4 @import — 4 части темы: shikimori.io подключает только 4 первых @import.
    Тёмный редактор кода (CodeMirror_dark) и свои постеры персонажей уже внутри темы,
    отдельные импорты для них не нужны. */
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.22/css/part_01.css");
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.22/css/part_02.css");
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.22/css/part_03.css");
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.22/css/part_04.css");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.23/css/part_01.css");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.23/css/part_02.css");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.23/css/part_03.css");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.23/css/part_04.css");
 
 /* Если какая-то из четырёх частей не загрузилась (Шикимори хранит ошибку 8 часов),
    в левом нижнем углу появится надпись с её номером. Тогда откройте
@@ -39,15 +39,15 @@
     --link: var(--accent);             /* цвет ссылок; можно задать отдельно, например 120, 170, 255 */
 
     /* Фон */
-    --bg-image: url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.22/themes/lake/bg.webp");  /* обои на ПК (Шикимори всё равно загружает их через свой прокси картинок — и с //, и с https://) */
-    --bg-image-mobile: url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.22/themes/lake/bg_m.webp");  /* обои на телефоне */
+    --bg-image: url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.23/themes/lake/bg.webp");  /* обои на ПК (Шикимори всё равно загружает их через свой прокси картинок — и с //, и с https://) */
+    --bg-image-mobile: url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.23/themes/lake/bg_m.webp");  /* обои на телефоне */
     --bg-color: 93, 98, 99;         /* цвет под обоями, пока они грузятся (средний тон обоев) */
     --bg-color-mobile: 93, 98, 99;  /* то же на телефоне */
     --bg-zoom: 1;                   /* приближение обоев на ПК, 1 — без зума */
     --bg-blur: 0px;                    /* размытие обоев на ПК, например 4px */
     --bg-blur-mobile: 1.5px;           /* размытие обоев на телефоне */
     --bg-dim: .5;                      /* затемнение обоев: 0 — нет, 1 — совсем тёмные; для светлых обоев — .7 */
-    --profile-banner: url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.22/themes/lake/banner.webp");  /* баннер в профиле */
+    --profile-banner: url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.23/themes/lake/banner.webp");  /* баннер в профиле */
     --profile-banner-height: 300px;    /* высота баннера; картинка не растягивается, лишнее обрезается */
     --profile-banner-height-mobile: 170px; /* высота баннера на телефоне (аватар и ник ложатся на его нижний край) */
     --profile-banner-glow: .5;         /* яркость свечения под баннером (цвет берётся из картинки), 0 — выключить */

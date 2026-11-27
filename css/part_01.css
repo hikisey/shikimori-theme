@@ -1,4 +1,4 @@
-/* shiki glass v1.7.22 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
+/* shiki glass v1.7.23 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
 html:root { --sg-p1: ""; }
 
 @media screen and (min-width: 1px) {
@@ -2356,11 +2356,22 @@ body#dashboards_show .b-catalog_entry.b-catalog_entry {
 
 @media screen and (min-width: 1200px) {
     .l-page {
-        background-color: color-mix(in srgb, var(--glass-deep) 80%, transparent);
-    }
-    .l-page {
         margin: 15px auto 15px;
         border-radius: 12px;
+        background-color: transparent;
+    }
+    .l-page::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        border-radius: inherit;
+        background-color: color-mix(in srgb, var(--glass-deep) 80%, transparent);
+        will-change: transform;
+        pointer-events: none;
+    }
+    body.p-achievements.p-profiles .l-page::before {
+        content: none;
     }
 }
 
@@ -2416,6 +2427,17 @@ body::before {
 
 html:not(:hover) body::before {
     transform: scale(1);
+}
+
+@media screen and (min-width: 1200px) {
+    body::before {
+        background:
+            linear-gradient(color-mix(in srgb, var(--glass-deep) calc(var(--bg-dim) * 100%), transparent) 0 0),
+            var(--bg-image) center / cover no-repeat;
+    }
+    body:not(.p-achievements.p-profiles)::after {
+        content: none;
+    }
 }
 
 @media screen and (min-width: 768px) {
@@ -4035,6 +4057,19 @@ header.head :is(h1, h2) {
     }
 }
 
+@media screen and (min-width: 1024px) and (hover: hover) and (pointer: fine) {
+    .b-topic.b-topic-preview:not(.aside-expanded) > .inner > aside.buttons {
+        position: static;
+        float: right;
+        display: block;
+        visibility: hidden;
+    }
+    .b-topic.b-topic-preview:not(.aside-expanded) > .inner:hover > aside.buttons,
+    .b-topic.b-topic-preview:not(.aside-expanded) > .inner > aside.buttons:focus-within {
+        visibility: visible;
+    }
+}
+
 aside.buttons :is(.item-share, .item-ban, .item-abuse, .item-spoiler, .item-censored, .item-offtopic, .item-summary) {
     color: rgba(var(--text-2), 1);
 }
@@ -4914,11 +4949,25 @@ aside.buttons :is(.item-share, .item-ban, .item-abuse, .item-spoiler, .item-cens
         background-color .35s ease !important;
 }
 
+.b-catalog_entry::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    border-radius: inherit;
+    box-shadow: var(--card-hover-shadow);
+    opacity: 0;
+    transition: opacity .35s var(--ease-out);
+    pointer-events: none;
+}
+
 @media (hover: hover) and (pointer: fine) {
     .b-catalog_entry.b-catalog_entry:hover {
         transform: var(--card-lift);
-        box-shadow: var(--card-hover-shadow);
         z-index: 2;
+    }
+    .b-catalog_entry.b-catalog_entry:hover::before {
+        opacity: 1;
     }
 }
 
@@ -5482,59 +5531,4 @@ a.b-link.bubbled-processed {
 .b-log_entry a:hover .id-label,
 .b-log_entry .link:hover .id-label {
     color: rgba(var(--accent), var(--hundred));
-}
-
-.b-comments .comments-collapser:after {
-    content: '\f139';
-    font: normal normal normal 14px/1 FontAwesome;
-    text-rendering: auto;
-    -webkit-font-smoothing: antialiased;
-    position: relative;
-    font-size: 20px;
-    color: rgba(var(--text-2), 0.6);
-}
-
-.b-comments .comments-collapser:hover:after {
-    color: rgba(var(--text-strong), var(--hundred));
-}
-
-.b-comments .comments-collapser {
-    font-size: 0;
-    text-decoration: none;
-    margin: 6px 10px 0 0;
-    border: none;
-}
-
-.b-height_shortener .expand:after {
-    content: "далее" !important;
-    font-size: 13px;
-    background-color: rgba(var(--glass), 0.3);
-    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.05);
-    padding: 0 27px;
-    line-height: 16px;
-    left: 0;
-    position: absolute;
-    border-radius: 4px;
-    transition: 0.1s ease-in-out;
-}
-
-@media (hover: hover) and (pointer: fine) {
-    .b-height_shortener .expand:hover:after {
-        background-color: rgba(var(--accent), 0.3);
-    }
-}
-
-.b-height_shortener .expand {
-    font-size: 0;
-    height: 17px;
-}
-
-.b-height_shortener .expand:hover {
-    font-size: 0;
-}
-
-.b-height_shortener .expand:hover {
-    color: rgba(var(--accent), var(--hundred));
-    animation: none !important;
-    border: none;
 }

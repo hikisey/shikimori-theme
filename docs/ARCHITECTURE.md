@@ -79,23 +79,23 @@ flowchart LR
 | `base/animations.css` | 294 | 5.4 | все @keyframes темы |
 | `base/colors.css` | 46 | 1.2 | цветовые классы bb-кодов и подсветки (.red, .green, …) |
 | `layout/header.css` | 568 | 27.4 | верхняя панель .l-top_menu-v2, выпадающие меню, глобальный поиск |
-| `layout/page.css` | 1045 | 33.5 | каркас страницы: html/body, обои, .l-page, колонки и сетки .cc/.c-column |
+| `layout/page.css` | 1077 | 35.5 | каркас страницы: html/body, обои, .l-page, колонки и сетки .cc/.c-column |
 | `components/badges.css` | 150 | 4.8 | статусы и метки: *_status_tag, *_marker, .b-tag |
 | `components/carousels.css` | 212 | 7.2 | ленты, стрелки, пагинация, кнопка «наверх»; стрелки лент (::scroll-button) |
 | `components/tooltips.css` | 182 | 4.7 | подсказки .tipsy, .b-tooltipped, всплывающие карточки |
 | `components/headings.css` | 299 | 7.3 | заголовки .headline / .subheadline / .midheadline |
 | `components/users.css` | 161 | 4.1 | пользователи и аватары: .b-user, .b-user16, .b-menu-line |
-| `components/buttons.css` | 294 | 8.9 | кнопки .b-link_button, .b-button, button, кнопки действий |
+| `components/buttons.css` | 313 | 10.3 | кнопки .b-link_button, .b-button, button, кнопки действий |
 | `components/stats.css` | 72 | 2.9 | полоски-шкалы .bar |
 | `components/tabs.css` | 603 | 15.1 | вкладки и переключатели: .b-options-floated, .b-list_switchers, use-tabs |
 | `components/plates.css` | 18 | 0.4 | стеклянные плашки .block |
-| `components/cards.css` | 336 | 9.4 | карточки аниме/манги .b-catalog_entry, обложки .image-decor |
+| `components/cards.css` | 354 | 10.3 | карточки аниме/манги .b-catalog_entry, обложки .image-decor |
 | `components/editor.css` | 1014 | 26.6 | комментарии, редактор .b-shiki_editor, спойлеры, цитаты, код |
 | `components/modals.css` | 59 | 1.4 | окна: просмотр картинок (mfp), bulma-модалки, обратная связь |
 | `components/forms.css` | 538 | 15.9 | поля, select и мультиселект фильтров (.c-ms), галочки, @starting-style выезда списков |
 | `components/motion.css` | 72 | 3.9 | лёгкие анимации (v1.7.10): пружинное нажатие кнопок, появление комментариев и окон; только scale/translate/opacity, при «уменьшении движения» выключены |
 | `pages/clubs.css` | 255 | 6.7 | клубы |
-| `pages/profile.css` | 1944 | 63.1 | профиль: шапка, баннер, история, списки-статистика, совместимость, друзья |
+| `pages/profile.css` | 1941 | 63.4 | профиль: шапка, баннер, история, списки-статистика, совместимость, друзья |
 | `pages/anime.css` | 1109 | 36.0 | страница аниме/манги/персонажа: описание, постер, кадры и видео, плеер, «добавить в список» |
 | `pages/settings.css` | 280 | 9.0 | настройки профиля и аккаунта, сервисы входа |
 | `pages/catalog.css` | 704 | 30.7 | каталог: фильтры слева, коллекции, поиск |
@@ -108,10 +108,10 @@ flowchart LR
 | `kits/custom-posters.css` | 80 | 2.8 | свои постеры персонажей и точечные правки отдельных профилей |
 | `kits/about-kits.css` | 1438 | 34.6 | наборы для «О себе»: Animes_Mangas, Ssylki, Razmer, k-0-1 и т. п. (не удалять) |
 | `layout/footer.css` | 70 | 1.4 | подвал и подпись «shiki glass vX.Y.Z» |
-| `overrides/late.css` | 3774 | 123.4 | правила, которые обязаны идти после всех модулей (см. ниже и шапку файла) |
+| `overrides/late.css` | 3776 | 124.1 | правила, которые обязаны идти после всех модулей (см. ниже и шапку файла) |
 | `vendor/codemirror-dark.css` | 92 | 4.0 | тёмный редактор кода (CodeMirror «material», MIT, Mattia Astorino; версия css-club), без изменений; последним — на месте бывшего 5-го `@import` |
 | `overrides/codemirror-tint.css` | 36 | 1.9 | рамка редактора кода в цвет темы (v1.7.19): фон из `--glass` с 10% акцента, номера строк `--text-3`, выделение и курсор из акцента; подсветка синтаксиса — как в vendor-файле |
-| **всего** | **20772** | **657.2** | |
+| **всего** | **20840** | **662.6** | |
 
 **телефон рядом с модулем.** в конце каждого модуля — раздел `/* ----- телефон и узкие экраны ----- */`: его правила для ширины ≤1023 и сенсорных экранов (`hover: none`, `pointer: coarse`). несколько телефонных правил остались в основной части модуля внутри своего `@media` — их нельзя опустить ниже соседей.
 
@@ -369,6 +369,7 @@ background: color-mix(in srgb, var(--glass-deep) 55%, transparent);
 | v1.3.9 | «Сортировка» раздвигает фильтры, как остальные списки: это обычный `<select>` с `appearance: base-select`, его окно `::picker(select)` живёт в верхнем слое и в поток не встаёт, поэтому на ПК, пока select `:open`, у его `.c-ms-field` растёт `padding-bottom` ровно на высоту окна (число пунктов через `:has(option:nth-child(n))` × 28px + поля и рамки), с теми же `--drop-time`/`--drop-ease`/`--drop-ease-close`; окно всегда вниз (`position-try-fallbacks: none`). На сенсорных экранах — системный список, без изменений |
 | v1.3.10 | выпадающие списки темнее: `--drop-bg` (base.css) = `color-mix(in srgb, var(--glass-popup) 35%, var(--glass-deep))` вместо `--glass-popup` — списки фильтров (`.c-ms-dropdown`), окно «Сортировки» и всех select (`::picker(select)`, `option`) теперь rgb(26, 29, 37) вместо rgb(38, 43, 54) и не выбиваются из тёмной панели; остальное без изменений |
 | v1.3.11 | обои не отъезжают, когда курсор над открытым списком select: окно `::picker(select)` в верхнем слое, и `html:not(:hover) body::before { transform: scale(1) }` (page.css) срабатывал; добавлено `html:has(select:open) body::before { transform: scale(var(--bg-zoom)) }` для ≥ 768px (касается «Сортировки» и всех select, в том числе в настройках) |
+| v1.7.23 | ПК, прокрутка колесом: у плашек оценки в каталоге убран `backdrop-filter`, фон 88% (late.css); тень карточки при наведении — `::before` с `opacity` вместо анимации `box-shadow` (cards.css); карточки рецензий на главной rip без `backdrop-filter`, фон 68% (late.css); на ≥1200px затемнение обоев — верхний слой фона `body::before`, `body::after` выключен, кроме страницы ачивок с картинкой (page.css). Быстрая прокрутка: подложка `.l-page` — отдельный сплошной слой `.l-page::before` с `will-change: transform` (браузер заливает его цветом без растра, недорисованные тайлы показывают подложку, а не обои), у самой `.l-page` фон прозрачный (page.css). Новости/темы форума: `aside.buttons` в `.b-topic-preview` — `float: right` + `visibility`, место под кнопки занято до наведения, только для мыши (buttons.css). Профиль: значок совместимости под курсором без `scale(1.17)` — не обрезается `.c-info`, становится ярче (profile.css) |
 | v1.7.22 | телефон, меню ☰: сайт по `.is-submenu` делал `.l-page` `position: fixed` — прокрутка сбрасывалась в 0 и страница перекладывалась; теперь `.l-page` остаётся `relative`, прокрутку держит `body:has(> .l-top_menu-v2.is-submenu) { overflow: hidden }` (у body, не у html — иначе шапка теряет sticky), затемнение `.b-shade` проявляется `shiki-fade` 0.16 с, выезд меню `shiki-drop` 0.16 с (было 0.24 с + opacity 0.3 с) — header.css. Профиль «Время за»: кружки отметок — рамка 10px по центру `.cut` высотой 6px вместо значка FontAwesome (на iPhone садился выше), цвет — акцент; галочка у пройденных — акцент (profile.css). Новый комментарий (сайт: append + `.yellow-fade`): `.b-comment.yellow-fade` раскрывается сеткой `grid-template-rows` 0fr → 1fr за 0.32 с с `clip-path`, только при `prefers-reduced-motion: no-preference` (motion.css). «Полезное» (rip): автор в карточке и фильтры-пилюли `.b-useful_chip` — стекло темы и акцент вместо белого (late.css) |
 | v1.7.21 | тема по умолчанию — «лунная ночь» (корневой `site.css`, обои и баннер из `themes/moon/`); прежняя алая — готовая тема «алая» (`themes/crimson/`, обои — копия корневых `bg.webp`/`bg_m.webp`, баннер сохранён в репозиторий); новая готовая тема «фиолетовое небо» (`themes/purple/`). `tools/build_themes.py`: полная палитра `BASE` + отличия, `DEFAULT` пишется в корневой `site.css`. README: скриншоты тем всегда видны, свёрнут только код; компьютер и телефон — одна картинка одной высоты (`tools/preview_pair.py`), «Синяя ночь» и «Песочная» убраны. Форум: серая полоска у своих комментариев на rip — новая метка `.b-synced_marker` (data-text «sync»), скрыта (badges.css); кнопки комментария у непрочитанного встают левее «новое» (`:has(> aside.markers > .b-new_marker.active)` → `right: 80px`, ≥ 1024px, buttons.css); «поделиться» и кнопки модерации вместо #444 — `--text-2`. Прокрутка: у слоя обоев убраны `will-change: transform` и `backface-visibility: hidden` — размытие больше не пересчитывается в каждом кадре (Chrome 1920×1080: 21.8 → 8.1 мс на кадр), на телефоне слой обоев и затемнение не ниже `100lvh` (`min-height`, page.css) |
 | v1.7.20 | телефон: под баннером профиля больше нет еле заметного квадрата — свечение `.profile-head::after` (left/right 8%, `blur(32px)`) обрезалось своей маской `linear-gradient(to bottom, …)` по краю блока, и по бокам и сверху оставались прямые края; маска теперь `radial-gradient(closest-side, #000 30%, transparent)` и гаснет ко всем четырём краям (profile.css). ПК без изменений. «Песочная» палитра — теперь только пример в README (из `site.css` её убрали) |

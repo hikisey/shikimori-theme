@@ -1,5 +1,146 @@
-/* shiki glass v1.7.22 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
+/* shiki glass v1.7.23 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
 html:root { --sg-p4: ""; }
+
+.b-catalog_entry .cover .image-decor .image-cutter {
+    display: block;
+    line-height: 0;
+    overflow: hidden;
+    position: relative;
+    border-radius: 9px;
+}
+.b-catalog_entry .cover .image-decor > .text:before {
+    background: #b97b43bf;
+    z-index: -1;
+    left: 0;
+    bottom: 0;
+    margin: 0;
+}
+@media screen and (min-width: 150px) {
+    .about .b-catalog_entry,
+    .about .b-catalog_entry:last-child {
+        width: calc(100% / 1) !important;
+    }
+}
+.about .Animes_Mangas .b-catalog_entry .cover {
+    margin: 0;
+    padding: 0;
+    border-radius: 0;
+    pointer-events: all;
+    background: none !important;
+    box-shadow: none !important;
+    -webkit-transition: none;
+}
+.about .Animes_Mangas-1 .b-catalog_entry .cover {
+    margin: 0;
+    padding: 0;
+    border-radius: 0;
+    pointer-events: all;
+    background: none !important;
+    box-shadow: none !important;
+    -webkit-transition: none;
+}
+.k-0-1 .b-catalog_entry,
+.k-0-1 .b-catalog_entry .cover {
+    transform: none !important;
+    box-shadow: none !important;
+    background: none !important;
+}
+@media (hover: hover) and (pointer: fine) {
+    .k-0-1 .b-catalog_entry .cover:hover {
+        transform: none !important;
+        box-shadow: none !important;
+        background: none !important;
+    }
+    .b-catalog_entry:hover .cover {
+        transform: none !important;
+        box-shadow: none !important;
+    }
+}
+.b-catalog_entry:hover .title,
+.b-catalog_entry:hover .name {
+    color: rgb(var(--accent)) !important;
+}
+.b-catalog_entry .collection_score_mal_icon {
+    display: none !important;
+}
+
+.b-catalog_entry .image-decor {
+    position: relative;
+}
+
+:root {
+    --theme-name: "shiki glass";
+    --theme-version: "1.7.23";
+}
+
+.l-footer:before {
+    content: var(--theme-name) " v" var(--theme-version);
+    white-space: pre;
+}
+
+.l-footer {
+    position: relative;
+    margin: 0 0;
+    bottom: 0;
+    padding: 0;
+    background: none;
+}
+
+.l-footer .copyright {
+    font: bold 10px var(--font-family);
+    position: absolute;
+    right: 5px;
+    z-index: 10;
+}
+
+.l-footer .links {
+    clear: both;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    vertical-align: top;
+    text-align: center;
+    font: bold 10px var(--font-family);
+    z-index: 10;
+
+}
+
+.l-footer:before {
+    position: absolute;
+    left: 5px;
+    bottom: 0;
+    z-index: 10;
+    color: rgba(var(--text-2), 0.6);
+    font: bold 10px var(--font-family);
+}
+
+.l-footer:after {
+    position: absolute;
+    left: 96px;
+    bottom: 0;
+    color: rgba(var(--text-2), 0.6);
+    font: bold 10px var(--font-family);
+}
+
+.l-footer:after {
+    content: none !important;
+}
+
+@media screen and (max-width: 960px) {
+    .l-footer {
+        display: none;
+    }
+}
+
+.tags > [class*="_status_tag"],
+.tags > * {
+    padding: 0 1px;
+}
+
+.tags > [class*="_status_tag"]:not([data-text]),
+.tags > .b-tag {
+    padding: 2px 9px;
+}
 
 .c-brief header.head .notice,
 .c-brief header.head .misc,
@@ -2962,11 +3103,9 @@ body .b-catalog_entry .collection_score .collection_score_marker {
     margin: 0 !important;
     padding: 2px 8px;
     border-radius: 999px;
-    background: color-mix(in srgb, var(--glass-deep) 82%, transparent) !important;
+    background: color-mix(in srgb, var(--glass-deep) 88%, transparent) !important;
     border: 1px solid rgba(var(--glass-light), .12) !important;
     box-shadow: 0 2px 8px rgba(var(--shade), .35) !important;
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
     color: rgb(var(--text-strong)) !important;
     font-size: 11px !important;
     font-weight: 600;
@@ -3050,12 +3189,10 @@ body .b-catalog_entry .collection_score .collection_score_marker {
 
 .p-dashboards-show .review-slide,
 .p-dashboards-show .review-slide:is(.color-0, .color-1, .color-2) {
-    background: color-mix(in srgb, var(--glass-deep) 62%, transparent);
+    background: color-mix(in srgb, var(--glass-deep) 68%, transparent);
     border: 1px solid rgba(var(--glass-light), .08);
     border-radius: var(--plate-radius-lg);
     box-shadow: var(--plate-shadow-soft);
-    backdrop-filter: var(--plate-blur);
-    -webkit-backdrop-filter: blur(5px);
 }
 
 .p-dashboards-show :is(.review-slide a.mini-review-title, .mini-review-title) {

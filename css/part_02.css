@@ -1,5 +1,60 @@
-/* shiki glass v1.7.22 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
+/* shiki glass v1.7.23 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
 html:root { --sg-p2: ""; }
+
+.b-comments .comments-collapser:after {
+    content: '\f139';
+    font: normal normal normal 14px/1 FontAwesome;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    position: relative;
+    font-size: 20px;
+    color: rgba(var(--text-2), 0.6);
+}
+
+.b-comments .comments-collapser:hover:after {
+    color: rgba(var(--text-strong), var(--hundred));
+}
+
+.b-comments .comments-collapser {
+    font-size: 0;
+    text-decoration: none;
+    margin: 6px 10px 0 0;
+    border: none;
+}
+
+.b-height_shortener .expand:after {
+    content: "далее" !important;
+    font-size: 13px;
+    background-color: rgba(var(--glass), 0.3);
+    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.05);
+    padding: 0 27px;
+    line-height: 16px;
+    left: 0;
+    position: absolute;
+    border-radius: 4px;
+    transition: 0.1s ease-in-out;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .b-height_shortener .expand:hover:after {
+        background-color: rgba(var(--accent), 0.3);
+    }
+}
+
+.b-height_shortener .expand {
+    font-size: 0;
+    height: 17px;
+}
+
+.b-height_shortener .expand:hover {
+    font-size: 0;
+}
+
+.b-height_shortener .expand:hover {
+    color: rgba(var(--accent), var(--hundred));
+    animation: none !important;
+    border: none;
+}
 
 .b-height_shortener .expand:before {
     content: '\f078\f078';
@@ -1719,14 +1774,8 @@ div.compatibility > a:before {
         background: transparent !important;
         transition: 0.3s ease-out, margin 0s, padding 0s, opacity 0s, font-size 0s, width 0s, height 0s, top 0s, bottom 0s, line-height 0s, min-height 0s, min-width 0s;
     }
-    .text.full:hover,
-    .text.moderate:hover,
-    .text.high:hover,
-    .text.weak:hover,
-    .text.zero:hover,
-    .b-stats_bar.manga .compatibility a:hover,
-    .b-stats_bar.anime .compatibility a:hover {
-        transform: scale(1.17);
+    .b-stats_bar .compatibility :is(a, span.link-replacement):hover .text::before {
+        opacity: 1;
     }
     .p-profiles .profile-head .c-info .c-lists-info .b-stats_bar .compatibility a:hover {
         box-shadow: none !important;
@@ -5062,57 +5111,4 @@ section.l-page aside.l-menu .c-filters:has(.c-score-input:focus) .c-ms-dropdown:
     section.l-page aside.l-menu .c-ms-control:not(#u):active {
         transform: none !important;
     }
-}
-
-@supports (appearance: base-select) and selector(:open) {
-    @media not ((hover: none) and (pointer: coarse)) {
-        section.l-page aside.l-menu .c-ms-field:has(> .c-filter-select) {
-            --sort-n: 1;
-            --sort-opt: 28px;
-            padding-bottom: 0;
-            transition: padding-bottom var(--drop-time) var(--drop-ease-close);
-        }
-        section.l-page aside.l-menu .c-ms-field:has(> .c-filter-select option:nth-child(2)) { --sort-n: 2; }
-        section.l-page aside.l-menu .c-ms-field:has(> .c-filter-select option:nth-child(3)) { --sort-n: 3; }
-        section.l-page aside.l-menu .c-ms-field:has(> .c-filter-select option:nth-child(4)) { --sort-n: 4; }
-        section.l-page aside.l-menu .c-ms-field:has(> .c-filter-select option:nth-child(5)) { --sort-n: 5; }
-        section.l-page aside.l-menu .c-ms-field:has(> .c-filter-select option:nth-child(6)) { --sort-n: 6; }
-        section.l-page aside.l-menu .c-ms-field:has(> .c-filter-select option:nth-child(7)) { --sort-n: 7; }
-        section.l-page aside.l-menu .c-ms-field:has(> .c-filter-select option:nth-child(8)) { --sort-n: 8; }
-        section.l-page aside.l-menu .c-ms-field:has(> .c-filter-select option:nth-child(9)) { --sort-n: 9; }
-        section.l-page aside.l-menu .c-ms-field:has(> .c-filter-select option:nth-child(10)) { --sort-n: 10; }
-        section.l-page aside.l-menu .c-ms-field:has(> .c-filter-select option:nth-child(11)) { --sort-n: 11; }
-        section.l-page aside.l-menu .c-ms-field:has(> .c-filter-select option:nth-child(12)) { --sort-n: 12; }
-        section.l-page aside.l-menu .c-ms-field:has(> .c-filter-select option:nth-child(13)) { --sort-n: 13; }
-        section.l-page aside.l-menu .c-ms-field:has(> .c-filter-select option:nth-child(14)) { --sort-n: 14; }
-        section.l-page aside.l-menu .c-ms-field:has(> .c-filter-select option:nth-child(15)) { --sort-n: 15; }
-        section.l-page aside.l-menu .c-ms-field:has(> .c-filter-select:open) {
-            padding-bottom: calc(var(--drop-gap) + 2px + 2 * var(--drop-pad) + var(--sort-n) * var(--sort-opt));
-            transition: padding-bottom var(--drop-time) var(--drop-ease);
-        }
-        section.l-page aside.l-menu .c-filter-select option:not(#u) {
-            box-sizing: border-box;
-            block-size: var(--sort-opt);
-            line-height: 18px;
-        }
-        section.l-page aside.l-menu .c-filter-select::picker(select) {
-            position-try-fallbacks: none;
-            max-height: none;
-        }
-        section.l-page aside.l-menu .c-filter-select:not(:open)::picker(select) {
-            transition: clip-path var(--drop-time) var(--drop-ease-close),
-                        transform var(--drop-time) var(--drop-ease-close),
-                        display var(--drop-time) allow-discrete,
-                        overlay var(--drop-time) allow-discrete !important;
-        }
-    }
-}
-
-form.simple_form.b-form:is(.new_collection, .edit_collection):last-child {
-    padding-bottom: 24px;
-}
-
-.b-collection-filters .filter-actions:not(#u) {
-    display: flex;
-    gap: 8px;
 }

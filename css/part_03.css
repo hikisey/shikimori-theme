@@ -1,5 +1,58 @@
-/* shiki glass v1.7.22 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
+/* shiki glass v1.7.23 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
 html:root { --sg-p3: ""; }
+
+@supports (appearance: base-select) and selector(:open) {
+    @media not ((hover: none) and (pointer: coarse)) {
+        section.l-page aside.l-menu .c-ms-field:has(> .c-filter-select) {
+            --sort-n: 1;
+            --sort-opt: 28px;
+            padding-bottom: 0;
+            transition: padding-bottom var(--drop-time) var(--drop-ease-close);
+        }
+        section.l-page aside.l-menu .c-ms-field:has(> .c-filter-select option:nth-child(2)) { --sort-n: 2; }
+        section.l-page aside.l-menu .c-ms-field:has(> .c-filter-select option:nth-child(3)) { --sort-n: 3; }
+        section.l-page aside.l-menu .c-ms-field:has(> .c-filter-select option:nth-child(4)) { --sort-n: 4; }
+        section.l-page aside.l-menu .c-ms-field:has(> .c-filter-select option:nth-child(5)) { --sort-n: 5; }
+        section.l-page aside.l-menu .c-ms-field:has(> .c-filter-select option:nth-child(6)) { --sort-n: 6; }
+        section.l-page aside.l-menu .c-ms-field:has(> .c-filter-select option:nth-child(7)) { --sort-n: 7; }
+        section.l-page aside.l-menu .c-ms-field:has(> .c-filter-select option:nth-child(8)) { --sort-n: 8; }
+        section.l-page aside.l-menu .c-ms-field:has(> .c-filter-select option:nth-child(9)) { --sort-n: 9; }
+        section.l-page aside.l-menu .c-ms-field:has(> .c-filter-select option:nth-child(10)) { --sort-n: 10; }
+        section.l-page aside.l-menu .c-ms-field:has(> .c-filter-select option:nth-child(11)) { --sort-n: 11; }
+        section.l-page aside.l-menu .c-ms-field:has(> .c-filter-select option:nth-child(12)) { --sort-n: 12; }
+        section.l-page aside.l-menu .c-ms-field:has(> .c-filter-select option:nth-child(13)) { --sort-n: 13; }
+        section.l-page aside.l-menu .c-ms-field:has(> .c-filter-select option:nth-child(14)) { --sort-n: 14; }
+        section.l-page aside.l-menu .c-ms-field:has(> .c-filter-select option:nth-child(15)) { --sort-n: 15; }
+        section.l-page aside.l-menu .c-ms-field:has(> .c-filter-select:open) {
+            padding-bottom: calc(var(--drop-gap) + 2px + 2 * var(--drop-pad) + var(--sort-n) * var(--sort-opt));
+            transition: padding-bottom var(--drop-time) var(--drop-ease);
+        }
+        section.l-page aside.l-menu .c-filter-select option:not(#u) {
+            box-sizing: border-box;
+            block-size: var(--sort-opt);
+            line-height: 18px;
+        }
+        section.l-page aside.l-menu .c-filter-select::picker(select) {
+            position-try-fallbacks: none;
+            max-height: none;
+        }
+        section.l-page aside.l-menu .c-filter-select:not(:open)::picker(select) {
+            transition: clip-path var(--drop-time) var(--drop-ease-close),
+                        transform var(--drop-time) var(--drop-ease-close),
+                        display var(--drop-time) allow-discrete,
+                        overlay var(--drop-time) allow-discrete !important;
+        }
+    }
+}
+
+form.simple_form.b-form:is(.new_collection, .edit_collection):last-child {
+    padding-bottom: 24px;
+}
+
+.b-collection-filters .filter-actions:not(#u) {
+    display: flex;
+    gap: 8px;
+}
 
 .b-collection-filters .filter-actions > .filter-action:not(#u) {
     display: flex;
@@ -5333,144 +5386,4 @@ div.Ssylki-anime:hover .Text-2 {
 .b-catalog_entry .cover .image-cutter,
 .b-catalog_entry .cover .image-cutter img {
     transition: 0s ease-out, box-shadow .2s ease-out, transform .2s ease-out;
-}
-.b-catalog_entry .cover .image-decor .image-cutter {
-    display: block;
-    line-height: 0;
-    overflow: hidden;
-    position: relative;
-    border-radius: 9px;
-}
-.b-catalog_entry .cover .image-decor > .text:before {
-    background: #b97b43bf;
-    z-index: -1;
-    left: 0;
-    bottom: 0;
-    margin: 0;
-}
-@media screen and (min-width: 150px) {
-    .about .b-catalog_entry,
-    .about .b-catalog_entry:last-child {
-        width: calc(100% / 1) !important;
-    }
-}
-.about .Animes_Mangas .b-catalog_entry .cover {
-    margin: 0;
-    padding: 0;
-    border-radius: 0;
-    pointer-events: all;
-    background: none !important;
-    box-shadow: none !important;
-    -webkit-transition: none;
-}
-.about .Animes_Mangas-1 .b-catalog_entry .cover {
-    margin: 0;
-    padding: 0;
-    border-radius: 0;
-    pointer-events: all;
-    background: none !important;
-    box-shadow: none !important;
-    -webkit-transition: none;
-}
-.k-0-1 .b-catalog_entry,
-.k-0-1 .b-catalog_entry .cover {
-    transform: none !important;
-    box-shadow: none !important;
-    background: none !important;
-}
-@media (hover: hover) and (pointer: fine) {
-    .k-0-1 .b-catalog_entry .cover:hover {
-        transform: none !important;
-        box-shadow: none !important;
-        background: none !important;
-    }
-    .b-catalog_entry:hover .cover {
-        transform: none !important;
-        box-shadow: none !important;
-    }
-}
-.b-catalog_entry:hover .title,
-.b-catalog_entry:hover .name {
-    color: rgb(var(--accent)) !important;
-}
-.b-catalog_entry .collection_score_mal_icon {
-    display: none !important;
-}
-
-.b-catalog_entry .image-decor {
-    position: relative;
-}
-
-:root {
-    --theme-name: "shiki glass";
-    --theme-version: "1.7.22";
-}
-
-.l-footer:before {
-    content: var(--theme-name) " v" var(--theme-version);
-    white-space: pre;
-}
-
-.l-footer {
-    position: relative;
-    margin: 0 0;
-    bottom: 0;
-    padding: 0;
-    background: none;
-}
-
-.l-footer .copyright {
-    font: bold 10px var(--font-family);
-    position: absolute;
-    right: 5px;
-    z-index: 10;
-}
-
-.l-footer .links {
-    clear: both;
-    position: relative;
-    display: inline-block;
-    width: 100%;
-    vertical-align: top;
-    text-align: center;
-    font: bold 10px var(--font-family);
-    z-index: 10;
-
-}
-
-.l-footer:before {
-    position: absolute;
-    left: 5px;
-    bottom: 0;
-    z-index: 10;
-    color: rgba(var(--text-2), 0.6);
-    font: bold 10px var(--font-family);
-}
-
-.l-footer:after {
-    position: absolute;
-    left: 96px;
-    bottom: 0;
-    color: rgba(var(--text-2), 0.6);
-    font: bold 10px var(--font-family);
-}
-
-.l-footer:after {
-    content: none !important;
-}
-
-@media screen and (max-width: 960px) {
-    .l-footer {
-        display: none;
-    }
-}
-
-.tags > [class*="_status_tag"],
-.tags > * {
-    padding: 0 1px;
-}
-
-.tags > [class*="_status_tag"]:not([data-text]),
-.tags > .b-tag {
-    padding: 2px 9px;
 }
