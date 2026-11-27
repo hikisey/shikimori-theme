@@ -1,0 +1,109 @@
+/* shiki glass v1.7.18, тема «неоновый квартал» — тема и обновления: https://github.com/Hikisey/shikimori-theme */
+/* Ровно 4 @import — 4 части темы: shikimori.io подключает только 4 первых @import.
+   Тёмный редактор кода (CodeMirror_dark) и свои постеры персонажей уже внутри темы,
+   отдельные импорты для них не нужны. */
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.18/css/part_01.css");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.18/css/part_02.css");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.18/css/part_03.css");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.18/css/part_04.css");
+
+/* Если какая-то из четырёх частей не загрузилась (Шикимори хранит ошибку 8 часов),
+   в левом нижнем углу появится надпись с её номером. Тогда откройте
+   https://shikimori.io/tests/reset_styles_cache (или shikimori.rip/tests/reset_styles_cache)
+   и вставьте туда адрес этой части. Когда всё загрузилось, надписи нет. */
+@media screen and (min-width: 1px) {
+  html::after {
+    content: var(--sg-p1, "shiki glass: не загрузилась часть 1. ") var(--sg-p2, "shiki glass: не загрузилась часть 2. ") var(--sg-p3, "shiki glass: не загрузилась часть 3. ") var(--sg-p4, "shiki glass: не загрузилась часть 4. ");
+    position: fixed;
+    left: 8px;
+    bottom: 8px;
+    z-index: 2147483647;
+    max-width: calc(100vw - 16px);
+    color: #ff8080;
+    font: bold 12px/1.4 sans-serif;
+    text-shadow: 0 1px 2px #000;
+    pointer-events: none;
+  }
+}
+
+/* ===================== Палитра ===================== */
+/* Четыре группы: АКЦЕНТ, ФОН, СТЕКЛО, ТЕКСТ. Всё остальное тема считает сама:
+   поменяйте --accent — и перекрасится всё «красное» (кнопки, ник, ссылки под курсором).
+   Цвета пишутся тремя числами R, G, B через запятую (без rgb()).
+   Подобрать цвет и узнать его числа можно в любой «color picker».
+   Обёртку @media не удаляйте, иначе Шикимори применит стиль только на широких экранах. */
+@media screen and (min-width: 1px) {
+  html:root {
+    /* Акцент */
+    --accent: 96, 204, 146;           /* главный цвет темы: ссылки, значки, подсветка; из него же кнопки и ник */
+    --link: var(--accent);             /* цвет ссылок; можно задать отдельно, например 120, 170, 255 */
+
+    /* Фон */
+    --bg-image: url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.18/themes/neon/bg.webp");  /* обои на ПК (Шикимори всё равно загружает их через свой прокси картинок — и с //, и с https://) */
+    --bg-image-mobile: url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.18/themes/neon/bg_m.webp");  /* обои на телефоне */
+    --bg-color: 34, 21, 17;         /* цвет под обоями, пока они грузятся (средний тон обоев) */
+    --bg-color-mobile: 30, 20, 17;  /* то же на телефоне */
+    --bg-zoom: 1;                   /* приближение обоев на ПК, 1 — без зума */
+    --bg-blur: 2px;                    /* размытие обоев на ПК, например 4px */
+    --bg-blur-mobile: 1.5px;           /* размытие обоев на телефоне */
+    --bg-dim: .55;                      /* затемнение обоев: 0 — нет, 1 — совсем тёмные; для светлых обоев — .7 */
+    --profile-banner: url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.18/themes/neon/bg.webp");  /* баннер в профиле */
+    --profile-banner-height: 300px;    /* высота баннера; картинка не растягивается, лишнее обрезается */
+    --profile-banner-height-mobile: 170px; /* высота баннера на телефоне (аватар и ник ложатся на его нижний край) */
+    --profile-banner-glow: .5;         /* яркость свечения под баннером (цвет берётся из картинки), 0 — выключить */
+    --profile-banner-position: 50% 20%; /* какую часть картинки показывать: center, top, bottom или, например, 50% 30% */
+
+    /* Стекло (блоки, меню, окна) */
+    --glass: 18, 16, 17;               /* цвет стекла; тёмные оттенки панели, меню и окон считаются из него. Чем темнее, тем лучше читается текст */
+    --glass-light: 255, 255, 255;      /* рамки и блики на стекле */
+    --glass-blur: 5px;                 /* размытие под стеклом (телефон, стрелки лент) */
+
+    /* Текст */
+    --text: 238, 236, 234;             /* основной текст — мягко-белый */
+    --text-2: 180, 174, 172;           /* второстепенный текст и подписи */
+    --text-3: 146, 140, 138;           /* приглушённый текст: даты, счётчики */
+    --text-strong: 255, 255, 255;      /* самый яркий текст (заголовки карточек, текст на кнопках) */
+
+    /* Оценки и шкалы (можно не трогать) */
+    --very-high-rating: 129, 199, 132; /* очень высокая */
+    --high-rating: 156, 204, 101;      /* высокая */
+    --average-rating: 255, 202, 40;    /* средняя */
+    --small-rating: 239, 108, 108;     /* низкая */
+    --time-filled: var(--accent);      /* шкала времени: заполненная часть */
+    --time-empty: 34, 30, 30;          /* шкала времени: пустая часть */
+    --anime-inprocess: var(--accent);  /* аниме: смотрю (по умолчанию из акцента) */
+    --anime-complete: var(--accent);   /* аниме: просмотрено */
+    --manga-inprocess: var(--accent);  /* манга: читаю */
+    --manga-complete: var(--accent);   /* манга: прочитано */
+  }
+}
+
+/* ===================== Готовая палитра ===================== */
+/* Чтобы включить, удалите строку с названием над блоком и строку со звёздочкой и косой чертой под ним.
+   Палитра перекрывает блок «Палитра» выше, всё остальное берётся из него. */
+
+/* Песочная: спокойный тёплый акцент вместо алого, меньше яркого цвета
+@media screen and (min-width: 1px) {
+  html:root {
+    --accent: 220, 182, 132;
+    --glass: 32, 31, 30;
+    --text: 238, 234, 226;
+  }
+}
+*/
+
+/* ===================== Дополнительно ===================== */
+/* Чтобы включить блок, удалите строку с косой чертой и звёздочкой над ним
+   и строку со звёздочкой и косой чертой под ним. */
+
+/* Полупрозрачная рамка вокруг страницы:
+@media (min-width: 1200px) {
+  .l-page { outline: 20px solid rgba(255, 255, 255, 0.3); margin-bottom: 20px; }
+}
+*/
+
+/* Вернуть всплывающие карточки с описанием при наведении на аниме (окно с крестиком):*/
+/*
+.tooltip { visibility: visible !important; opacity: 1 !important; pointer-events: auto !important; }
+.tooltip * { visibility: inherit !important; pointer-events: auto !important; }
+*/
