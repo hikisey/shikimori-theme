@@ -77,15 +77,15 @@ flowchart LR
 | `base/base.css` | 621 | 15.2 | база: ссылки, текст, таблицы, полосы прокрутки, служебные мелочи |
 | `base/animations.css` | 294 | 5.4 | все @keyframes темы |
 | `base/colors.css` | 46 | 1.2 | цветовые классы bb-кодов и подсветки (.red, .green, …) |
-| `layout/header.css` | 528 | 16.8 | верхняя панель .l-top_menu-v2, выпадающие меню, глобальный поиск |
-| `layout/page.css` | 1042 | 31.6 | каркас страницы: html/body, обои, .l-page, колонки и сетки .cc/.c-column |
+| `layout/header.css` | 531 | 25.2 | верхняя панель .l-top_menu-v2, выпадающие меню, глобальный поиск |
+| `layout/page.css` | 1044 | 32.1 | каркас страницы: html/body, обои, .l-page, колонки и сетки .cc/.c-column |
 | `components/badges.css` | 143 | 4.3 | статусы и метки: *_status_tag, *_marker, .b-tag |
 | `components/carousels.css` | 212 | 7.2 | ленты, стрелки, пагинация, кнопка «наверх»; стрелки лент (::scroll-button) |
 | `components/tooltips.css` | 182 | 4.7 | подсказки .tipsy, .b-tooltipped, всплывающие карточки |
 | `components/headings.css` | 299 | 7.3 | заголовки .headline / .subheadline / .midheadline |
 | `components/users.css` | 161 | 4.1 | пользователи и аватары: .b-user, .b-user16, .b-menu-line |
-| `components/buttons.css` | 260 | 6.3 | кнопки .b-link_button, .b-button, button, кнопки действий |
-| `components/stats.css` | 69 | 2.3 | полоски-шкалы .bar |
+| `components/buttons.css` | 274 | 7.5 | кнопки .b-link_button, .b-button, button, кнопки действий |
+| `components/stats.css` | 72 | 2.9 | полоски-шкалы .bar |
 | `components/tabs.css` | 603 | 15.1 | вкладки и переключатели: .b-options-floated, .b-list_switchers, use-tabs |
 | `components/plates.css` | 18 | 0.4 | стеклянные плашки .block |
 | `components/cards.css` | 336 | 9.4 | карточки аниме/манги .b-catalog_entry, обложки .image-decor |
@@ -94,10 +94,10 @@ flowchart LR
 | `components/forms.css` | 538 | 15.9 | поля, select и мультиселект фильтров (.c-ms), галочки, @starting-style выезда списков |
 | `components/motion.css` | 51 | 2.6 | лёгкие анимации (v1.7.10): пружинное нажатие кнопок, появление комментариев и окон; только scale/translate/opacity, при «уменьшении движения» выключены |
 | `pages/clubs.css` | 255 | 6.7 | клубы |
-| `pages/profile.css` | 1927 | 61.3 | профиль: шапка, баннер, история, списки-статистика, совместимость, друзья |
+| `pages/profile.css` | 1930 | 61.8 | профиль: шапка, баннер, история, списки-статистика, совместимость, друзья |
 | `pages/anime.css` | 1109 | 36.0 | страница аниме/манги/персонажа: описание, постер, кадры и видео, плеер, «добавить в список» |
 | `pages/settings.css` | 280 | 9.0 | настройки профиля и аккаунта, сервисы входа |
-| `pages/catalog.css` | 655 | 28.9 | каталог: фильтры слева, коллекции, поиск |
+| `pages/catalog.css` | 704 | 30.7 | каталог: фильтры слева, коллекции, поиск |
 | `pages/messages.css` | 580 | 15.1 | почта, диалоги, уведомления |
 | `pages/lists.css` | 653 | 22.9 | списки аниме/манги пользователя, сравнение списков |
 | `pages/achievements.css` | 1271 | 38.7 | ачивки: страница и блок в профиле |
@@ -367,6 +367,7 @@ background: color-mix(in srgb, var(--glass-deep) 55%, transparent);
 | v1.3.9 | «Сортировка» раздвигает фильтры, как остальные списки: это обычный `<select>` с `appearance: base-select`, его окно `::picker(select)` живёт в верхнем слое и в поток не встаёт, поэтому на ПК, пока select `:open`, у его `.c-ms-field` растёт `padding-bottom` ровно на высоту окна (число пунктов через `:has(option:nth-child(n))` × 28px + поля и рамки), с теми же `--drop-time`/`--drop-ease`/`--drop-ease-close`; окно всегда вниз (`position-try-fallbacks: none`). На сенсорных экранах — системный список, без изменений |
 | v1.3.10 | выпадающие списки темнее: `--drop-bg` (base.css) = `color-mix(in srgb, var(--glass-popup) 35%, var(--glass-deep))` вместо `--glass-popup` — списки фильтров (`.c-ms-dropdown`), окно «Сортировки» и всех select (`::picker(select)`, `option`) теперь rgb(26, 29, 37) вместо rgb(38, 43, 54) и не выбиваются из тёмной панели; остальное без изменений |
 | v1.3.11 | обои не отъезжают, когда курсор над открытым списком select: окно `::picker(select)` в верхнем слое, и `html:not(:hover) body::before { transform: scale(1) }` (page.css) срабатывал; добавлено `html:has(select:open) body::before { transform: scale(var(--bg-zoom)) }` для ≥ 768px (касается «Сортировки» и всех select, в том числе в настройках) |
+| v1.7.18 | полоски оценок и «В списках у людей»: вместо плотного акцента/оранжевого с тёмными числами — полупрозрачное стекло тех же цветов и светлые числа с тенью (stats.css). логотип в шапке встроен (`data:image/png`, та же картинка 102×30) вместо image.ibb.co — на rip он бывал пустым синим прямоугольником (header.css). rip, каталог: кубик «случайное» и «сбросить фильтры» в `.filter-actions` — компактные 46px в стиле полей, значок виден (раньше `late.css` растягивал `.random-anime-button` на всю ширину; catalog.css). наведение больше не меняет разметку: `aside.buttons` у комментариев/топиков/почты — absolute (сайт делал их float, и время переносилось), скрытый `.b-new_marker.off` не раскрывается в 75px (page.css), полоска-мостик наведения карточки не трогает clearfix у карточек-вставок в «Новостях сайта» (новость схлопывалась на 20px и мигала; profile.css). проверка — `tools/regress/late/hovershift.js` |
 | v1.7.17 | выпадающие меню (профиль и меню панели, «…» у постера, `.dropdown`): тень выезжает и проявляется вместе с меню — у `@keyframes shiki-drop` окно `clip-path` шире меню на место под тень и в начале `opacity: 0` (раньше обрезка резала тень, и она появлялась разом в конце выезда); при «Уменьшении движения» — только проявление (`shiki-fade`), animations.css + anime.css. карточки каталога на shikimori.io: новые правила сайта (`.collection_score { height: 1.6667em }`, `.image-cutter img[width][height] { height: auto }`) опускали чип оценки на угол статуса и укорачивали постер — высота чипа по содержимому, постер на всю рамку; у карточек со статусом чип на 36px от края, левее уголка («+», галочка), cards.css |
 | v1.7.16 | тёмный редактор кода встроен: `CodeMirror_dark.css` (css-club; тема «material» CodeMirror, MIT, Mattia Astorino) — модуль `vendor/codemirror-dark.css` без изменений, последним в манифесте (на месте бывшего 5-го `@import`, каскад тот же); в `site.css` ровно 4 импорта — на shikimori.io пятый давал «Не удалось импортировать следующие стили». CSS сборки совпадает с «v1.7.15 + старый импорт» без комментариев и пробелов |
 | v1.7.15 | rip: пустая ссылка-маркер `.b-shiki_sync_marker` (комментарии и топики, синхронизированные с shikimori.io) скрыта — общее `body * [class*="_marker"]` (page.css) рисовало из неё серую полоску 28×4px рядом с ☰; скрывается только `:empty` (badges.css). Метка «rip» у своих комментариев остаётся, отдельной метки «shiki» нет |
