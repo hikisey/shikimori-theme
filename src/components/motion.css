@@ -9,6 +9,15 @@
     from { opacity: 0; translate: 0 8px; }
 }
 
+/* v1.7.22: новый комментарий раскрывается по высоте — страница под ним сдвигается плавно,
+   а не скачком. Высоту даёт строка сетки 0fr → 1fr (работает во всех браузерах, в отличие
+   от анимации height: auto); clip-path на время раскрытия прячет то, что ещё не влезло. */
+@keyframes sg-open {
+    from { grid-template-rows: 0fr; clip-path: inset(0 -80px 0 -80px);
+           padding-block: 0; margin-block: 0; }
+    to   { grid-template-rows: 1fr; clip-path: inset(0 -80px 0 -80px); }
+}
+
 @keyframes sg-pop {
     from { opacity: 0; scale: .96; }
 }
@@ -40,6 +49,18 @@
        порядок детей в списке разный (кнопки, скрытые блоки). */
     html body .b-comments .b-comment {
         animation: sg-rise .32s cubic-bezier(.22, 1, .36, 1) backwards;
+    }
+    /* только что отправленный: сайт добавляет его в список и сразу ставит .yellow-fade
+       (подсветка на 1 с) — по нему отличаем новый от загруженных со страницей */
+    html body .b-comments .b-comment.yellow-fade {
+        display: grid;
+        grid-template-rows: 1fr;
+        animation: sg-open .32s cubic-bezier(.4, 0, .2, 1),
+                   sg-rise .32s cubic-bezier(.22, 1, .36, 1) .06s backwards;
+    }
+    html body .b-comments .b-comment.yellow-fade > * {
+        grid-area: 1 / 1;
+        min-height: 0;
     }
 
     /* 3. окна (жалоба, обратная связь, bulma-окна): проявление с лёгким
