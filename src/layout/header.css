@@ -529,3 +529,41 @@ span.submenu-triangle.submenu-triangle.icon-profile {
 .l-top_menu-v2 .submenu > a.icon-mail:hover span.unread span:nth-child(3n) {
     background: rgba(148, 70, 113, 0.8);
 }
+
+/* v1.7.22 — главное меню ☰ на телефоне и планшете.
+   Сайт по нажатию ставит шапке .is-submenu, а меню — .active. Раньше:
+   1) до 767px сайт делал .l-page position: fixed (так он запрещает прокрутку под меню) — страница
+      перескакивала в начало (прокрутка сбрасывалась в 0), и всю её браузер раскладывал заново;
+      первые кадры открытия из-за этого тормозили, и выезд казался запоздалым;
+   2) затемнение .b-shade появлялось разом — как вспышка тени;
+   3) выезд длился 240 мс, а поверх ещё шла прозрачность 0.3 с ease-in-out.
+   Теперь страница остаётся на месте (прокрутку запрещает overflow: hidden у body), затемнение
+   проявляется, меню выезжает за 160 мс без задержки. */
+@media screen and (max-width: 767px) {
+    .l-top_menu-v2.is-submenu + .l-page {
+        position: relative !important;
+        width: auto !important;
+    }
+    /* у body, а не у html: overflow body переходит к окну, и шапка остаётся sticky к окну
+       (overflow у html сделал бы body своей областью прокрутки — шапка уехала бы) */
+    body:has(> .l-top_menu-v2.is-submenu) {
+        overflow: hidden !important;
+    }
+}
+@media screen and (max-width: 1023px) {
+    .l-top_menu-v2 .menu-dropdown.main .submenu {
+        transition: opacity .16s ease-out;
+        overscroll-behavior: contain;
+    }
+    .l-top_menu-v2 .menu-dropdown.main.active > .submenu {
+        animation: shiki-drop .16s cubic-bezier(.22, 1, .36, 1) !important;
+    }
+    .l-top_menu-v2.is-submenu + .l-page + .b-shade {
+        animation: shiki-fade .16s ease-out backwards;
+    }
+}
+@media screen and (max-width: 1023px) and (prefers-reduced-motion: reduce) {
+    .l-top_menu-v2 .menu-dropdown.main.active > .submenu {
+        animation: shiki-fade .16s ease-out !important;
+    }
+}
