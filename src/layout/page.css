@@ -531,11 +531,26 @@ body#dashboards_show .b-catalog_entry.b-catalog_entry {
 
 @media screen and (min-width: 1200px) {
     .l-page {
-        background-color: color-mix(in srgb, var(--glass-deep) 80%, transparent);
-    }
-    .l-page {
         margin: 15px auto 15px;
         border-radius: 12px;
+        background-color: transparent;
+    }
+    /* v1.7.23: подложка страницы — отдельный слой (::before) одного сплошного цвета. Такой слой браузер
+       не растрирует, а заливает цветом сразу, поэтому при быстрой прокрутке колесом там, где текст и
+       картинки ещё не успели дорисоваться, видна пустая подложка, а не голые обои с «выпадающей»
+       полосой на треть экрана. Вид тот же: тот же цвет, те же скругления */
+    .l-page::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        border-radius: inherit;
+        background-color: color-mix(in srgb, var(--glass-deep) 80%, transparent);
+        will-change: transform;
+        pointer-events: none;
+    }
+    body.p-achievements.p-profiles .l-page::before {
+        content: none;
     }
 }
 
@@ -617,7 +632,8 @@ html:not(:hover) body::before {
             linear-gradient(color-mix(in srgb, var(--glass-deep) calc(var(--bg-dim) * 100%), transparent) 0 0),
             var(--bg-image) center / cover no-repeat;
     }
-    body::after {
+    /* у страницы ачивок в body::after своя картинка — её не трогаем */
+    body:not(.p-achievements.p-profiles)::after {
         content: none;
     }
 }
