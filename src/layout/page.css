@@ -538,9 +538,12 @@ body#dashboards_show .b-catalog_entry.b-catalog_entry {
     }
 }
 
+/* Телефон и планшет (до 1199px): та же стеклянная подложка под содержимым, что и на ПК, только чуть
+   прозрачнее — текст на любых обоях читается без тени-ореола (v1.7.19; раньше подложки не было,
+   и ореол пачкал тёмный текст рекламы на белом фоне) */
 @media screen and (max-width: 1199px) {
     .l-page {
-        background-color: color-mix(in srgb, var(--glass-deep) 0%, transparent);
+        background-color: color-mix(in srgb, var(--glass-deep) 72%, transparent);
         box-shadow: none !important;
     }
     body#profiles_show .b-clubs {
@@ -993,18 +996,9 @@ html input[type="checkbox"]:not(#u):focus-visible {
     }
 }
 
-/* Телефон и планшет (до 1199px): у страницы нет стеклянной подложки, часть текста лежит прямо на обоях
-   (списки пользователей и клубов, новости, история, «Прочее» в настройках, ссылки «О сайте»).
-   Фон не добавляем: тексту — плотная тёмная тень-ореол (без размытия под ним, дёшево),
-   подписям и датам на обоях — цвет светлее (из --text, поэтому следует палитре). */
+/* Телефон и планшет (до 1199px): подписи и даты — цвет светлее (из --text, поэтому следует палитре).
+   Тени-ореола у текста больше нет: под страницей стеклянная подложка (выше, v1.7.19) */
 @media screen and (max-width: 1199px) {
-    .l-page {
-        --text-halo: 0 0 2px rgba(var(--shade), .9), 0 0 6px rgba(var(--shade), .7), 0 0 14px rgba(var(--shade), .5);
-        text-shadow: var(--text-halo);
-    }
-    .l-page a:not([class*="button"]):not(.b-tag) {
-        text-shadow: var(--text-halo);
-    }
     .l-page :is(.b-user .last-online, .b-user .line .event, .b-club span.grouped > span, .b-user_history-line > time.date,
         .b-user_history-line > a.id, .b-topic .section time, .b-topic span.comments, .b-topic span.hash, span.misc > span) {
         color: rgba(var(--text), .82) !important; /* перебивает time {… !important} и цвета шикимори */
