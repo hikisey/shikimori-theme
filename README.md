@@ -62,7 +62,7 @@
   </tr>
 </table>
 
-Источник: обои и баннер — как в основной теме.
+Источник: обои и баннер — как в основной теме; на скриншоте — профиль hikisey.
 
 <details>
 <summary>CSS-код</summary>
@@ -247,11 +247,11 @@
     --bg-blur: 2px;                    /* размытие обоев на ПК, например 4px */
     --bg-blur-mobile: 1.5px;           /* размытие обоев на телефоне */
     --bg-dim: .55;                      /* затемнение обоев: 0 — нет, 1 — совсем тёмные; для светлых обоев — .7 */
-    --profile-banner: url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.18/themes/neon/bg.webp");  /* баннер в профиле */
+    --profile-banner: url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.18/themes/neon/banner.webp");  /* баннер в профиле */
     --profile-banner-height: 300px;    /* высота баннера; картинка не растягивается, лишнее обрезается */
     --profile-banner-height-mobile: 170px; /* высота баннера на телефоне (аватар и ник ложатся на его нижний край) */
     --profile-banner-glow: .5;         /* яркость свечения под баннером (цвет берётся из картинки), 0 — выключить */
-    --profile-banner-position: 50% 20%; /* какую часть картинки показывать: center, top, bottom или, например, 50% 30% */
+    --profile-banner-position: center; /* какую часть картинки показывать: center, top, bottom или, например, 50% 30% */
 
     /* Стекло (блоки, меню, окна) */
     --glass: 18, 16, 17;               /* цвет стекла; тёмные оттенки панели, меню и окон считаются из него. Чем темнее, тем лучше читается текст */
@@ -377,11 +377,11 @@
     --bg-blur: 0px;                    /* размытие обоев на ПК, например 4px */
     --bg-blur-mobile: 1.5px;           /* размытие обоев на телефоне */
     --bg-dim: .45;                      /* затемнение обоев: 0 — нет, 1 — совсем тёмные; для светлых обоев — .7 */
-    --profile-banner: url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.18/themes/torii/bg.webp");  /* баннер в профиле */
+    --profile-banner: url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.18/themes/torii/banner.webp");  /* баннер в профиле */
     --profile-banner-height: 300px;    /* высота баннера; картинка не растягивается, лишнее обрезается */
     --profile-banner-height-mobile: 170px; /* высота баннера на телефоне (аватар и ник ложатся на его нижний край) */
     --profile-banner-glow: .5;         /* яркость свечения под баннером (цвет берётся из картинки), 0 — выключить */
-    --profile-banner-position: 50% 45%; /* какую часть картинки показывать: center, top, bottom или, например, 50% 30% */
+    --profile-banner-position: center; /* какую часть картинки показывать: center, top, bottom или, например, 50% 30% */
 
     /* Стекло (блоки, меню, окна) */
     --glass: 16, 26, 24;               /* цвет стекла; тёмные оттенки панели, меню и окон считаются из него. Чем темнее, тем лучше читается текст */
@@ -507,11 +507,11 @@
     --bg-blur: 0px;                    /* размытие обоев на ПК, например 4px */
     --bg-blur-mobile: 1.5px;           /* размытие обоев на телефоне */
     --bg-dim: .4;                      /* затемнение обоев: 0 — нет, 1 — совсем тёмные; для светлых обоев — .7 */
-    --profile-banner: url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.18/themes/moon/bg.webp");  /* баннер в профиле */
+    --profile-banner: url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.18/themes/moon/banner.webp");  /* баннер в профиле */
     --profile-banner-height: 300px;    /* высота баннера; картинка не растягивается, лишнее обрезается */
     --profile-banner-height-mobile: 170px; /* высота баннера на телефоне (аватар и ник ложатся на его нижний край) */
     --profile-banner-glow: .5;         /* яркость свечения под баннером (цвет берётся из картинки), 0 — выключить */
-    --profile-banner-position: 50% 35%; /* какую часть картинки показывать: center, top, bottom или, например, 50% 30% */
+    --profile-banner-position: center; /* какую часть картинки показывать: center, top, bottom или, например, 50% 30% */
 
     /* Стекло (блоки, меню, окна) */
     --glass: 18, 24, 38;               /* цвет стекла; тёмные оттенки панели, меню и окон считаются из него. Чем темнее, тем лучше читается текст */
@@ -637,11 +637,11 @@
     --bg-blur: 0px;                    /* размытие обоев на ПК, например 4px */
     --bg-blur-mobile: 1.5px;           /* размытие обоев на телефоне */
     --bg-dim: .5;                      /* затемнение обоев: 0 — нет, 1 — совсем тёмные; для светлых обоев — .7 */
-    --profile-banner: url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.18/themes/lake/bg.webp");  /* баннер в профиле */
+    --profile-banner: url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.18/themes/lake/banner.webp");  /* баннер в профиле */
     --profile-banner-height: 300px;    /* высота баннера; картинка не растягивается, лишнее обрезается */
     --profile-banner-height-mobile: 170px; /* высота баннера на телефоне (аватар и ник ложатся на его нижний край) */
     --profile-banner-glow: .5;         /* яркость свечения под баннером (цвет берётся из картинки), 0 — выключить */
-    --profile-banner-position: 50% 60%; /* какую часть картинки показывать: center, top, bottom или, например, 50% 30% */
+    --profile-banner-position: center; /* какую часть картинки показывать: center, top, bottom или, например, 50% 30% */
 
     /* Стекло (блоки, меню, окна) */
     --glass: 22, 24, 27;               /* цвет стекла; тёмные оттенки панели, меню и окон считаются из него. Чем темнее, тем лучше читается текст */
