@@ -1,5 +1,114 @@
-/* shiki glass v1.7.16 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
+/* shiki glass v1.7.17 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
 html:root { --sg-p3: ""; }
+
+body.p-profiles .mass-actions .action a:hover:AFTER,
+.headline .misc-links > a:hover:after,
+.midheadline .misc-links > a:hover:after,
+.subheadline .misc-links > a:hover:after {
+    color: var(--heading-link);
+}
+
+body.p-db_entries-works .p-profiles .mass-actions .action a:after,
+body.p-db_entries-works .p-profiles .subheadline .misc-links > a:after,
+.p-db_entries-works .headline .misc-links > a:after,
+.p-db_entries-works .midheadline .misc-links > a:after,
+.p-db_entries-works .subheadline .misc-links > a:after,
+body.p-db_entries-works .p-profiles .mass-actions .action a:before,
+.p-db_entries-works .headline .misc-links > a:before,
+.p-db_entries-works .midheadline .misc-links > a:before,
+.p-db_entries-works .subheadline .misc-links > a:before {
+    display: none !important;
+}
+
+.l-top_menu-v2 .submenu > a.icon-mail span.unread {
+    position: absolute;
+    top: 1px;
+    right: 4px;
+}
+
+.l-top_menu-v2 .submenu > a.icon-mail span.unread span {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    height: 15px;
+    width: 15px;
+    padding-top: 3px;
+    color: rgba(var(--text-strong), 1) !important;
+    border-radius: 50%;
+    -webkit-transition: 0.2s all;
+    transition: 0.2s all;
+}
+
+.l-top_menu-v2 .submenu > a.icon-mail span.unread span:after {
+    content: none !important;
+}
+
+.l-top_menu-v2 .submenu > a.icon-mail span.unread span:first-child {
+    background: rgba(52, 105, 54, 0.4);
+}
+
+.l-top_menu-v2 .submenu > a.icon-mail span.unread span:nth-child(2n) {
+    background: rgba(65, 100, 144, 0.4);
+}
+
+.l-top_menu-v2 .submenu > a.icon-mail span.unread span:nth-child(3n) {
+    background: rgba(148, 70, 113, 0.4);
+}
+
+body#messages_index .l-page,
+body#dialogs_index .l-page,
+body#dialogs_show .l-page,
+body.p-user_history .l-page {
+    max-width: 800px;
+}
+
+.b-comment > .inner div.body,
+.b-message > .inner div.body {
+    margin-left: 58px;
+}
+
+.b-dialog > .inner div.body {
+    margin-left: 58px;
+}
+
+.b-dialog > .inner div.body .inner div.body {
+    margin-left: 40px;
+}
+
+@media only screen and (min-width: 1075px) {
+    .b-comments-notifier[style*="none"] {
+        display: block !important;
+        visibility: hidden;
+        z-index: 9;
+    }
+    .b-comments-notifier:after {
+        content: "";
+        display: block;
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        max-width: 100%;
+        height: 56px;
+        margin: auto;
+        background: linear-gradient(to bottom, color-mix(in srgb, var(--glass-deep) calc(var(--hundred) * 100%), transparent) 0 , color-mix(in srgb, var(--glass-deep) 80%, transparent) 80%, color-mix(in srgb, var(--glass-deep) 40%, transparent) 100%);
+        z-index: -1;
+        opacity: 0;
+        visibility: visible;
+        pointer-events: none;
+        transition: opacity 0.25s ease;
+        box-shadow: 0 1px 20px 10px color-mix(in srgb, var(--glass-deep) 40%, transparent);
+    }
+    .b-comments-notifier[style*=": 0"]:after {
+        opacity: 1;
+    }
+}
+
+@media only screen and (max-width: 1100px) {
+    .b-comments-notifier {
+        display: none !important;
+    }
+}
 
 @media screen and (max-width: 768px) {
     body.p-db_entries-works .p-profiles .mass-actions .action a,
@@ -4913,7 +5022,7 @@ div.Ssylki-anime:hover .Text-2 {
 
 :root {
     --theme-name: "shiki glass";
-    --theme-version: "1.7.16";
+    --theme-version: "1.7.17";
 }
 
 .l-footer:before {
@@ -5364,134 +5473,4 @@ body * [class*="new_marker"] {
 header.head h1 a.back,
 header.head h2 a.back {
     color: rgba(var(--link), var(--hundred));
-}
-
-@media (hover: hover) and (pointer: fine) {
-    .b-message .b-catalog_entry:hover,
-    .l-content.swiss .b-catalog_entry:hover,
-    .b-catalog-entry-embedded .b-catalog_entry:hover {
-        background: transparent !important;
-        transform: scale(1);
-        box-shadow: none;
-    }
-}
-
-body#profiles_show .b-catalog_entry,
-.c-column.user_rate .b-catalog_entry {
-    background: transparent;
-}
-
-@media (hover: hover) and (pointer: fine) {
-    .b-modal .b-catalog_entry:hover {
-        transform: none;
-        background: none !important;
-        z-index: 10;
-        box-shadow: none;
-    }
-}
-
-.b-modal .b-catalog_entry {
-    transform: none;
-}
-
-.l-content.swiss .image-cutter {
-    transition: 0.5s ease;
-}
-
-@media (hover: hover) and (pointer: fine) {
-    .p-profiles-show .about a:hover {
-        box-shadow: none;
-        background: none;
-        border: none;
-        opacity: 1;
-    }
-}
-
-.b-message > .inner .was_updated {
-    color: rgba(var(--text-2), var(--hundred));
-    margin-left: 58px;
-    transition: var(--ease-base);
-}
-
-@media (hover: hover) and (pointer: fine) {
-    .b-user16:hover,
-    .b-user16:hover span,
-    .b-user16 a:hover {
-        box-shadow: none;
-        background: none;
-    }
-}
-
-.b-poll .poll .name {
-    font-size: 15px;
-    color: rgba(var(--text-strong), var(--hundred));
-}
-
-.b-poll .poll-variants .poll-variant.result .votes-percent,
-.p-translations .animes a {
-    color: rgba(var(--accent), var(--hundred));
-}
-
-.b-menu-line.friend-rate .b-user16 a,
-.friend-rate .b-user16 a {
-    line-height: 10px;
-    vertical-align: middle;
-    height: 30px !important;
-    display: block;
-}
-
-.b-menu-line.friend-rate .b-user16 span,
-.friend-rate .b-user16 span {
-    word-wrap: break-word;
-    white-space: normal;
-    line-height: 15px;
-    display: inline-block;
-    max-width: 100px;
-    vertical-align: middle !important;
-}
-
-.b-height_shortener .expand:hover span {
-    animation: none !important;
-    border: none;
-}
-
-.b-achievement .c-about a.title {
-    font-size: 14px;
-    color: rgba(var(--text-strong), var(--hundred));
-}
-
-.b-achievement .c-about .hint {
-    font-size: 12px;
-    font-weight: bold;
-    color: rgba(var(--text), var(--hundred));
-    opacity: 1;
-}
-
-.persisted a.b-link.bubbled-processed {
-    margin-left: 25px;
-    color: rgba(var(--text), var(--hundred)) !important;
-}
-
-.persisted a.b-link.bubbled-processed:hover {
-    color: rgba(var(--link), var(--hundred)) !important;
-}
-
-.ac_results .name,
-.completable-block .name {
-    font-weight: bold;
-    color: rgba(var(--text-strong), var(--hundred));
-}
-
-.b-button[disabled],
-.b-button.disabled {
-    cursor: default;
-    pointer-events: none;
-    background-color: var(--plate-bg);
-    border-radius: 4px !important;
-    color: rgba(var(--text), 0.3);
-    padding: 6px 10px 6px 10px;
-    transition: 0.3s ease-out;
-    border: none;
-    font-family: var(--font-family);
-    box-shadow: var(--plate-shadow);
 }

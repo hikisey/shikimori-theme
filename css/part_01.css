@@ -1,4 +1,4 @@
-/* shiki glass v1.7.16 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
+/* shiki glass v1.7.17 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
 html:root { --sg-p1: ""; }
 
 @media screen and (min-width: 1px) {
@@ -1249,8 +1249,8 @@ html body :is(a, button, [role="button"], .b-link_button, .b-js-link):focus:not(
 }
 
 @keyframes shiki-drop {
-    from { clip-path: inset(0 0 100% 0 round 10px); transform: translateY(-4px); }
-    to   { clip-path: inset(0 0 0 0 round 10px); transform: none; }
+    from { clip-path: inset(-20px -40px 100% -40px round 10px); transform: translateY(-4px); opacity: 0; }
+    to   { clip-path: inset(-20px -40px -56px -40px round 10px); transform: none; }
 }
 
 @keyframes shiki-fade {
@@ -4946,17 +4946,26 @@ header.head :is(h1, h2) {
     }
 }
 
+.b-catalog_entry .cover .image-cutter img:not(#u) {
+    height: 100%;
+}
+
 .b-catalog_entry .image-decor .collection_score:not(#u) {
     display: flex;
     position: absolute;
     right: 6px;
     bottom: 6px;
+    height: auto;
     z-index: 2;
     padding: 0;
     background: none;
     border: 0;
     box-shadow: none;
     backdrop-filter: none;
+}
+
+.b-catalog_entry:is(.planned, .watching, .completed, .rewatching, .on_hold, .dropped) .image-decor .collection_score:not(#u) {
+    right: 36px;
 }
 
 .b-message .b-catalog_entry.b-catalog_entry:not(#u),
@@ -5749,111 +5758,4 @@ html body .b-comments_select-panel button.is-danger:not(#u) {
 }
 html body .b-comments_select-panel button:disabled:not(#u) {
     opacity: .45 !important;
-}
-
-@media screen and (max-width: 1023px) {
-    .item-cancel,
-    .item-reply,
-    .item-edit,
-    .item-ignore,
-    .item-delete-cancel,
-    .item-moderation,
-    .item-moderation-cancel,
-    .item-delete,
-    .item-request-reject,
-    .item-cancel:after,
-    .item-reply:after,
-    .item-edit:after,
-    .item-ignore:after,
-    .item-delete-cancel:after,
-    .item-moderation:after,
-    .item-moderation-cancel:after,
-    .item-delete:after,
-    .item-request-reject:after,
-    .item-cancel:before,
-    .item-reply:before,
-    .item-edit:before,
-    .item-ignore:before,
-    .item-delete-cancel:before,
-    .item-moderation:before,
-    .item-moderation-cancel:before,
-    .item-delete:before,
-    .item-request-reject:before,
-    .item-delete-confirm:after,
-    .item-delete-confirm:before,
-    .item-abuse:before,
-    .item-abuse:after,
-    .item-spoiler:before,
-    .item-spoiler:after,
-    .item-offtopic:before,
-    .item-offtopic:after {
-        font-family: var(--font-family);
-        color: rgba(var(--text), var(--hundred));
-    }
-    .b-shiki_editor aside.markers {
-        float: right;
-        height: 20px;
-        margin-right: 10px;
-        margin-top: 4px;
-    }
-    .b-shiki_editor aside.buttons {
-        white-space: nowrap;
-        width: 80%;
-        float: left !important;
-    }
-    .editor-controls {
-        white-space: nowrap;
-        overflow-x: auto;
-    }
-    .buttons .editor-quote {
-        display: inline-block !important;
-    }
-    .b-shiki_editor .links.links p,
-    .b-shiki_editor .images.links p,
-    .b-shiki_editor .quotes.links p,
-    .b-shiki_editor .email.links p,
-    .b-shiki_editor .upload.links p {
-        width: 100%;
-        height: 46px;
-        white-space: nowrap;
-        overflow-x: auto;
-    }
-    .b-shiki_editor .links,
-    .b-shiki_editor .images,
-    .b-shiki_editor .quotes,
-    .b-shiki_editor .email,
-    .b-shiki_editor .upload {
-        width: 100%;
-        height: 46px;
-        white-space: nowrap;
-        overflow-x: auto;
-    }
-    .b-shiki_editor .links input,
-    .b-shiki_editor .images input,
-    .b-shiki_editor .quotes input,
-    .b-shiki_editor .email input,
-    .b-shiki_editor .upload input {
-        margin-top: 8px;
-    }
-    .b-shiki_editor .hidden-block {
-        width: 100%;
-        max-width: 460px;
-    }
-    .b-comment > .inner header .name-date {
-        margin-left: 55px !important;
-    }
-    .buttons .editor-italic:before,
-    .buttons .editor-spoiler:before,
-    .buttons .editor-smiley:before,
-    .buttons .editor-quote:before,
-    .buttons .editor-image:before,
-    .buttons .editor-link:before,
-    .buttons .editor-strike:before,
-    .buttons .editor-underline:before,
-    .buttons .editor-bold:before {
-        font-size: 22px !important;
-    }
-    .CodeMirror-dialog-top {
-        margin-top: 80px;
-    }
 }
