@@ -553,7 +553,6 @@ span.submenu-triangle.submenu-triangle.icon-profile {
 @media screen and (max-width: 1023px) {
     .l-top_menu-v2 .menu-dropdown.main .submenu {
         transition: opacity .16s ease-out;
-        overscroll-behavior: contain;
     }
     .l-top_menu-v2 .menu-dropdown.main.active > .submenu {
         animation: shiki-drop .16s cubic-bezier(.22, 1, .36, 1) !important;
