@@ -1,34 +1,34 @@
-/* shiki glass v2.0.1 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
+/* shiki glass v2.0.0 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
 html:root { --sg-p1: ""; }
 
 @media screen and (min-width: 1px) {
     html:root {
-        --accent: var(--bright-color, 232, 108, 108);
+        --accent: var(--bright-color, 150, 184, 236);
         --link: var(--accent);
 
-        --bg-color: var(--page-bg, 28, 30, 33);
-        --bg-color-mobile: var(--page-bg-mobile, 167, 148, 145);
-        --bg-image: url("https://cdn.jsdelivr.net/gh/Hikisey/shikimori-theme/bg.webp");
-        --bg-image-mobile: url("//cdn.jsdelivr.net/gh/Hikisey/shikimori-theme/bg_m.webp");
-        --bg-zoom: 1.08;
+        --bg-color: var(--page-bg, 75, 95, 123);
+        --bg-color-mobile: var(--page-bg-mobile, 62, 74, 92);
+        --bg-image: url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v2.0.0/themes/moon/bg.webp");
+        --bg-image-mobile: url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v2.0.0/themes/moon/bg_m.webp");
+        --bg-zoom: 1;
         --bg-blur: 0px;
         --bg-blur-mobile: 1.5px;
-        --bg-dim: .5;
+        --bg-dim: .4;
         --bg-brightness-mobile: .9;
-        --profile-banner: none;
+        --profile-banner: url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v2.0.0/themes/moon/banner.webp");
         --profile-banner-height: 300px;
         --profile-banner-height-mobile: 170px;
         --profile-banner-position: center;
         --profile-banner-glow: .5;
 
-        --glass: var(--block-color, 30, 34, 42);
+        --glass: var(--block-color, 18, 24, 38);
         --glass-light: var(--white-color, 255, 255, 255);
         --glass-blur: 5px;
         --shade: 0, 0, 0;
 
-        --text: var(--light-color, 236, 240, 247);
-        --text-2: var(--dark-color, 196, 204, 216);
-        --text-3: var(--dull-color, 140, 148, 160);
+        --text: var(--light-color, 232, 238, 250);
+        --text-2: var(--dark-color, 170, 182, 204);
+        --text-3: var(--dull-color, 138, 150, 172);
         --text-strong: var(--white-color, 255, 255, 255);
         --hundred: 1;
 
@@ -37,7 +37,7 @@ html:root { --sg-p1: ""; }
         --average-rating: 255, 202, 40;
         --small-rating: 239, 108, 108;
         --time-filled: var(--accent);
-        --time-empty: 34, 38, 46;
+        --time-empty: 30, 38, 54;
         --anime-inprocess: var(--accent);
         --anime-complete: var(--accent);
         --manga-inprocess: var(--accent);
@@ -5526,9 +5526,4 @@ a.b-link.bubbled-processed {
 .b-log_entry .link .id-label {
     color: rgba(var(--accent), var(--hundred));
     transition: var(--ease-base);
-}
-
-.b-log_entry a:hover .id-label,
-.b-log_entry .link:hover .id-label {
-    color: rgba(var(--accent), var(--hundred));
 }

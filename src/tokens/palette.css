@@ -1,5 +1,6 @@
 /* ===== tokens/palette =====
-   палитра: акцент, фон, стекло, текст и производные оттенки (переопределяется блоком «Палитра» в site.css) */
+   палитра: акцент, фон, стекло, текст и производные оттенки (переопределяется блоком «Палитра» в site.css).
+   Значения по умолчанию = «Лунная ночь» (themes/moon): её дают одни 4 строки @import без палитры (с v2.0.0) */
 
 @media screen and (min-width: 1px) {
     /* =====================================================================
@@ -12,36 +13,36 @@
        ===================================================================== */
     html:root {
         /* ---------- АКЦЕНТ: всё «красное» считается из одного цвета ---------- */
-        --accent: var(--bright-color, 232, 108, 108);   /* основной акцент: ссылки, значки, подсветка */
+        --accent: var(--bright-color, 150, 184, 236);   /* основной акцент: ссылки, значки, подсветка */
         --link: var(--accent);                          /* цвет ссылок (по умолчанию = акцент) */
         /* оттенки (--accent-dim, --accent-hover, --link-hover) вычисляются ниже сами */
 
         /* ---------- ФОН ---------- */
-        --bg-color: var(--page-bg, 28, 30, 33);         /* цвет под обоями на ПК (виден, пока обои грузятся) */
-        --bg-color-mobile: var(--page-bg-mobile, 167, 148, 145); /* то же на телефоне */
-        --bg-image: url("https://cdn.jsdelivr.net/gh/Hikisey/shikimori-theme/bg.webp"); /* обои на ПК */
-        --bg-image-mobile: url("//cdn.jsdelivr.net/gh/Hikisey/shikimori-theme/bg_m.webp"); /* обои на телефоне */
-        --bg-zoom: 1.08;                                /* приближение обоев на ПК (1 — без зума) */
+        --bg-color: var(--page-bg, 75, 95, 123);         /* цвет под обоями на ПК (виден, пока обои грузятся) */
+        --bg-color-mobile: var(--page-bg-mobile, 62, 74, 92); /* то же на телефоне */
+        --bg-image: url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v2.0.0/themes/moon/bg.webp"); /* обои на ПК */
+        --bg-image-mobile: url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v2.0.0/themes/moon/bg_m.webp"); /* обои на телефоне */
+        --bg-zoom: 1;                                /* приближение обоев на ПК (1 — без зума) */
         --bg-blur: 0px;                                 /* размытие обоев на ПК */
         --bg-blur-mobile: 1.5px;                        /* размытие обоев на телефоне */
-        --bg-dim: .5;                                   /* затемнение обоев (0 — нет, 1 — чёрный) */
+        --bg-dim: .4;                                   /* затемнение обоев (0 — нет, 1 — чёрный) */
         --bg-brightness-mobile: .9;                     /* яркость обоев на телефоне (1 — как есть) */
-        --profile-banner: none;                         /* баннер профиля: url("…") */
+        --profile-banner: url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v2.0.0/themes/moon/banner.webp");                         /* баннер профиля: url("…") */
         --profile-banner-height: 300px;                 /* высота баннера */
         --profile-banner-height-mobile: 170px;          /* высота баннера на телефоне */
         --profile-banner-position: center;              /* какая часть картинки видна */
         --profile-banner-glow: .5;                      /* сила свечения баннера под шапкой */
 
         /* ---------- СТЕКЛО: блоки, меню, окна ---------- */
-        --glass: var(--block-color, 30, 34, 42);        /* заливка стекла; тёмные оттенки меню и окон считаются из неё */
+        --glass: var(--block-color, 18, 24, 38);        /* заливка стекла; тёмные оттенки меню и окон считаются из неё */
         --glass-light: var(--white-color, 255, 255, 255); /* рамки и блики на стекле */
         --glass-blur: 5px;                              /* размытие под стеклом (телефон, стрелки лент) */
         --shade: 0, 0, 0;                               /* цвет теней и затемнений */
 
         /* ---------- ТЕКСТ ---------- */
-        --text: var(--light-color, 236, 240, 247);      /* основной текст */
-        --text-2: var(--dark-color, 196, 204, 216);     /* второстепенный текст, подписи */
-        --text-3: var(--dull-color, 140, 148, 160);     /* приглушённый: даты, счётчики */
+        --text: var(--light-color, 232, 238, 250);      /* основной текст */
+        --text-2: var(--dark-color, 170, 182, 204);     /* второстепенный текст, подписи */
+        --text-3: var(--dull-color, 138, 150, 172);     /* приглушённый: даты, счётчики */
         --text-strong: var(--white-color, 255, 255, 255); /* самый яркий: заголовки, текст на кнопках */
         --hundred: 1;                                   /* непрозрачность части текста */
 
@@ -51,7 +52,7 @@
         --average-rating: 255, 202, 40;
         --small-rating: 239, 108, 108;
         --time-filled: var(--accent);                   /* полоска просмотра: заполнено */
-        --time-empty: 34, 38, 46;                       /* полоска просмотра: пусто */
+        --time-empty: 30, 38, 54;                       /* полоска просмотра: пусто */
         --anime-inprocess: var(--accent);
         --anime-complete: var(--accent);
         --manga-inprocess: var(--accent);

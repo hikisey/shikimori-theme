@@ -1,5 +1,10 @@
-/* shiki glass v2.0.1 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
+/* shiki glass v2.0.0 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
 html:root { --sg-p2: ""; }
+
+.b-log_entry a:hover .id-label,
+.b-log_entry .link:hover .id-label {
+    color: rgba(var(--accent), var(--hundred));
+}
 
 .b-comments .comments-collapser:after {
     content: '\f139';
