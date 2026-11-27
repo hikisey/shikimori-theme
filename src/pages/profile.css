@@ -1715,8 +1715,11 @@ div.compatibility > span.link-replacement > .text.full:before {
         background: var(--profile-banner) center bottom / cover no-repeat;
         filter: blur(32px) saturate(1.5);
         opacity: var(--profile-banner-glow);
-        -webkit-mask-image: linear-gradient(to bottom, #000 30%, transparent);
-        mask-image: linear-gradient(to bottom, #000 30%, transparent);
+        /* v1.7.20: маска гаснет ко всем четырём краям. Раньше она гасла только вниз, а маска обрезает
+           размытие по краю блока — по бокам (left/right 8%) и сверху оставались прямые края, и под баннером
+           был виден еле заметный квадрат */
+        -webkit-mask-image: radial-gradient(closest-side, #000 30%, transparent);
+        mask-image: radial-gradient(closest-side, #000 30%, transparent);
         -webkit-mask-size: 100% 100%;
         mask-size: 100% 100%;
         -webkit-mask-repeat: no-repeat;
