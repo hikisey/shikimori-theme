@@ -3529,6 +3529,39 @@ body.p-dialogs .l-content > .subheadline {
     }
 }
 
+/* v1.7.22: автор в карточке «Полезного» и фильтры-пилюли (Все типы / Программа / Стиль / Другое).
+   Сайт красил их белым (#fff, при наведении на автора — светло-серый #f0f2f4). Теперь стекло
+   темы и акцент; наведение только меняет цвет, ничего не сдвигает. */
+.p-user_tools .b-useful_card .author {
+    color: rgba(var(--text-2), 1);
+    transition: background-color .15s ease, color .15s ease, box-shadow .15s ease;
+}
+.p-user_tools .b-useful_chip {
+    background: var(--field-bg) !important;
+    border: 1px solid var(--field-border) !important;
+    color: rgba(var(--text-2), 1) !important;
+    box-shadow: none !important;
+}
+.p-user_tools .b-useful_chip.is-active {
+    background: rgba(var(--accent), .24) !important;
+    border-color: rgba(var(--accent), .6) !important;
+    color: rgb(var(--text-strong)) !important;
+}
+.p-user_tools .b-useful_chip:focus-visible {
+    box-shadow: 0 0 0 3px rgba(var(--accent), .3) !important;
+}
+@media (hover: hover) and (pointer: fine) {
+    .p-user_tools .b-useful_card .author:hover {
+        background: rgba(var(--accent), .16);
+        box-shadow: inset 0 0 0 1px rgba(var(--accent), .35);
+        color: rgba(var(--accent), 1);
+    }
+    .p-user_tools .b-useful_chip:hover:not(.is-active) {
+        border-color: rgba(var(--accent), .6) !important;
+        color: rgba(var(--accent), 1) !important;
+    }
+}
+
 /* ── только shikimori.rip ── */
 /* v1.6.0 rip плееры */
 .players-loader .subheadline { display: flex !important; align-items: center; }
