@@ -299,17 +299,32 @@
     }
 }
 
+/* shikimori.io (ноябрь 2026) добавил свои правила, которых нет на rip:
+   .collection_score { height: 1.6667em; line-height: 1 } — коробка 20px, а чип 26px вылезал из неё
+   вниз и садился на угол статуса («+» / галочка); и .image-cutter img[width][height] { height: auto } —
+   постер не доставал до низа рамки на ~20px. Высота коробки — по чипу, постер — на всю рамку, как на rip */
+.b-catalog_entry .cover .image-cutter img:not(#u) {
+    height: 100%;
+}
+
 .b-catalog_entry .image-decor .collection_score:not(#u) {
     display: flex;
     position: absolute;
     right: 6px;
     bottom: 6px;
+    height: auto;
     z-index: 2;
     padding: 0;
     background: none;
     border: 0;
     box-shadow: none;
     backdrop-filter: none;
+}
+
+/* карточка в списке (planned / watching / …): в правом нижнем углу постера уголок статуса 42px
+   со значком («+», галочка, ▶, ✕). Чип оценки сдвигается левее, на ту же высоту, чтобы не наезжать на уголок */
+.b-catalog_entry:is(.planned, .watching, .completed, .rewatching, .on_hold, .dropped) .image-decor .collection_score:not(#u) {
+    right: 36px;
 }
 
 /* Новости и вставки карточек: общий «подъём» (cards.css) обнулял margin-top при наведении,
