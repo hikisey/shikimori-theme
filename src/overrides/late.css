@@ -3774,3 +3774,47 @@ html {
         transition: none !important;
     }
 }
+
+/* ----- карточки раздела «Полезное» (.b-useful_card, shikimori.rip/useful и топики «Опубликован новый инструмент»)
+   у сайта белый фон и тёмный текст; в топике ленты .body карточки ещё и получал отступ тела топика ----- */
+.b-useful_card.b-useful_card:not(#u) {
+    background: var(--plate-bg);
+    backdrop-filter: var(--plate-blur);
+    -webkit-backdrop-filter: blur(5px);
+    box-shadow: var(--plate-shadow);
+    border-radius: var(--card-radius);
+}
+.b-useful_card.b-useful_card:not(#u) .poster {
+    background-color: rgba(var(--glass), 0.6);
+}
+.b-useful_card.b-useful_card:not(#u) > .body {
+    margin: 0 !important;
+    padding: 14px 16px 16px !important;
+}
+.b-useful_card.b-useful_card:not(#u) .title a {
+    color: rgba(var(--text-strong), 1);
+}
+.b-useful_card.b-useful_card:not(#u) .description,
+.b-useful_card.b-useful_card:not(#u) .author {
+    color: rgba(var(--text-2), 1);
+}
+.b-useful_card.b-useful_card:not(#u) .vote,
+.b-useful_card.b-useful_card:not(#u) .moderation .moderate {
+    background-color: transparent;
+}
+.b-useful_card.b-useful_card:not(#u) .action {
+    background-color: rgba(var(--glass), 0.85);
+    color: rgba(var(--text), 1);
+}
+@media (hover: hover) and (pointer: fine) {
+    .b-useful_card.b-useful_card:not(#u):hover {
+        box-shadow: var(--card-hover-shadow);
+    }
+    .b-useful_card.b-useful_card:not(#u) .title a:hover {
+        color: rgba(var(--link), 1);
+    }
+    .b-useful_card.b-useful_card:not(#u) .author:hover {
+        background-color: rgba(var(--glass), 0.6);
+        color: rgba(var(--link), 1);
+    }
+}
