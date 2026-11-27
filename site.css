@@ -1,10 +1,10 @@
-/* shiki glass v1.7.14 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
+/* shiki glass v1.7.15 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
 /* 4 части темы идут первыми: shikimori.io подключает только 4 первых @import,
    остальные молча пропускает (shikimori.rip берёт все). */
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.14/css/part_01.css");
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.14/css/part_02.css");
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.14/css/part_03.css");
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.14/css/part_04.css");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.15/css/part_01.css");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.15/css/part_02.css");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.15/css/part_03.css");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.15/css/part_04.css");
 
 /* Тёмный редактор кода в настройках стиля (css-club). Стоит после частей темы:
    на shikimori.io он может не подключиться, зато тема загрузится целиком.

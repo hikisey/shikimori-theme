@@ -1,4 +1,4 @@
-/* shiki glass v1.7.14 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
+/* shiki glass v1.7.15 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
 html:root { --sg-p1: ""; }
 
 @media screen and (min-width: 1px) {
@@ -2918,6 +2918,10 @@ body * .b-anime_status_tag.released:before {
 }
 
 body * .b-from_rip_marker:not(#u) {
+    display: none;
+}
+
+body * .b-shiki_sync_marker:empty:not(#u) {
     display: none;
 }
 
