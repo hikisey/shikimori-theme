@@ -5,37 +5,40 @@
 /* Полоски оценок и списков (.bar.simple, «Оценки людей», «В списках у людей»): в стиле темы,
    от акцента (s0, высокие) через смесь к тёплому оранжевому (s2) и приглушённому (s3). Следуют палитре. */
 .bar.simple .bar.s3 {
-    background: color-mix(in srgb, var(--accent-warm) 55%, rgb(var(--text-3)));
+    background: color-mix(in srgb, color-mix(in srgb, var(--accent-warm) 55%, rgb(var(--text-3))) 42%, transparent);
     transition: 0.2s ease-out, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s,
     min-height 0s;
 }
 
 .bar.simple .bar.s2 {
-    background: var(--accent-warm);
+    background: color-mix(in srgb, var(--accent-warm) 48%, transparent);
     transition: 0.2s ease-out, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s,
     min-height 0s;
 }
 
 .bar.simple .bar.s1 {
-    background: color-mix(in srgb, rgb(var(--accent)) 50%, var(--accent-warm));
+    background: color-mix(in srgb, color-mix(in srgb, rgb(var(--accent)) 50%, var(--accent-warm)) 52%, transparent);
     transition: 0.2s ease-out, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s,
     min-height 0s;
 }
 
 .bar.simple .bar.s0 {
-    background: rgb(var(--accent));
+    background: color-mix(in srgb, rgb(var(--accent)) 58%, transparent);
     transition: 0.2s ease-out, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s,
     min-height 0s;
 }
 
 .bar.simple .bar {
     border-radius: 8px;
+    box-shadow: inset 0 0 0 1px rgba(var(--glass-light), .10);
 }
 
-/* числа на полосках: тёмные — на светлых полосках акцента и оранжевого читаются лучше белых */
+/* числа на полосках: светлые. Раньше полоски были плотного акцента и оранжевого с тёмными числами —
+   на тёмно-красном акценте чёрный текст читался плохо (отзыв, v1.7.18). Теперь полоски — полупрозрачное
+   стекло в тех же цветах (s0 → s3), число — светлый текст темы с лёгкой тенью */
 .bar.simple.horizontal .line .bar-container .bar > .value {
-    color: var(--glass-deep) !important; /* перебивает .line .value в anime.css */
-    text-shadow: none;
+    color: rgb(var(--text-strong)) !important; /* перебивает .line .value в anime.css */
+    text-shadow: 0 1px 2px rgba(var(--shade), .55);
 }
 
 .bar.horizontal {
