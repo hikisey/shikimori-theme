@@ -40,6 +40,8 @@
 
 > [!TIP]
 > **Обновление.** Когда выйдет новая версия, замените в четырёх строках `@import` номер `v1.7.15` на новый со страницы [Releases](https://github.com/Hikisey/shikimori-theme/releases). Свои цвета и обои можно не трогать.
+>
+> С v1.7.16 в site.css ровно четыре строки `@import`: тёмный редактор кода (`CodeMirror_dark.css` от css-club) встроен в тему. Если у вас осталась пятая строка с `css-club.web.app/css/CodeMirror_dark.css`, удалите её: на shikimori.io из-за неё появлялось «Не удалось импортировать следующие стили».
 
 > [!NOTE]
 > Частей четыре, потому что Шикимори не принимает файл больше ~230 КБ, а вся тема весит около 600 КБ.
@@ -139,3 +141,5 @@
 Основа темы: [E-design](https://github.com/ed-main) от [ed-main](https://github.com/ed-main).
 
 Обои примера «Синяя ночь»: [Kanchenjunga South Peak](https://commons.wikimedia.org/wiki/File:Kanchenjunga_South_Peak_%28Unsplash%29.jpg) (Mukesh Jain, Unsplash, [CC0](https://creativecommons.org/publicdomain/zero/1.0/)).
+
+Тёмный редактор кода в настройках стиля: тема «material» для [CodeMirror](https://github.com/codemirror/codemirror5) (MIT) от [Mattia Astorino](https://github.com/equinusocio), в версии [css-club](https://css-club.web.app/css/CodeMirror_dark.css) под редактор Шикимори; встроена в тему как `src/vendor/codemirror-dark.css`.

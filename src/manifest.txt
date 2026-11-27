@@ -36,3 +36,5 @@ kits/custom-posters.css
 kits/about-kits.css
 layout/footer.css
 overrides/late.css
+# сторонний CSS: последним, на месте бывшего 5-го @import в site.css (после частей темы)
+vendor/codemirror-dark.css
