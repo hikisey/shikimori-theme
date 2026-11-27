@@ -616,6 +616,19 @@ a.b-db_entry-variant-list_item .b-link.b-link:hover {
     transform-origin: top center;
 }
 
+/* «Уменьшение движения»: меню не выезжает, а только проявляется — вместе с тенью */
+@media (prefers-reduced-motion: reduce) {
+    .l-top_menu-v2 .menu-dropdown.active > .submenu,
+    .l-top_menu-v2 .menu-dropdown:hover > .submenu,
+    .l-top_menu-v2 .menu-dropdown:focus-within > .submenu,
+    .b-options-dropdown.active .submenu,
+    .b-subposter-actions .submenu,
+    .dropdown.active .submenu,
+    .dropdown.active .dropdown-menu {
+        animation-name: shiki-fade !important;
+    }
+}
+
 /* поле оценки в фильтрах — тот же вид, без стрелки */
 .c-score-input {
     background: var(--field-bg) !important;

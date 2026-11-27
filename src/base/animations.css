@@ -268,10 +268,14 @@
     }
 }
 
-/* выезд списка: без прозрачности (используют меню панели и фильтры) */
+/* выезд выпадающего меню (меню панели, «…» у постера, .dropdown — pages/anime.css).
+   Окно обрезки шире меню на место под тень (сбоку 40px, снизу 56px, сверху 20px — тени меню
+   до 0 14px 30px): раньше clip-path резал тень по краю меню, и в конце выезда, когда обрезка
+   снималась, тень появлялась разом. Теперь тень выезжает вместе с нижним краем и вместе с
+   меню проявляется из прозрачности (у «to» прозрачности нет — меню панели держит свою). */
 @keyframes shiki-drop {
-    from { clip-path: inset(0 0 100% 0 round 10px); transform: translateY(-4px); }
-    to   { clip-path: inset(0 0 0 0 round 10px); transform: none; }
+    from { clip-path: inset(-20px -40px 100% -40px round 10px); transform: translateY(-4px); opacity: 0; }
+    to   { clip-path: inset(-20px -40px -56px -40px round 10px); transform: none; }
 }
 
 @keyframes shiki-fade {
