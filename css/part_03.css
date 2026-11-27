@@ -1,5 +1,80 @@
-/* shiki glass v1.7.21 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
+/* shiki glass v1.7.22 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
 html:root { --sg-p3: ""; }
+
+.b-collection-filters .filter-actions > .filter-action:not(#u) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+    width: 46px;
+    height: var(--field-height, 34px);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: var(--field-bg);
+    border: 1px solid var(--field-border);
+    border-radius: var(--field-radius);
+    color: rgb(var(--text-2));
+    box-shadow: none;
+    transition: background-color var(--ease-fast), border-color var(--ease-fast), color var(--ease-fast);
+}
+
+.b-collection-filters .filter-actions > .filter-action:not(#u)::before {
+    flex: 0 0 auto;
+    width: 18px;
+    height: 18px;
+    margin: 0;
+    background-color: currentColor;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .b-collection-filters .filter-actions > .filter-action:not(#u):hover {
+        background: var(--field-bg);
+        border-color: var(--field-border-hover);
+        color: rgb(var(--accent));
+    }
+}
+
+.b-collection-filters .filter-actions > .filter-action:not(#u):active {
+    background: var(--field-bg);
+    color: rgb(var(--accent));
+}
+
+.p-dashboards-show .v2 .db-update .name,
+.b-comment > .inner .name-date .name,
+.b-topic > .inner header .name-date a.name,
+.b-dialog > .inner header .name-date a.name,
+.b-message > .inner header .name-date a.name {
+    color: rgba(var(--text-strong), 1) !important;
+    top: 2px;
+    position: relative;
+    padding-top: 2px;
+}
+
+.p-dashboards-show .v2 .db-update .name,
+.b-comment > .inner .name-date .name,
+.b-comment > .inner header .name-date a.name,
+.b-topic > .inner header .name-date a.name,
+.b-dialog > .inner header .name-date a.name,
+.b-message > .inner header .name-date a.name {
+    font-size: 16px;
+}
+
+.b-comment > .inner div.body,
+.b-message > .inner div.body {
+    color: rgba(var(--text), 1);
+    font-size: 13px !important;
+}
+
+.b-message > .inner header .name-date a.name {
+    color: rgba(var(--text-strong), 1);
+}
+
+.b-message > .inner header .name-date {
+    line-height: 24px;
+    overflow: visible;
+    white-space: normal;
+}
 
 .p-messages .mass-actions .action:after {
     display: none;
@@ -5328,7 +5403,7 @@ div.Ssylki-anime:hover .Text-2 {
 
 :root {
     --theme-name: "shiki glass";
-    --theme-version: "1.7.21";
+    --theme-version: "1.7.22";
 }
 
 .l-footer:before {
@@ -5398,89 +5473,4 @@ div.Ssylki-anime:hover .Text-2 {
 .tags > [class*="_status_tag"]:not([data-text]),
 .tags > .b-tag {
     padding: 2px 9px;
-}
-
-.c-brief header.head .notice,
-.c-brief header.head .misc,
-.c-brief header.head a.edit,
-.p-profiles .profile-head .c-info .c-additionals b,
-.p-profiles .profile-head .c-brief header h1.aliases::after,
-.p-profiles .profile-head .c-brief header .notice a {
-    color: rgba(var(--text), 1) !important;
-    transition: var(--ease-fast), width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s,
-    text-shadow 0s;
-}
-
-.b-user16:hover,
-.b-user.named_avatar img:hover,
-.b-user16:hover a {
-    color: rgba(var(--accent), 1) !important;
-}
-
-.p-profiles-show .about a {
-    color: rgba(var(--link), 1);
-}
-
-.p-userlist_comparer .comparer table .name a:hover {
-    color: rgba(var(--link), 1) !important;
-}
-
-.b-options-floated a span.brackets:after,
-.b-options-floated .link span.brackets:after {
-    color: rgba(var(--text-2), 1);
-    content: ")";
-}
-
-.b-log_entry a,
-.b-log_entry .link {
-    color: rgba(var(--text-strong), 1);
-}
-
-.b-log_entry a:hover,
-.b-log_entry .link:hover {
-    color: rgba(var(--accent), 1);
-}
-
-.b-bb_codes-examples .example .title,
-.b-bb_codes-examples .result .title {
-    color: rgba(var(--text-2), 1);
-}
-
-.b-bb_codes-examples .result a {
-    color: rgba(var(--text-strong), 1);
-}
-
-body.localized_names-ru .name-ru {
-    color: rgba(var(--text-strong), 1);
-    font-weight: bold;
-    text-decoration: none !important;
-    transform: scale(1.05);
-}
-
-.p-profiles .profile-head .c-history .entry,
-.p-topics .l-menu .reviews .entry,
-.p-topics .l-menu .clubs .entry {
-    margin-bottom: 0;
-    padding: 0 3px 0;
-    transition: var(--ease-fast), width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s,
-    background 0s;
-    border-top: none;
-    text-decoration: none !important;
-}
-
-.p-profiles .profile-head .c-history .entry a:hover {
-    color: rgba(var(--link), 1) !important;
-}
-
-.headline > a,
-.midheadline > a,
-.subheadline > a,
-.p-topics .l-menu .sticky-topics .topic {
-    color: var(--heading-text);
-    transition: var(--ease-fast), margin 0s, padding 0s, opacity 0s, color 0.2s, font-size 0s, width 0s, height 0s, top 0s, bottom 0s,
-    border 0s, border-radius 0s, left 0s, right 0s, line-height 0s, min-height 0s;
-}
-
-.b-db_entry-note .name-container .name {
-    color: rgba(var(--text-strong), 1);
 }

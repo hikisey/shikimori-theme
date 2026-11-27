@@ -1,5 +1,54 @@
-/* shiki glass v1.7.21 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
+/* shiki glass v1.7.22 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
 html:root { --sg-p2: ""; }
+
+.b-height_shortener .expand:before {
+    content: '\f078\f078';
+    text-rendering: auto;
+    font: normal normal normal 14px/1 FontAwesome;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 12px;
+    position: absolute;
+    left: 8px;
+    color: rgba(var(--accent), 0.7);
+    line-height: 15px;
+    letter-spacing: 64px;
+}
+
+.b-shiki_editor aside.markers label > span {
+    padding: 3px 8px;
+    border: none;
+    border-radius: 9px !important;
+}
+
+.b-comment > .inner header a[href*="/EngiNier"] img {
+    border: 2px solid #a7843d75;
+}
+
+.b-comment > .inner header a[href*="/Cosmo+%E2%98%AD"] img {
+    border: 2px solid #3ba2bd75;
+}
+
+.b-shiki_editor footer .hide {
+    display: none;
+    opacity: 0.6;
+}
+
+.b-replies {
+    padding-top: 0;
+}
+
+.b-comment:first-child {
+    border-top-width: 0 !important;
+}
+
+.b-comment > .inner header img {
+    margin: 0 10px 0 0;
+}
+
+.b-quote {
+    margin: 5px 0;
+}
 
 .cm-s-solarized.cm-s-light {
     background-color: var(--tone-1f2123);
@@ -985,6 +1034,12 @@ label:has(> input[type="checkbox"]) > input[type="checkbox"]:not(#u) {
     from { opacity: 0; translate: 0 8px; }
 }
 
+@keyframes sg-open {
+    from { grid-template-rows: 0fr; clip-path: inset(0 -80px 0 -80px);
+           padding-block: 0; margin-block: 0; }
+    to   { grid-template-rows: 1fr; clip-path: inset(0 -80px 0 -80px); }
+}
+
 @keyframes sg-pop {
     from { opacity: 0; scale: .96; }
 }
@@ -1008,6 +1063,16 @@ label:has(> input[type="checkbox"]) > input[type="checkbox"]:not(#u) {
 
     html body .b-comments .b-comment {
         animation: sg-rise .32s cubic-bezier(.22, 1, .36, 1) backwards;
+    }
+    html body .b-comments .b-comment.yellow-fade {
+        display: grid;
+        grid-template-rows: 1fr;
+        animation: sg-open .32s cubic-bezier(.4, 0, .2, 1),
+                   sg-rise .32s cubic-bezier(.22, 1, .36, 1) .06s backwards;
+    }
+    html body .b-comments .b-comment.yellow-fade > * {
+        grid-area: 1 / 1;
+        min-height: 0;
     }
 
     .b-modal > .inner,
@@ -1709,15 +1774,17 @@ body#profiles_show .b-shiki_editor footer {
 }
 
 .p-profiles-show .lifetime .cuts .cut:after {
-    content: '\f10c';
-    font: normal normal normal 14px/1 FontAwesome;
-    text-rendering: auto;
-    -webkit-font-smoothing: antialiased;
-    top: -2px;
-    right: 5px;
-    position: relative;
-    font-size: 11px;
-    color: rgba(var(--very-high-rating), var(--hundred));
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 10px;
+    height: 10px;
+    box-sizing: border-box;
+    border: 1.5px solid rgba(var(--accent), 1);
+    border-radius: 50%;
+    background: rgba(var(--time-empty), 1);
+    translate: -50% -50%;
     z-index: 10;
 }
 
@@ -1728,6 +1795,11 @@ body#profiles_show .b-shiki_editor footer {
 
 .p-profiles-show .lifetime .cuts .cut {
     width: 0;
+    height: 6px;
+}
+
+.p-profiles-show .lifetime .times .time.checked:before {
+    color: rgba(var(--accent), 1);
 }
 
 .b-stats_bar.lifetime .bar .first,
@@ -5043,79 +5115,4 @@ form.simple_form.b-form:is(.new_collection, .edit_collection):last-child {
 .b-collection-filters .filter-actions:not(#u) {
     display: flex;
     gap: 8px;
-}
-
-.b-collection-filters .filter-actions > .filter-action:not(#u) {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex: 0 0 auto;
-    width: 46px;
-    height: var(--field-height, 34px);
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    background: var(--field-bg);
-    border: 1px solid var(--field-border);
-    border-radius: var(--field-radius);
-    color: rgb(var(--text-2));
-    box-shadow: none;
-    transition: background-color var(--ease-fast), border-color var(--ease-fast), color var(--ease-fast);
-}
-
-.b-collection-filters .filter-actions > .filter-action:not(#u)::before {
-    flex: 0 0 auto;
-    width: 18px;
-    height: 18px;
-    margin: 0;
-    background-color: currentColor;
-}
-
-@media (hover: hover) and (pointer: fine) {
-    .b-collection-filters .filter-actions > .filter-action:not(#u):hover {
-        background: var(--field-bg);
-        border-color: var(--field-border-hover);
-        color: rgb(var(--accent));
-    }
-}
-
-.b-collection-filters .filter-actions > .filter-action:not(#u):active {
-    background: var(--field-bg);
-    color: rgb(var(--accent));
-}
-
-.p-dashboards-show .v2 .db-update .name,
-.b-comment > .inner .name-date .name,
-.b-topic > .inner header .name-date a.name,
-.b-dialog > .inner header .name-date a.name,
-.b-message > .inner header .name-date a.name {
-    color: rgba(var(--text-strong), 1) !important;
-    top: 2px;
-    position: relative;
-    padding-top: 2px;
-}
-
-.p-dashboards-show .v2 .db-update .name,
-.b-comment > .inner .name-date .name,
-.b-comment > .inner header .name-date a.name,
-.b-topic > .inner header .name-date a.name,
-.b-dialog > .inner header .name-date a.name,
-.b-message > .inner header .name-date a.name {
-    font-size: 16px;
-}
-
-.b-comment > .inner div.body,
-.b-message > .inner div.body {
-    color: rgba(var(--text), 1);
-    font-size: 13px !important;
-}
-
-.b-message > .inner header .name-date a.name {
-    color: rgba(var(--text-strong), 1);
-}
-
-.b-message > .inner header .name-date {
-    line-height: 24px;
-    overflow: visible;
-    white-space: normal;
 }

@@ -1,4 +1,4 @@
-/* shiki glass v1.7.21 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
+/* shiki glass v1.7.22 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
 html:root { --sg-p1: ""; }
 
 @media screen and (min-width: 1px) {
@@ -1817,6 +1817,32 @@ span.submenu-triangle.submenu-triangle.icon-profile {
 }
 .l-top_menu-v2 .submenu > a.icon-mail:hover span.unread span:nth-child(3n) {
     background: rgba(148, 70, 113, 0.8);
+}
+
+@media screen and (max-width: 767px) {
+    .l-top_menu-v2.is-submenu + .l-page {
+        position: relative !important;
+        width: auto !important;
+    }
+    body:has(> .l-top_menu-v2.is-submenu) {
+        overflow: hidden !important;
+    }
+}
+@media screen and (max-width: 1023px) {
+    .l-top_menu-v2 .menu-dropdown.main .submenu {
+        transition: opacity .16s ease-out;
+    }
+    .l-top_menu-v2 .menu-dropdown.main.active > .submenu {
+        animation: shiki-drop .16s cubic-bezier(.22, 1, .36, 1) !important;
+    }
+    .l-top_menu-v2.is-submenu + .l-page + .b-shade {
+        animation: shiki-fade .16s ease-out backwards;
+    }
+}
+@media screen and (max-width: 1023px) and (prefers-reduced-motion: reduce) {
+    .l-top_menu-v2 .menu-dropdown.main.active > .submenu {
+        animation: shiki-fade .16s ease-out !important;
+    }
 }
 
 body {
@@ -5511,53 +5537,4 @@ a.b-link.bubbled-processed {
     color: rgba(var(--accent), var(--hundred));
     animation: none !important;
     border: none;
-}
-
-.b-height_shortener .expand:before {
-    content: '\f078\f078';
-    text-rendering: auto;
-    font: normal normal normal 14px/1 FontAwesome;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    font-size: 12px;
-    position: absolute;
-    left: 8px;
-    color: rgba(var(--accent), 0.7);
-    line-height: 15px;
-    letter-spacing: 64px;
-}
-
-.b-shiki_editor aside.markers label > span {
-    padding: 3px 8px;
-    border: none;
-    border-radius: 9px !important;
-}
-
-.b-comment > .inner header a[href*="/EngiNier"] img {
-    border: 2px solid #a7843d75;
-}
-
-.b-comment > .inner header a[href*="/Cosmo+%E2%98%AD"] img {
-    border: 2px solid #3ba2bd75;
-}
-
-.b-shiki_editor footer .hide {
-    display: none;
-    opacity: 0.6;
-}
-
-.b-replies {
-    padding-top: 0;
-}
-
-.b-comment:first-child {
-    border-top-width: 0 !important;
-}
-
-.b-comment > .inner header img {
-    margin: 0 10px 0 0;
-}
-
-.b-quote {
-    margin: 5px 0;
 }
