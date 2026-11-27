@@ -460,15 +460,20 @@ body#profiles_show .b-shiki_editor footer {
 }
 
 .p-profiles-show .lifetime .cuts .cut:after {
-    content: '\f10c';
-    font: normal normal normal 14px/1 FontAwesome;
-    text-rendering: auto;
-    -webkit-font-smoothing: antialiased;
-    top: -2px;
-    right: 5px;
-    position: relative;
-    font-size: 11px;
-    color: rgba(var(--very-high-rating), var(--hundred));
+    /* v1.7.22: кружок рисуется рамкой, а не значком шрифта: значок FontAwesome на iPhone
+       садится по-другому (метрики шрифта) и оказывался выше полосы. Рамка ставится ровно
+       по центру полосы (у .cut высота полосы) и красится акцентом темы, а не зелёным. */
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 10px;
+    height: 10px;
+    box-sizing: border-box;
+    border: 1.5px solid rgba(var(--accent), 1);
+    border-radius: 50%;
+    background: rgba(var(--time-empty), 1); /* тёмная серединка: кружок виден и на заполненной части */
+    translate: -50% -50%;
     z-index: 10;
 }
 
@@ -479,6 +484,12 @@ body#profiles_show .b-shiki_editor footer {
 
 .p-profiles-show .lifetime .cuts .cut {
     width: 0;
+    height: 6px; /* = высоте полосы: по ней центрируется кружок */
+}
+
+/* галочка у пройденных отметок — акцент темы вместо зелёного сайта */
+.p-profiles-show .lifetime .times .time.checked:before {
+    color: rgba(var(--accent), 1);
 }
 
 .b-stats_bar.lifetime .bar .first,
