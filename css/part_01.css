@@ -1,4 +1,4 @@
-/* shiki glass v1.7.18 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
+/* shiki glass v1.7.19 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
 html:root { --sg-p1: ""; }
 
 @media screen and (min-width: 1px) {
@@ -909,6 +909,10 @@ a,
     --opt-pad: 5px 10px;
     --opt-radius: 6px;
     --opt-hover: rgba(var(--accent), .18);
+}
+
+:is([class*="spns_"], [class*="b-spns"], [id^="yd_"]) * {
+    text-shadow: none !important;
 }
 
 @media screen and (max-width: 1023px) {
@@ -2335,7 +2339,7 @@ body#dashboards_show .b-catalog_entry.b-catalog_entry {
 
 @media screen and (max-width: 1199px) {
     .l-page {
-        background-color: color-mix(in srgb, var(--glass-deep) 0%, transparent);
+        background-color: color-mix(in srgb, var(--glass-deep) 72%, transparent);
         box-shadow: none !important;
     }
     body#profiles_show .b-clubs {
@@ -2750,13 +2754,6 @@ html input[type="checkbox"]:not(#u):focus-visible {
 }
 
 @media screen and (max-width: 1199px) {
-    .l-page {
-        --text-halo: 0 0 2px rgba(var(--shade), .9), 0 0 6px rgba(var(--shade), .7), 0 0 14px rgba(var(--shade), .5);
-        text-shadow: var(--text-halo);
-    }
-    .l-page a:not([class*="button"]):not(.b-tag) {
-        text-shadow: var(--text-halo);
-    }
     .l-page :is(.b-user .last-online, .b-user .line .event, .b-club span.grouped > span, .b-user_history-line > time.date,
         .b-user_history-line > a.id, .b-topic .section time, .b-topic span.comments, .b-topic span.hash, span.misc > span) {
         color: rgba(var(--text), .82) !important;
@@ -5568,4 +5565,18 @@ a.b-link.bubbled-processed {
 
 .cm-s-solarized.cm-s-light div.CodeMirror-selected {
     background: color-mix(in srgb, var(--tone-6b6965) 40%, transparent);
+}
+
+.CodeMirror-dialog-top {
+    border-bottom: none;
+    top: 0px;
+    background: var(--tone-171717);
+}
+
+.cm-s-solarized .cm-variable {
+    color: #dade38;
+}
+
+.cm-s-solarized .cm-tag {
+    color: var(--tone-a8a99f);
 }

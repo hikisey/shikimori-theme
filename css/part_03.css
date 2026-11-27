@@ -1,22 +1,5 @@
-/* shiki glass v1.7.18 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
+/* shiki glass v1.7.19 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
 html:root { --sg-p3: ""; }
-
-.b-dialog,
-.b-user.detailed,
-.b-comment,
-.b-db_entry-note,
-.p-topics .l-menu .clubs .entry,
-.p-topics .l-menu .sticky-topics .topic {
-    margin: 4px 0;
-    border-top: none;
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-
-.b-comments .comments-loaded,
-.b-message .comments-loaded {
-    padding-bottom: 10px !important;
-}
 
 .b-dialog:first-child {
     padding-top: 15px;
@@ -5310,7 +5293,7 @@ div.Ssylki-anime:hover .Text-2 {
 
 :root {
     --theme-name: "shiki glass";
-    --theme-version: "1.7.18";
+    --theme-version: "1.7.19";
 }
 
 .l-footer:before {
@@ -5486,4 +5469,8 @@ a:-webkit-any-link {
 .p-studios .studio .name {
     color: rgba(var(--text-strong), 1);
     width: 150px;
+}
+
+.p-studios .studio .name:hover {
+    color: rgba(var(--accent), 1);
 }

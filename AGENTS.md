@@ -53,7 +53,7 @@
 1. правки — в модулях `src/`; `css/part_NN.css` руками не править.
 2. сборка: `python3 tools/build.py --version X.Y.Z` (подвал «shiki glass vX.Y.Z»). 4 части ≤ 155 КБ: на .io только 4 первых `@import` и ~230 КБ на файл, подробности — в docs/ARCHITECTURE.md, «пределы импорта шикимори».
 3. проверки: `tools/quick_check.py` без ошибок + полная регрессия (см. выше).
-4. в `site.css` и `README.md` заменить старый тег на новый во всех `@import`; если число частей изменилось — заменить весь список строк (и метки `--sg-pN` в блоке-индикаторе `site.css`).
+4. в `site.css` и `README.md` заменить старый тег на новый во всех `@import`, затем `python3 tools/build_themes.py` (перезапишет `themes/*/site.css` с новым тегом и раздел тем в README); если число частей изменилось — заменить весь список строк (и метки `--sg-pN` в блоке-индикаторе `site.css`).
 5. commit → push в `main` → тег `vX.Y.Z` → GitHub release с описанием на русском.
 6. проверить, что `raw.githubusercontent.com/Hikisey/shikimori-theme/vX.Y.Z/css/part_NN.css` (все 4) и `site.css` отдают 200 и совпадают с репозиторием.
 
