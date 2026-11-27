@@ -214,11 +214,29 @@
         background-color .35s ease !important;
 }
 
+/* v1.7.23: тень при наведении — готовая, на ::before, и проявляется прозрачностью.
+   Раньше плавно менялся сам box-shadow, и браузер перерисовывал карточку в каждом кадре
+   анимации; при прокрутке колесом карточки под курсором сменяются одна за другой —
+   в каталоге это ~200 перерисовок за прокрутку. Прозрачность считает видеокарта, без перерисовки. */
+.b-catalog_entry::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    border-radius: inherit;
+    box-shadow: var(--card-hover-shadow);
+    opacity: 0;
+    transition: opacity .35s var(--ease-out);
+    pointer-events: none;
+}
+
 @media (hover: hover) and (pointer: fine) {
     .b-catalog_entry.b-catalog_entry:hover {
         transform: var(--card-lift);
-        box-shadow: var(--card-hover-shadow);
         z-index: 2;
+    }
+    .b-catalog_entry.b-catalog_entry:hover::before {
+        opacity: 1;
     }
 }
 

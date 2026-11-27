@@ -3166,11 +3166,12 @@ body .b-catalog_entry .collection_score .collection_score_marker {
     margin: 0 !important;
     padding: 2px 8px;
     border-radius: 999px;
-    background: color-mix(in srgb, var(--glass-deep) 82%, transparent) !important;
+    /* v1.7.23: без backdrop-filter. Плашка почти непрозрачная (82%), размытие под ней было
+       почти незаметно, но каждая из ~40 плашек каталога — отдельный проход размытия в каждом
+       кадре прокрутки (на слабой видеокарте прокрутка колесом подтормаживала). Фон на 6% плотнее. */
+    background: color-mix(in srgb, var(--glass-deep) 88%, transparent) !important;
     border: 1px solid rgba(var(--glass-light), .12) !important;
     box-shadow: 0 2px 8px rgba(var(--shade), .35) !important;
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
     color: rgb(var(--text-strong)) !important;
     font-size: 11px !important;
     font-weight: 600;
