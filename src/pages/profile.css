@@ -404,14 +404,11 @@ div.compatibility > a:before {
         background: transparent !important;
         transition: 0.3s ease-out, margin 0s, padding 0s, opacity 0s, font-size 0s, width 0s, height 0s, top 0s, bottom 0s, line-height 0s, min-height 0s, min-width 0s;
     }
-    .text.full:hover,
-    .text.moderate:hover,
-    .text.high:hover,
-    .text.weak:hover,
-    .text.zero:hover,
-    .b-stats_bar.manga .compatibility a:hover,
-    .b-stats_bar.anime .compatibility a:hover {
-        transform: scale(1.17);
+    /* v1.7.23: значок совместимости над полосой «Список аниме» под курсором больше не увеличивается
+       (было scale 1.17 и у ссылки, и у текста — значок вылезал за верх блока и обрезался, и наведение
+       двигало его). Теперь он просто становится ярче, размер и место те же */
+    .b-stats_bar .compatibility :is(a, span.link-replacement):hover .text::before {
+        opacity: 1;
     }
     .p-profiles .profile-head .c-info .c-lists-info .b-stats_bar .compatibility a:hover {
         box-shadow: none !important;

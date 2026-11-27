@@ -282,6 +282,24 @@
     }
 }
 
+/* v1.7.23: в списке новостей и тем форума (.b-topic-preview) заголовок длинный и доходит до правого края,
+   и кнопки поверх него (подписаться, ответить, игнорировать, в закладки) налезали на название и «о …».
+   Здесь кнопки снова в строке справа (float), а место под них занято всегда: до наведения они просто
+   невидимы. Заголовок обтекает их сразу при загрузке, поэтому при наведении ничего не сдвигается,
+   а ширина места — ровно по числу кнопок, которые сайт показал этому пользователю */
+@media screen and (min-width: 1024px) {
+    .b-topic.b-topic-preview:not(.aside-expanded) > .inner > aside.buttons {
+        position: static;
+        float: right;
+        display: block;
+        visibility: hidden;
+    }
+    .b-topic.b-topic-preview:not(.aside-expanded) > .inner:hover > aside.buttons,
+    .b-topic.b-topic-preview:not(.aside-expanded) > .inner > aside.buttons:focus-within {
+        visibility: visible;
+    }
+}
+
 /* v1.7.21: «поделиться» и кнопки модерации (бан, жалоба, спойлер, цензура, оффтоп) у сайта #444 —
    на тёмном стекле почти чёрные. Теперь как остальные: приглушённый текст, под курсором акцент */
 aside.buttons :is(.item-share, .item-ban, .item-abuse, .item-spoiler, .item-censored, .item-offtopic, .item-summary) {
