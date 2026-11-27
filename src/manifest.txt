@@ -38,3 +38,5 @@ layout/footer.css
 overrides/late.css
 # сторонний CSS: последним, на месте бывшего 5-го @import в site.css (после частей темы)
 vendor/codemirror-dark.css
+# цвет рамки редактора кода из палитры темы (после vendor-файла, тот же вес селекторов)
+overrides/codemirror-tint.css
